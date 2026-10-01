@@ -2,487 +2,1747 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ملخصات الدراسات الاجتماعية </title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f2f2f7">
+<title>دراسات اجتماعية · الثالث الإعدادي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f3f7f8;--card:#fff;--card-2:#e8f0f3;--ink:#10283a;--ink-dim:#4d6373;--rule:#cfdde4;--acc:#2457d6;--acc-ink:#fff;--ember:#d6336c;--toxic:#c62828;--leaf:#2e7d32;--slate:#546e7a;--violet:#6a4bc4;--ok:#2e7d32;--bad:#c62828;--gold:#b8862f}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1a26;--card:#13283a;--card-2:#1a3449;--ink:#e8f1f6;--ink-dim:#9db4c3;--rule:#2a4257;--acc:#7aa8ff;--acc-ink:#0b1a2e;--ember:#ff7aa2;--toxic:#ff7b72;--leaf:#7fd18b;--slate:#9fb6c2;--violet:#b7a3f0;--ok:#7fd18b;--bad:#ff7b72;--gold:#e8c877}}:root[data-theme="dark"]{--bg:#0d1a26;--card:#13283a;--card-2:#1a3449;--ink:#e8f1f6;--ink-dim:#9db4c3;--rule:#2a4257;--acc:#7aa8ff;--acc-ink:#0b1a2e;--ember:#ff7aa2;--toxic:#ff7b72;--leaf:#7fd18b;--slate:#9fb6c2;--violet:#b7a3f0;--ok:#7fd18b;--bad:#ff7b72;--gold:#e8c877}
-*{box-sizing:border-box}html,body{margin:0}
-body{background:var(--bg);color:var(--ink);font:17px/1.9 'Tajawal',system-ui,sans-serif}
-h1,h2,h3,button,.num{font-family:'Cairo',sans-serif}
-.wrap{max-width:780px;margin:0 auto;padding:0 16px 70px}
-header{padding:22px 0 8px;text-align:center}
-.by{direction:ltr;font-family:'Cairo',sans-serif;font-weight:800;font-size:14px;color:var(--ember)}
-h1{font-size:clamp(26px,6vw,36px);font-weight:900;margin:4px 0;line-height:1.35}
-.sub{color:var(--ink-dim);font-size:15px;margin:0}
-.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--rule)}
-.seg{display:flex;gap:6px;margin-bottom:8px}
-.seg button{flex:1;font-weight:800;font-size:14px;padding:9px 6px;border-radius:10px;border:1px solid var(--rule);background:var(--card);color:var(--ink-dim);cursor:pointer}
-.seg button.on{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
-.seg.modes button.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
-.stat{font-size:13px;color:var(--ink-dim);text-align:center;margin-top:4px}
-#app{padding-top:16px}
-.tools{display:flex;justify-content:flex-end;margin-bottom:10px}
-.btn{font-weight:800;font-size:14px;padding:9px 16px;border-radius:10px;border:1px solid var(--rule);background:var(--card);color:var(--ink);cursor:pointer}
-.btn.pri{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
-section{background:var(--card);border:1px solid var(--rule);border-radius:14px;margin-bottom:12px;padding:0 16px 16px}
-.section-head{display:flex;align-items:center;gap:12px;padding:14px 0 6px;cursor:pointer;user-select:none}
-.section-head .num{width:32px;height:32px;border-radius:50%;background:var(--acc);color:var(--acc-ink);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0}
-.section-head h2{font-size:19px;margin:0;flex:1}
-.section-head::after{content:'⌄';font-size:22px;color:var(--ink-dim);transition:transform .2s}
-section.closed .section-head::after{transform:rotate(90deg)}
-section.closed>:not(.section-head){display:none}
-.callout,.conclusion,.obs-box{background:var(--card-2);border-radius:10px;padding:14px 16px;margin:10px 0;font-size:16px}
-.callout{border-right:4px solid var(--ember)}.callout b,.obs-box b{color:var(--ember)}
-.comp-card,.gas-box,.split .col,.text-block{background:var(--card-2);border-radius:12px;padding:14px 16px;margin-bottom:10px;border-top:3px solid var(--accent,var(--acc))}
-.comp-title,.gas-box h3,.split h3{font-weight:800;font-size:16px;color:var(--accent,var(--acc));margin:0 0 6px;display:flex;align-items:center;gap:8px}
-.dot{width:10px;height:10px;border-radius:50%;background:var(--accent,var(--acc))}
-.comp-card p,.text-block p{margin:0 0 8px}.fact{font-size:15px;color:var(--ink-dim);border-top:1px dashed var(--rule);padding-top:8px;margin-top:8px}
-.c-nicotine{--accent:var(--leaf)}.c-carb{--accent:var(--slate)}.c-mineral{--accent:#b8901f}.c-radio{--accent:var(--violet)}
-.gas-grid,.split{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-@media(max-width:520px){.gas-grid,.split{grid-template-columns:1fr}}
-.col.safe h3{color:var(--leaf)}.col.danger{--accent:var(--toxic)}
-.split ul{margin:0;padding-inline-start:18px;color:var(--ink-dim)}
-.steps{list-style:none;margin:0;padding:0}.steps li{display:flex;gap:10px;background:var(--card-2);border-radius:10px;padding:10px 14px;margin-bottom:8px;font-size:15.5px}
-.steps .n{font-family:'Cairo',sans-serif;font-weight:800;color:var(--ember);flex-shrink:0}
-.cnt{text-align:center;color:var(--ink-dim);font-size:14px;margin-bottom:10px}
-.fc{perspective:1000px;height:260px;margin-bottom:14px;cursor:pointer}
-.fc-in{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
-.fc.flip .fc-in{transform:rotateY(180deg)}
-.face{position:absolute;inset:0;backface-visibility:hidden;background:var(--card);border:2px solid var(--rule);border-radius:18px;padding:18px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:auto}
-.face.back{transform:rotateY(180deg);border-color:var(--acc);background:var(--card-2)}
-.face small{color:var(--ink-dim);font-size:12px;margin-bottom:8px}.face .t{font-size:18px;font-weight:700}.face .hint{margin-top:10px;font-size:12px;color:var(--ink-dim)}
-.row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-.qz{background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:18px}
-.qz .qt{font-size:18px;font-weight:700;margin-bottom:14px}
-.opt{display:block;width:100%;text-align:right;margin-bottom:8px;padding:12px 14px;font:600 16px/1.6 'Tajawal',sans-serif;border-radius:12px;border:2px solid var(--rule);background:var(--card-2);color:var(--ink);cursor:pointer}
-.opt.ok{border-color:var(--ok);background:rgba(47,143,78,.18)}.opt.bad{border-color:var(--bad);background:rgba(192,57,43,.18)}.opt:disabled{cursor:default}
-.tf{display:flex;gap:10px}.tf .opt{text-align:center;font-size:22px}
-.fb{margin-top:10px;padding:12px 14px;border-radius:10px;background:var(--card-2);font-size:15.5px}
-.bigscore{font-family:'Cairo',sans-serif;font-size:56px;font-weight:900;color:var(--acc);text-align:center;line-height:1.2}
-.prog{height:6px;background:var(--rule);border-radius:4px;margin-bottom:14px;overflow:hidden}.prog i{display:block;height:100%;background:var(--acc);transition:width .3s}
-.empty{text-align:center;color:var(--ink-dim);padding:30px 0}
-:root{--grid:#dbe6eb}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--grid:#1a3144}}
-:root[data-theme="dark"]{--grid:#1a3144}
-body{background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:26px 26px;background-attachment:fixed}
-.s-wrap{max-width:860px;margin:0 auto;padding:0 18px 48px}
-.s-nav{padding:18px 0 0;font:700 17px 'Cairo',sans-serif;display:flex;align-items:center;gap:10px}
-.s-nav i{width:14px;height:14px;background:var(--ember);border-radius:50%}
-.s-hero{padding:54px 0 28px}
-.s-title{font:700 clamp(40px,11.5vw,80px)/1.2 'Cairo',sans-serif;margin:0 0 14px}
-.s-lead{font-size:18px;color:var(--ink-dim);max-width:26em;margin:0 0 26px}
-.s-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
-@media(max-width:600px){.s-grid{grid-template-columns:1fr}}
-.s-card{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:6px 22px 6px 22px;padding:0 20px 20px;overflow:hidden}
-.s-card::before{content:'';display:block;height:10px;margin:0 -20px 16px;background:var(--gold)}
-.s-ready:hover{box-shadow:4px 4px 0 var(--ink)}
-.s-ct{font:800 20px/1.6 'Cairo',sans-serif;margin:0 0 2px}
-.s-meta{color:var(--ink-dim);font-size:15px;margin-bottom:12px}
-.s-chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
-.s-chips span{font-size:13px;font-weight:700;border:1.5px solid var(--gold);color:var(--gold);border-radius:99px;padding:0 11px}
-.s-open{font:800 15px 'Cairo',sans-serif;color:var(--gold)}
-.s-back{display:inline-block;margin-top:16px;text-decoration:none;font:800 14px 'Cairo',sans-serif;color:var(--acc)}
-.s-foot{margin-top:46px;padding-top:16px;border-top:2px solid var(--ink);direction:ltr;font:700 14px 'Cairo',sans-serif;color:var(--ink-dim)}
+/* ══════════════════════════════════════════════════════════
+   iOS SYSTEM
+   ══════════════════════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  /* iOS System Colors */
+  --blue:#007aff;--blue-2:#0a84ff;
+  --green:#34c759;--green-2:#30d158;
+  --orange:#ff9500;--orange-2:#ff9f0a;
+  --red:#ff3b30;--red-2:#ff453a;
+  --purple:#af52de;--purple-2:#bf5af2;
+  --pink:#ff2d55;--pink-2:#ff375f;
+  --teal:#5ac8fa;--teal-2:#64d2ff;
+  --indigo:#5856d6;--indigo-2:#5e5ce6;
+  --yellow:#ffcc00;--yellow-2:#ffd60a;
+
+  /* Backgrounds (Light) */
+  --bg:#f2f2f7;
+  --bg-2:#ffffff;
+  --bg-3:#fbfbfd;
+  --bg-card:#ffffff;
+  --bg-elev:rgba(255,255,255,.72);
+  --bg-fill:#e5e5ea;
+  --bg-fill-2:#f2f2f7;
+  --bg-grouped:rgba(118,118,128,.12);
+
+  /* Text */
+  --t-1:#000000;
+  --t-2:rgba(60,60,67,.6);
+  --t-3:rgba(60,60,67,.3);
+  --t-inv:#ffffff;
+
+  /* Separators */
+  --sep:rgba(60,60,67,.29);
+  --sep-opq:rgba(60,60,67,.36);
+
+  /* Shadows (iOS-like, very subtle) */
+  --sh-1:0 1px 2px rgba(0,0,0,.04);
+  --sh-2:0 2px 8px rgba(0,0,0,.06);
+  --sh-3:0 8px 24px rgba(0,0,0,.08);
+  --sh-card:0 1px 3px rgba(0,0,0,.04),0 4px 12px rgba(0,0,0,.05);
+
+  /* Radii */
+  --r-sm:8px;--r-md:12px;--r-lg:16px;--r-xl:20px;--r-2xl:28px;--r-pill:9999px;
+
+  /* Timing (iOS-style easing) */
+  --ease:cubic-bezier(.25,.1,.25,1);
+  --ease-out:cubic-bezier(0,0,.2,1);
+  --ease-in:cubic-bezier(.4,0,1,1);
+  --spring:cubic-bezier(.34,1.4,.64,1);
+  --smooth:cubic-bezier(.16,1,.3,1);
+  --dur-fast:.18s;--dur:.28s;--dur-slow:.42s;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#000000;--bg-2:#1c1c1e;--bg-3:#0a0a0a;
+    --bg-card:#1c1c1e;--bg-elev:rgba(28,28,30,.72);
+    --bg-fill:#2c2c2e;--bg-fill-2:#1c1c1e;
+    --bg-grouped:rgba(118,118,128,.24);
+    --t-1:#ffffff;--t-2:rgba(235,235,245,.6);--t-3:rgba(235,235,245,.3);
+    --sep:rgba(84,84,88,.65);--sep-opq:rgba(84,84,88,.78);
+    --sh-1:0 1px 2px rgba(0,0,0,.3);--sh-2:0 2px 8px rgba(0,0,0,.4);--sh-3:0 8px 24px rgba(0,0,0,.5);
+    --sh-card:0 1px 3px rgba(0,0,0,.3),0 4px 12px rgba(0,0,0,.35);
+    --blue:#0a84ff;--green:#30d158;--orange:#ff9f0a;--red:#ff453a;
+    --purple:#bf5af2;--pink:#ff375f;--teal:#64d2ff;--indigo:#5e5ce6;--yellow:#ffd60a;
+  }
+}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);color:var(--t-1);
+  font:400 17px/1.5 'Tajawal','SF Pro Text',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  min-height:100vh;overflow-x:hidden;
+  letter-spacing:-.01em;
+}
+h1,h2,h3,h4,h5,h6{font-family:'Cairo','SF Pro Display',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;font-weight:700;letter-spacing:-.022em;line-height:1.15}
+a{color:inherit;text-decoration:none}
+button{background:none;border:none;color:inherit;cursor:pointer;font:inherit}
+img,svg{max-width:100%;display:block}
+::selection{background:var(--blue);color:#fff}
+::-webkit-scrollbar{width:8px;height:8px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--t-3);border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:var(--t-2)}
+
+/* ══════════════════════════════════════════════════════════
+   BACKGROUND (Soft, iOS-like)
+   ══════════════════════════════════════════════════════════ */
+.bg{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 0%,color-mix(in oklab,var(--blue) 8%,transparent),transparent 60%),
+    radial-gradient(ellipse 50% 35% at 85% 25%,color-mix(in oklab,var(--purple) 6%,transparent),transparent 60%),
+    radial-gradient(ellipse 70% 45% at 50% 100%,color-mix(in oklab,var(--teal) 5%,transparent),transparent 60%);
+}
+@media (prefers-color-scheme: dark){
+  .bg{background:
+    radial-gradient(ellipse 60% 40% at 20% 0%,color-mix(in oklab,var(--blue) 12%,transparent),transparent 60%),
+    radial-gradient(ellipse 50% 35% at 85% 25%,color-mix(in oklab,var(--purple) 10%,transparent),transparent 60%);
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   PAGE SWITCHING (Fade only — iOS smooth)
+   ══════════════════════════════════════════════════════════ */
+.pr,.tr{position:absolute;opacity:0;pointer-events:none;width:0;height:0}
+.page{display:none;position:relative;z-index:2}
+.page.on{display:block;animation:pageIn var(--dur-slow) var(--ease-out)}
+@keyframes pageIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+#pg-home:checked~#shell .pg-home,
+#pg-l1:checked~#shell .pg-l1,
+#pg-l2:checked~#shell .pg-l2,
+#pg-l3:checked~#shell .pg-l3,
+#pg-l4:checked~#shell .pg-l4,
+#pg-l5:checked~#shell .pg-l5,
+#pg-l6:checked~#shell .pg-l6{display:block;animation:pageIn var(--dur-slow) var(--ease-out)}
+
+.tpane{display:none;animation:paneIn var(--dur) var(--ease-out)}
+@keyframes paneIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+#t1a:checked~.tbody .tp-1a,#t1b:checked~.tbody .tp-1b,
+#t2a:checked~.tbody .tp-2a,#t2b:checked~.tbody .tp-2b,
+#t3a:checked~.tbody .tp-3a,#t3b:checked~.tbody .tp-3b,
+#t4a:checked~.tbody .tp-4a,#t4b:checked~.tbody .tp-4b,
+#t5a:checked~.tbody .tp-5a,#t5b:checked~.tbody .tp-5b,
+#t6a:checked~.tbody .tp-6a,#t6b:checked~.tbody .tp-6b{display:block;animation:paneIn var(--dur) var(--ease-out)}
+
+/* ══════════════════════════════════════════════════════════
+   TOPBAR (Frosted Glass)
+   ══════════════════════════════════════════════════════════ */
+.topbar{
+  position:sticky;top:0;z-index:100;
+  padding:12px 20px;
+  background:color-mix(in oklab,var(--bg) 72%,transparent);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:.5px solid var(--sep);
+}
+.topbar-inner{
+  max-width:1120px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-icon{
+  width:38px;height:38px;border-radius:11px;
+  background:linear-gradient(135deg,var(--blue),var(--indigo));
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 6px color-mix(in oklab,var(--blue) 35%,transparent);
+  flex-shrink:0;
+}
+.brand-icon svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.brand-text{display:flex;flex-direction:column;line-height:1.2}
+.brand-title{font-family:'Cairo';font-size:16px;font-weight:700;color:var(--t-1);letter-spacing:-.02em}
+.brand-sub{font-size:11px;color:var(--t-2);font-weight:500;margin-top:1px}
+
+.top-actions{display:flex;gap:8px;align-items:center}
+.pill{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:8px 14px;border-radius:var(--r-pill);
+  background:var(--bg-fill);color:var(--t-1);
+  font-family:'Cairo';font-weight:600;font-size:13px;
+  transition:transform var(--dur-fast) var(--ease),background var(--dur-fast);
+  cursor:pointer;
+}
+.pill:hover{background:color-mix(in oklab,var(--bg-fill) 80%,var(--t-1))}
+.pill:active{transform:scale(.96)}
+.pill .dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 8px color-mix(in oklab,var(--green) 60%,transparent);
+}
+
+/* ══════════════════════════════════════════════════════════
+   SHELL
+   ══════════════════════════════════════════════════════════ */
+#shell{max-width:1120px;margin:0 auto;padding:0 20px 100px;position:relative;z-index:2}
+
+/* ══════════════════════════════════════════════════════════
+   HERO
+   ══════════════════════════════════════════════════════════ */
+.hero{padding:64px 0 44px;text-align:center}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 14px;margin-bottom:22px;
+  background:var(--bg-fill);color:var(--t-2);
+  border-radius:var(--r-pill);
+  font-family:'Cairo';font-weight:600;font-size:12.5px;
+}
+.hero-badge .live{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--blue);
+  animation:pulse 2s var(--ease) infinite;
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.hero-badge b{color:var(--blue);font-weight:700}
+
+.hero h1{
+  font-size:clamp(2.4rem,7vw,4.4rem);
+  font-weight:700;
+  letter-spacing:-.035em;
+  line-height:1.08;
+  margin:0 0 16px;
+  background:linear-gradient(135deg,var(--t-1) 30%,color-mix(in oklab,var(--t-1) 55%,var(--blue)) 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.hero h1 .sub{
+  display:block;
+  font-size:clamp(1rem,2.6vw,1.35rem);
+  font-weight:500;
+  color:var(--t-2);
+  -webkit-text-fill-color:var(--t-2);
+  letter-spacing:-.015em;
+  margin-top:10px;
+}
+.hero-desc{
+  font-size:clamp(15px,2.2vw,17px);
+  color:var(--t-2);
+  max-width:34em;
+  margin:0 auto 36px;
+  line-height:1.55;
+  font-weight:400;
+}
+.hero-desc b{color:var(--t-1);font-weight:600}
+.hero-desc em{color:var(--blue);font-style:normal;font-weight:600}
+
+/* ══════════════════════════════════════════════════════════
+   STATS (iOS Cards)
+   ══════════════════════════════════════════════════════════ */
+.stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:12px;max-width:600px;margin:0 auto 20px;
+}
+.stat{
+  background:var(--bg-card);
+  border-radius:var(--r-lg);
+  padding:20px 14px;
+  text-align:center;
+  box-shadow:var(--sh-card);
+  transition:transform var(--dur) var(--spring),box-shadow var(--dur);
+}
+.stat:hover{transform:translateY(-2px);box-shadow:var(--sh-3)}
+.stat:active{transform:scale(.98)}
+.stat-icon{font-size:24px;margin-bottom:8px;display:block}
+.stat-num{
+  display:block;
+  font-family:'Cairo';font-weight:700;
+  font-size:clamp(1.6rem,4vw,2.2rem);
+  letter-spacing:-.03em;
+  line-height:1;
+  margin-bottom:4px;
+}
+.stat-lbl{
+  display:block;
+  font-size:11.5px;font-weight:600;
+  color:var(--t-2);
+  letter-spacing:.02em;
+}
+.stat-a .stat-num{color:var(--blue)}
+.stat-b .stat-num{color:var(--purple)}
+.stat-c .stat-num{color:var(--green)}
+
+/* Progress */
+.progress-card{
+  max-width:600px;margin:0 auto;
+  background:var(--bg-card);
+  border-radius:var(--r-lg);
+  padding:18px 20px;
+  box-shadow:var(--sh-card);
+}
+.progress-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.progress-head b{font-family:'Cairo';font-weight:600;font-size:14px;color:var(--t-1)}
+.progress-head span{font-family:'Cairo';font-weight:700;font-size:15px;color:var(--blue)}
+.progress-track{
+  height:6px;background:var(--bg-fill);
+  border-radius:3px;overflow:hidden;
+}
+.progress-fill{
+  height:100%;width:100%;
+  background:linear-gradient(90deg,var(--blue),var(--purple));
+  border-radius:3px;
+  animation:grow 1.2s var(--ease-out)
+}
+@keyframes grow{from{width:0}to{width:100%}}
+
+/* ══════════════════════════════════════════════════════════
+   SECTION HEADER
+   ══════════════════════════════════════════════════════════ */
+.sec-head{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;margin:64px 0 24px;padding:0 4px;
+}
+.sec-head-left{display:flex;align-items:center;gap:12px}
+.sec-icon{
+  width:40px;height:40px;border-radius:11px;
+  background:var(--bg-fill);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;
+}
+.sec-head h2{
+  font-size:clamp(1.4rem,3.5vw,1.75rem);
+  font-weight:700;
+  letter-spacing:-.025em;
+  color:var(--t-1);
+}
+.sec-head h2 small{
+  display:block;
+  font-family:'Tajawal';
+  font-size:13px;font-weight:500;
+  color:var(--t-2);
+  margin-top:2px;letter-spacing:0;
+}
+.sec-counter{
+  font-family:'Cairo';font-weight:600;font-size:12.5px;
+  color:var(--t-2);
+  padding:6px 12px;
+  background:var(--bg-fill);border-radius:var(--r-pill);
+}
+
+/* ══════════════════════════════════════════════════════════
+   LESSON CARDS
+   ══════════════════════════════════════════════════════════ */
+.lessons{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:680px){.lessons{grid-template-columns:1fr}}
+
+.lesson{
+  position:relative;
+  display:block;
+  background:var(--bg-card);
+  border-radius:var(--r-xl);
+  padding:22px 22px 20px;
+  box-shadow:var(--sh-card);
+  cursor:pointer;
+  overflow:hidden;
+  transition:
+    transform var(--dur) var(--spring),
+    box-shadow var(--dur) var(--ease);
+  -webkit-user-select:none;user-select:none;
+  min-height:210px;
+}
+.lesson:hover{
+  transform:translateY(-3px);
+  box-shadow:var(--sh-3);
+}
+.lesson:active{transform:scale(.985);transition-duration:var(--dur-fast)}
+.lesson::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:3px;
+  background:var(--c);
+}
+.lesson-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.lesson-num{
+  width:44px;height:44px;border-radius:12px;
+  background:color-mix(in oklab,var(--c) 12%,transparent);
+  color:var(--c);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cairo';font-weight:700;font-size:16px;
+  flex-shrink:0;
+  transition:transform var(--dur) var(--spring);
+}
+.lesson:hover .lesson-num{transform:scale(1.06)}
+.lesson-tag{
+  padding:4px 10px;border-radius:var(--r-pill);
+  background:var(--bg-fill);
+  font-family:'Cairo';font-weight:600;font-size:11px;
+  color:var(--t-2);
+  letter-spacing:.01em;
+}
+.lesson-title{
+  display:flex;align-items:flex-start;gap:8px;
+  font-size:17px;
+  font-weight:700;
+  line-height:1.35;
+  letter-spacing:-.022em;
+  color:var(--t-1);
+  margin-bottom:8px;
+}
+.lesson-title .em{font-size:1.2rem;flex-shrink:0}
+.lesson-desc{
+  font-size:14.5px;
+  line-height:1.5;
+  color:var(--t-2);
+}
+.lesson-foot{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-top:18px;padding-top:16px;
+  border-top:.5px solid var(--sep);
+}
+.lesson-feat{display:flex;gap:6px;flex-wrap:wrap}
+.feat{
+  padding:4px 9px;border-radius:var(--r-pill);
+  background:var(--bg-fill);
+  font-family:'Cairo';font-weight:600;font-size:11px;
+  color:var(--t-2);
+}
+.lesson-cta{
+  display:inline-flex;align-items:center;gap:4px;
+  font-family:'Cairo';font-weight:600;font-size:13px;
+  color:var(--blue);
+}
+.lesson-cta svg{
+  width:14px;height:14px;
+  stroke:currentColor;fill:none;stroke-width:2.4;
+  stroke-linecap:round;stroke-linejoin:round;
+  transition:transform var(--dur) var(--ease-out);
+}
+.lesson:hover .lesson-cta svg{transform:translateX(-3px)}
+
+/* Colors */
+.cv1{--c:var(--blue)}
+.cv2{--c:var(--purple)}
+.cv3{--c:var(--green)}
+.cv4{--c:var(--orange)}
+.cv5{--c:var(--pink)}
+.cv6{--c:var(--teal)}
+
+/* ══════════════════════════════════════════════════════════
+   CHAPTER HEADER
+   ══════════════════════════════════════════════════════════ */
+.chapter{padding:32px 0 24px}
+.back-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:8px 14px;border-radius:var(--r-pill);
+  background:var(--bg-fill);color:var(--t-1);
+  font-family:'Cairo';font-weight:600;font-size:13px;
+  transition:transform var(--dur-fast) var(--ease),background var(--dur-fast);
+  cursor:pointer;
+  margin-bottom:24px;
+}
+.back-btn svg{
+  width:13px;height:13px;stroke:currentColor;fill:none;
+  stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;
+  transition:transform var(--dur) var(--ease-out);
+}
+.back-btn:hover{background:color-mix(in oklab,var(--bg-fill) 80%,var(--t-1))}
+.back-btn:hover svg{transform:translateX(-2px)}
+.back-btn:active{transform:scale(.96)}
+
+.chapter-card{
+  position:relative;
+  background:var(--bg-card);
+  border-radius:var(--r-2xl);
+  padding:32px 28px;
+  box-shadow:var(--sh-card);
+  overflow:hidden;
+}
+.chapter-card::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:4px;
+  background:var(--c);
+}
+.chapter-meta{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.chapter-icon{
+  width:52px;height:52px;border-radius:14px;
+  background:color-mix(in oklab,var(--c) 12%,transparent);
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;
+  flex-shrink:0;
+}
+.chapter-pill{
+  padding:5px 12px;border-radius:var(--r-pill);
+  background:color-mix(in oklab,var(--c) 12%,transparent);
+  color:var(--c);
+  font-family:'Cairo';font-weight:600;font-size:11.5px;
+}
+.chapter-title{
+  font-size:clamp(1.5rem,4.5vw,2.1rem);
+  font-weight:700;
+  letter-spacing:-.028em;
+  line-height:1.15;
+  color:var(--t-1);
+  margin:0 0 10px;
+}
+.chapter-sub{
+  font-size:14.5px;
+  color:var(--t-2);
+  line-height:1.5;
+}
+.ch-1{--c:var(--blue)}
+.ch-2{--c:var(--purple)}
+.ch-3{--c:var(--green)}
+.ch-4{--c:var(--orange)}
+.ch-5{--c:var(--pink)}
+.ch-6{--c:var(--teal)}
+
+/* ══════════════════════════════════════════════════════════
+   TABS (iOS Segmented Control)
+   ══════════════════════════════════════════════════════════ */
+.tabs{
+  display:flex;gap:3px;padding:3px;
+  background:var(--bg-fill);
+  border-radius:10px;
+  margin:20px 0 28px;
+  position:sticky;top:74px;z-index:50;
+  max-width:420px;
+  margin-inline:auto;
+  box-shadow:0 1px 2px rgba(0,0,0,.04);
+}
+.tab-btn{
+  flex:1;
+  padding:8px 14px;border-radius:8px;
+  font-family:'Cairo';font-weight:600;font-size:13px;
+  color:var(--t-1);
+  text-align:center;cursor:pointer;
+  transition:background var(--dur-fast) var(--ease),transform var(--dur-fast);
+  display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.tab-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.tab-btn:active{transform:scale(.97)}
+.tab-btn:hover:not(.on){background:color-mix(in oklab,var(--t-1) 4%,transparent)}
+#t1a:checked~.tabs label[for=t1a],#t1b:checked~.tabs label[for=t1b],
+#t2a:checked~.tabs label[for=t2a],#t2b:checked~.tabs label[for=t2b],
+#t3a:checked~.tabs label[for=t3a],#t3b:checked~.tabs label[for=t3b],
+#t4a:checked~.tabs label[for=t4a],#t4b:checked~.tabs label[for=t4b],
+#t5a:checked~.tabs label[for=t5a],#t5b:checked~.tabs label[for=t5b],
+#t6a:checked~.tabs label[for=t6a],#t6b:checked~.tabs label[for=t6b]{
+  background:var(--bg-card);
+  box-shadow:0 1px 3px rgba(0,0,0,.08);
+}
+
+/* ══════════════════════════════════════════════════════════
+   EDITORIAL CONTENT
+   ══════════════════════════════════════════════════════════ */
+.editorial{max-width:800px;margin:0 auto}
+
+.lede{
+  position:relative;
+  padding:20px 22px;
+  margin:0 0 28px;
+  background:var(--bg-card);
+  border-radius:var(--r-lg);
+  box-shadow:var(--sh-card);
+  font-size:15.5px;
+  line-height:1.65;
+  color:var(--t-1);
+}
+.lede::before{
+  content:'';position:absolute;
+  top:0;bottom:0;right:0;width:3px;
+  background:var(--c,var(--blue));
+  border-radius:0 var(--r-lg) var(--r-lg) 0;
+}
+.lede b{font-weight:600}
+.lede em{color:var(--c,var(--blue));font-style:normal;font-weight:600}
+
+/* Sections */
+.sec{
+  background:var(--bg-card);
+  border-radius:var(--r-lg);
+  margin-bottom:10px;
+  box-shadow:var(--sh-card);
+  overflow:hidden;
+  transition:box-shadow var(--dur) var(--ease);
+}
+.sec:hover{box-shadow:var(--sh-2)}
+.sec>summary{
+  display:flex;align-items:center;gap:14px;
+  padding:18px 20px;
+  cursor:pointer;list-style:none;user-select:none;
+  -webkit-user-select:none;
+  transition:background var(--dur-fast) var(--ease);
+}
+.sec>summary::-webkit-details-marker{display:none}
+.sec>summary:active{background:color-mix(in oklab,var(--t-1) 3%,transparent)}
+.sec-num{
+  width:36px;height:36px;border-radius:10px;
+  background:color-mix(in oklab,var(--c,var(--blue)) 12%,transparent);
+  color:var(--c,var(--blue));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cairo';font-weight:700;font-size:13px;
+  flex-shrink:0;
+  transition:transform var(--dur) var(--spring);
+}
+.sec[open] .sec-num{transform:scale(1.05)}
+.sec-title{
+  flex:1;
+  font-family:'Cairo';
+  font-size:15px;font-weight:600;
+  color:var(--t-1);
+  letter-spacing:-.018em;
+  line-height:1.3;
+}
+.sec-chev{
+  width:20px;height:20px;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform var(--dur) var(--ease-out);
+  color:var(--t-2);
+  flex-shrink:0;
+}
+.sec-chev svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.sec[open] .sec-chev{transform:rotate(180deg)}
+.sec-body{
+  padding:0 20px 20px;
+  font-size:15px;
+  line-height:1.65;
+  color:var(--t-1);
+}
+.sec-body b,.sec-body strong{font-weight:600}
+.sec-body em{color:var(--c,var(--blue));font-style:normal;font-weight:600}
+.sec-body p{margin:0 0 12px}
+.sec-body p:last-child{margin:0}
+
+/* Info boxes */
+.box{
+  position:relative;
+  padding:14px 16px;
+  margin:12px 0;
+  background:var(--bg-fill-2);
+  border-radius:var(--r-md);
+  font-size:14.5px;
+  line-height:1.55;
+  color:var(--t-1);
+}
+.box::before{
+  content:'';position:absolute;
+  top:0;bottom:0;right:0;width:3px;
+  background:var(--c,var(--blue));
+  border-radius:0 var(--r-md) var(--r-md) 0;
+}
+.box b,.box strong{color:var(--c,var(--blue));font-weight:600}
+.box em{color:var(--t-1);font-style:normal;font-weight:600}
+.box-blue{--c:var(--blue)}
+.box-green{--c:var(--green)}
+.box-orange{--c:var(--orange)}
+.box-purple{--c:var(--purple)}
+.box-pink{--c:var(--pink)}
+.box-teal{--c:var(--teal)}
+
+/* Fact cards */
+.fact{
+  background:var(--bg-fill-2);
+  border-radius:var(--r-md);
+  padding:14px 16px;
+  margin:10px 0;
+}
+.fact-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.fact-icon{
+  width:32px;height:32px;border-radius:8px;
+  background:color-mix(in oklab,var(--c,var(--blue)) 14%,transparent);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;
+  flex-shrink:0;
+}
+.fact-title{
+  font-family:'Cairo';font-weight:600;font-size:14px;
+  color:var(--t-1);
+  letter-spacing:-.015em;
+}
+.fact-body{
+  font-size:14px;
+  line-height:1.6;
+  color:var(--t-2);
+}
+.fact-body strong{color:var(--t-1);font-weight:600}
+.fact-body em{color:var(--c,var(--blue));font-style:normal;font-weight:600}
+.fact-body p{margin:0 0 6px}
+.fact-body p:last-child{margin:0}
+.fact-body ul{margin:4px 0;padding-inline-start:18px}
+.fact-body li{margin-bottom:3px}
+
+/* Points list */
+.points{list-style:none;padding:0;margin:12px 0;display:flex;flex-direction:column;gap:6px}
+.points li{
+  position:relative;
+  padding:10px 40px 10px 14px;
+  background:var(--bg-fill-2);
+  border-radius:var(--r-sm);
+  font-size:14.5px;
+  line-height:1.55;
+  color:var(--t-1);
+}
+.points li::before{
+  content:'';position:absolute;
+  right:18px;top:50%;transform:translateY(-50%);
+  width:6px;height:6px;border-radius:50%;
+  background:var(--c,var(--blue));
+}
+.points li strong{font-weight:600}
+
+/* Numbered */
+.numbered{list-style:none;padding:0;margin:12px 0;counter-reset:num;display:flex;flex-direction:column;gap:8px}
+.numbered li{
+  counter-increment:num;
+  position:relative;
+  padding:12px 52px 12px 16px;
+  background:var(--bg-fill-2);
+  border-radius:var(--r-md);
+  font-size:14.5px;
+  line-height:1.6;
+  color:var(--t-1);
+}
+.numbered li::before{
+  content:counter(num,decimal-leading-zero);
+  position:absolute;
+  right:16px;top:50%;transform:translateY(-50%);
+  font-family:'Cairo';font-weight:700;font-size:15px;
+  color:var(--c,var(--blue));
+  opacity:.65;
+}
+.numbered li strong{font-weight:600;color:var(--t-1)}
+
+/* Compare */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+@media(max-width:580px){.compare{grid-template-columns:1fr}}
+.col{
+  background:var(--bg-fill-2);
+  border-radius:var(--r-md);
+  padding:16px;
+}
+.col::before{content:none}
+.col h4{
+  display:flex;align-items:center;gap:8px;
+  font-family:'Cairo';font-weight:600;font-size:14px;
+  color:var(--c,var(--blue));
+  margin-bottom:10px;
+  letter-spacing:-.015em;
+}
+.col h4::before{
+  content:'';width:8px;height:8px;border-radius:50%;
+  background:var(--c,var(--blue));
+}
+.col ul{list-style:none;padding:0;margin:0}
+.col ul li{
+  position:relative;
+  padding:6px 0 6px 14px;
+  font-size:14px;
+  line-height:1.55;
+  color:var(--t-2);
+  border-bottom:.5px solid var(--sep);
+}
+.col ul li:last-child{border-bottom:none}
+.col ul li::before{
+  content:'·';
+  position:absolute;
+  right:0;
+  color:var(--c,var(--blue));
+  font-weight:800;
+  font-size:18px;
+  line-height:1;
+  top:6px;
+}
+.col ul li strong{color:var(--t-1);font-weight:600}
+.col p{font-size:14px;line-height:1.6;color:var(--t-2);margin:0}
+.col p strong{color:var(--t-1);font-weight:600}
+
+/* Definition */
+.def{
+  padding:16px 18px;
+  margin:12px 0;
+  background:color-mix(in oklab,var(--c,var(--blue)) 8%,transparent);
+  border-radius:var(--r-md);
+  font-size:15px;
+  line-height:1.6;
+  color:var(--t-1);
+}
+.def::before{
+  content:'تعريف';
+  display:inline-block;
+  padding:2px 8px;
+  margin-bottom:8px;
+  background:var(--c,var(--blue));
+  color:#fff;
+  font-family:'Cairo';font-weight:600;font-size:10px;
+  border-radius:4px;
+  letter-spacing:.04em;
+}
+.def strong{color:var(--c,var(--blue));font-weight:600}
+.def em{font-style:normal;font-weight:600}
+
+/* Quote */
+.quote{
+  padding:18px 22px;
+  margin:16px 0;
+  background:var(--bg-fill-2);
+  border-radius:var(--r-md);
+  text-align:center;
+  font-size:15px;
+  line-height:1.6;
+  color:var(--t-1);
+  font-weight:500;
+}
+.quote strong{color:var(--c,var(--blue));font-weight:600}
+
+/* ══════════════════════════════════════════════════════════
+   Q&A
+   ══════════════════════════════════════════════════════════ */
+.q-head{
+  text-align:center;
+  padding:28px 20px;
+  margin:0 0 20px;
+  background:var(--bg-card);
+  border-radius:var(--r-xl);
+  box-shadow:var(--sh-card);
+}
+.q-head-icon{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:52px;height:52px;border-radius:14px;
+  background:linear-gradient(135deg,var(--c,var(--blue)),color-mix(in oklab,var(--c,var(--blue)) 60%,var(--purple)));
+  color:#fff;
+  font-family:'Cairo';font-weight:700;font-size:22px;
+  margin-bottom:14px;
+  box-shadow:0 4px 14px color-mix(in oklab,var(--c,var(--blue)) 30%,transparent);
+}
+.q-head h2{
+  font-size:clamp(1.3rem,3.5vw,1.6rem);
+  font-weight:700;
+  letter-spacing:-.025em;
+  color:var(--t-1);
+  margin-bottom:6px;
+}
+.q-head p{font-size:13.5px;color:var(--t-2);font-weight:500}
+
+.q-list{display:flex;flex-direction:column;gap:8px}
+.qa{
+  background:var(--bg-card);
+  border-radius:var(--r-md);
+  box-shadow:var(--sh-1);
+  overflow:hidden;
+  transition:box-shadow var(--dur) var(--ease);
+}
+.qa:hover{box-shadow:var(--sh-2)}
+.qa>summary{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:16px 18px;
+  cursor:pointer;list-style:none;user-select:none;
+  -webkit-user-select:none;
+  transition:background var(--dur-fast) var(--ease);
+}
+.qa>summary::-webkit-details-marker{display:none}
+.qa>summary:active{background:color-mix(in oklab,var(--t-1) 3%,transparent)}
+.qa-num{
+  width:28px;height:28px;border-radius:8px;
+  background:var(--bg-fill);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cairo';font-weight:700;font-size:11.5px;
+  color:var(--t-2);
+  flex-shrink:0;
+  transition:all var(--dur) var(--ease-out);
+}
+.qa[open] .qa-num{
+  background:var(--c,var(--blue));
+  color:#fff;
+}
+.qa-text{
+  flex:1;
+  font-family:'Cairo';
+  font-size:14.5px;
+  font-weight:500;
+  line-height:1.5;
+  color:var(--t-1);
+  letter-spacing:-.01em;
+  padding-top:3px;
+}
+.qa-icon{
+  width:20px;height:20px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--t-2);
+  flex-shrink:0;
+  margin-top:4px;
+  transition:transform var(--dur) var(--ease-out);
+}
+.qa-icon svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.qa[open] .qa-icon{transform:rotate(180deg);color:var(--c,var(--blue))}
+.qa-ans{
+  padding:0 18px 16px 58px;
+  font-size:14.5px;
+  line-height:1.65;
+  color:var(--t-2);
+  animation:ansIn var(--dur) var(--ease-out);
+}
+@keyframes ansIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.qa-ans b,.qa-ans strong{color:var(--t-1);font-weight:600}
+.qa-ans em{color:var(--c,var(--blue));font-style:normal;font-weight:600}
+
+/* ══════════════════════════════════════════════════════════
+   FOOTER
+   ══════════════════════════════════════════════════════════ */
+.footer{
+  margin-top:80px;padding:40px 20px 30px;
+  text-align:center;
+  border-top:.5px solid var(--sep);
+}
+.footer-logo{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:48px;height:48px;border-radius:13px;
+  background:var(--bg-fill);
+  font-size:22px;
+  margin-bottom:14px;
+}
+.footer p{
+  font-size:13.5px;
+  color:var(--t-2);
+  margin-bottom:6px;
+}
+.footer .meta{
+  font-family:'Cairo';font-weight:600;
+  font-size:11px;
+  color:var(--t-3);
+  letter-spacing:.05em;
+}
+.footer b{color:var(--c,var(--blue));font-weight:600}
+
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════════════════ */
+@media(max-width:768px){
+  .topbar{padding:10px 14px}
+  #shell{padding:0 14px 80px}
+  .brand-icon{width:34px;height:34px}
+  .brand-icon svg{width:18px;height:18px}
+  .brand-title{font-size:15px}
+  .brand-sub{font-size:10.5px}
+  .chapter-card{padding:24px 20px}
+  .chapter-icon{width:46px;height:46px;font-size:22px}
+  .lesson{padding:20px 18px 18px;min-height:auto;border-radius:var(--r-lg)}
+  .lesson-num{width:40px;height:40px;font-size:14px}
+  .lesson-title{font-size:15.5px}
+  .lesson-desc{font-size:13.5px}
+  .lede{padding:18px 18px;font-size:14.5px}
+  .sec>summary{padding:16px 18px;gap:12px}
+  .sec-body{padding:0 18px 18px;font-size:14.5px}
+  .qa>summary{padding:14px 16px;gap:10px}
+  .qa-ans{padding:0 16px 14px 52px;font-size:14px}
+  .qa-text{font-size:14px}
+  .sec-head{margin:48px 0 20px}
+  .hero{padding:48px 0 32px}
+  .tabs{top:64px}
+}
+@media(max-width:480px){
+  .stats{grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .stat{padding:16px 10px;border-radius:var(--r-md)}
+  .stat-icon{font-size:20px}
+  .stat-num{font-size:1.4rem}
+  .stat-lbl{font-size:10px}
+  .hero h1{font-size:clamp(1.9rem,10vw,2.6rem)}
+  .chapter-title{font-size:clamp(1.3rem,6vw,1.6rem)}
+  .chapter-sub{font-size:13.5px}
+  .tab-btn span{display:none}
+  .tab-btn svg{width:18px;height:18px}
+  .sec-num{width:32px;height:32px;font-size:12px}
+  .sec-title{font-size:14px}
+  .points li{padding:9px 34px 9px 12px;font-size:14px}
+  .numbered li{padding:10px 46px 10px 14px;font-size:14px}
+  .qa-num{width:24px;height:24px;font-size:11px}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+}
 </style>
 </head>
 <body>
-<div id="lessonsList">
-  <div class="s-wrap">
-    <div class="s-nav"><i></i></div>
-    <div class="s-hero">
-      <h1 class="s-title">دراسات<br>اجتماعية</h1>
-      <p class="s-lead">الصف الثالث الإعدادي — الترم الأول · الوحدتان الأولى والثانية</p>
+
+<div class="bg"></div>
+
+<!-- PAGE STATE -->
+<input type="radio" name="pg" id="pg-home" class="pr" checked>
+<input type="radio" name="pg" id="pg-l1" class="pr">
+<input type="radio" name="pg" id="pg-l2" class="pr">
+<input type="radio" name="pg" id="pg-l3" class="pr">
+<input type="radio" name="pg" id="pg-l4" class="pr">
+<input type="radio" name="pg" id="pg-l5" class="pr">
+<input type="radio" name="pg" id="pg-l6" class="pr">
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      </div>
+      <div class="brand-text">
+        <span class="brand-title">دراسات اجتماعية</span>
+        <span class="brand-sub">الثالث الإعدادي · الترم الأول</span>
+      </div>
     </div>
-    <div class="s-grid" id="socialLessons"></div>
-    <div class="s-foot">by ZIAD AlMostafa</div>
+    <div class="top-actions">
+      <span class="pill"><span class="dot"></span> الوحدتان 1 & 2</span>
+      <label for="pg-home" class="pill">الرئيسية</label>
+    </div>
   </div>
-</div>
-
-<div id="reader" hidden>
-<div class="wrap">
-<a class="s-back" href="#" id="backLink">← كل الدروس</a>
-<header>
-  <div class="by">by ZIAD AlMostafa</div>
-  <h1 id="readerTitle">الدرس</h1>
-  <p class="sub" id="readerSub"></p>
 </header>
-<div class="bar">
-  <div class="seg modes" id="modes"></div>
-  <div class="stat" id="stat"></div>
+
+<div id="shell">
+
+<!-- ═══════════════ HOME ═══════════════ -->
+<section class="page pg-home">
+  <div class="hero">
+    <div class="hero-badge"><span class="live"></span> <span>منصة المراجعة</span> · <b>الوحدتان 1 & 2</b></div>
+    <h1>
+      دراسات اجتماعية
+      <span class="sub">ستة فصول كاملة بتصميم بسيط وسلس</span>
+    </h1>
+    <p class="hero-desc">
+      <b>٦ فصول</b> تفاعلية — ملخصات شاملة، <em>+٢٣٠ سؤال</em> بنماذج الإجابة النموذجية.
+    </p>
+
+    <div class="stats">
+      <div class="stat stat-a"><span class="stat-icon">📚</span><span class="stat-num">6</span><span class="stat-lbl">فصول</span></div>
+      <div class="stat stat-b"><span class="stat-icon">🗺️</span><span class="stat-num">2</span><span class="stat-lbl">وحدات</span></div>
+      <div class="stat stat-c"><span class="stat-icon">❓</span><span class="stat-num">230+</span><span class="stat-lbl">سؤال</span></div>
+    </div>
+
+    <div class="progress-card">
+      <div class="progress-head"><b>جاهز للمراجعة</b><span>100%</span></div>
+      <div class="progress-track"><div class="progress-fill"></div></div>
+    </div>
+  </div>
+
+  <div class="sec-head">
+    <div class="sec-head-left">
+      <div class="sec-icon">📖</div>
+      <h2>الفصول<small>اختر الفصل للبدء</small></h2>
+    </div>
+    <div class="sec-counter">محدّث 2026</div>
+  </div>
+
+  <div class="lessons">
+    <label for="pg-l1" class="lesson cv1">
+      <div class="lesson-head"><div class="lesson-num">01</div><span class="lesson-tag">الوحدة الأولى</span></div>
+      <h3 class="lesson-title"><span class="em">🌍</span>موقع ومظاهر سطح قارات العالم الجديد</h3>
+      <p class="lesson-desc">القارات الأربع الكبرى: أمريكا الشمالية والجنوبية وأستراليا والقطب الجنوبي</p>
+      <div class="lesson-foot">
+        <div class="lesson-feat"><span class="feat">ملخص</span><span class="feat">35 سؤال</span></div>
+        <span class="lesson-cta">افتح<svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></span>
+      </div>
+    </label>
+
+    <label for="pg-l2" class="lesson cv2">
+      <div class="lesson-head"><div class="lesson-num">02</div><span class="lesson-tag">الوحدة الأولى</span></div>
+      <h3 class="lesson-title"><span class="em">🏛️</span>الحضارات القديمة في الأمريكتين</h3>
+      <p class="lesson-desc">حضارة المايا وحضارة الإنكا وأوجه التشابه مع الحضارة المصرية</p>
+      <div class="lesson-foot">
+        <div class="lesson-feat"><span class="feat">ملخص</span><span class="feat">22 سؤال</span></div>
+        <span class="lesson-cta">افتح<svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></span>
+      </div>
+    </label>
+
+    <label for="pg-l3" class="lesson cv3">
+      <div class="lesson-head"><div class="lesson-num">03</div><span class="lesson-tag">الوحدة الأولى</span></div>
+      <h3 class="lesson-title"><span class="em">⛵</span>الكشوف الجغرافية للعالم الجديد</h3>
+      <p class="lesson-desc">رحلات كولومبوس وماجلان وكوك · دور العلماء المسلمين</p>
+      <div class="lesson-foot">
+        <div class="lesson-feat"><span class="feat">ملخص</span><span class="feat">20 سؤال</span></div>
+        <span class="lesson-cta">افتح<svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></span>
+      </div>
+    </label>
+
+    <label for="pg-l4" class="lesson cv4">
+      <div class="lesson-head"><div class="lesson-num">04</div><span class="lesson-tag">الوحدة الثانية</span></div>
+      <h3 class="lesson-title"><span class="em">👑</span>تولية محمد علي حكم مصر</h3>
+      <p class="lesson-desc">من الحملة الفرنسية إلى مذبحة القلعة · 1801-1811م</p>
+      <div class="lesson-foot">
+        <div class="lesson-feat"><span class="feat">ملخص</span><span class="feat">22 سؤال</span></div>
+        <span class="lesson-cta">افتح<svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></span>
+      </div>
+    </label>
+
+    <label for="pg-l5" class="lesson cv5">
+      <div class="lesson-head"><div class="lesson-num">05</div><span class="lesson-tag">الوحدة الثانية</span></div>
+      <h3 class="lesson-title"><span class="em">⚙️</span>محمد علي وبناء الدولة الحديثة</h3>
+      <p class="lesson-desc">الإصلاحات الداخلية والخارجية · معاهدة لندن 1840م</p>
+      <div class="lesson-foot">
+        <div class="lesson-feat"><span class="feat">ملخص</span><span class="feat">21 سؤال</span></div>
+        <span class="lesson-cta">افتح<svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></span>
+      </div>
+    </label>
+
+    <label for="pg-l6" class="lesson cv6">
+      <div class="lesson-head"><div class="lesson-num">06</div><span class="lesson-tag">الوحدة الثانية</span></div>
+      <h3 class="lesson-title"><span class="em">🌳</span>مصر في عصر خلفاء محمد علي</h3>
+      <p class="lesson-desc">إبراهيم باشا · عباس الأول · محمد سعيد · الخديو إسماعيل</p>
+      <div class="lesson-foot">
+        <div class="lesson-feat"><span class="feat">ملخص</span><span class="feat">20 سؤال</span></div>
+        <span class="lesson-cta">افتح<svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></span>
+      </div>
+    </label>
+  </div>
+</section>
+
+<!-- ═══════════════ LESSON 1 ═══════════════ -->
+<section class="page pg-l1">
+  <div class="chapter ch-1">
+    <label for="pg-home" class="back-btn"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>الفهرس</label>
+    <div class="chapter-card">
+      <div class="chapter-meta">
+        <div class="chapter-icon">🌍</div>
+        <span class="chapter-pill">الفصل الأول · الوحدة الأولى</span>
+      </div>
+      <h1 class="chapter-title">موقع ومظاهر سطح قارات العالم الجديد</h1>
+      <p class="chapter-sub">أمريكا الشمالية · أمريكا الجنوبية · القطب الجنوبي · أستراليا</p>
+    </div>
+  </div>
+
+  <input type="radio" name="t1" id="t1a" class="tr" checked>
+  <input type="radio" name="t1" id="t1b" class="tr">
+  <div class="tabs">
+    <label for="t1a" class="tab-btn"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>الملخص</span></label>
+    <label for="t1b" class="tab-btn"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>الأسئلة</span></label>
+  </div>
+
+  <div class="tbody">
+    <div class="tpane tp-1a">
+      <div class="editorial">
+        <div class="lede">أدى اكتشاف قارات العالم الجديد إلى <em>إعادة رسم خريطة العالم</em>، وتعدّ دراسة الموقع الجغرافي ومظاهر سطح هذه القارات من العوامل الأساسية لفهم خصائصها <b>الطبيعية والاقتصادية والحضارية</b>.</div>
+
+        <details class="sec" open style="--c:var(--blue)"><summary><span class="sec-num">01</span><span class="sec-title">قارات العالم الجديد</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body"><p>قارات العالم الجديد هى: <b>أمريكا الشمالية</b>، و<b>أمريكا الجنوبية</b>، و<b>القارة القطبية الجنوبية</b> (أنتاركتيكا)، و<b>أستراليا</b>.</p></div></details>
+
+        <details class="sec" open style="--c:var(--blue)"><summary><span class="sec-num">02</span><span class="sec-title">المساحة والترتيب</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <ul class="points">
+            <li><strong>أمريكا الشمالية:</strong> ثالث أكبر قارة.</li>
+            <li><strong>أمريكا الجنوبية:</strong> رابع أكبر قارة.</li>
+            <li><strong>القطب الجنوبي:</strong> خامس أكبر قارة.</li>
+            <li><strong>أستراليا:</strong> سابع وأصغر قارة.</li>
+          </ul>
+          <div class="box box-blue"><strong>ملاحظة:</strong> يتم دراسة الأمريكتين وأستراليا من حيث السكان، ولن يتم دراسة القطب الجنوبي لأنه متجمد وغير مأهول.</div>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--blue)"><summary><span class="sec-num">03</span><span class="sec-title">الموقع الفلكى والجغرافى</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <div class="fact" style="--c:var(--blue)"><div class="fact-head"><div class="fact-icon">🌎</div><div class="fact-title">أمريكا الشمالية</div></div><div class="fact-body"><p><strong>الموقع الفلكى:</strong> بين دائرتى عرض ٧°٣٠′ و٨٣° شمالًا، وخطى طول ١٠° و١٦٨° غربًا.</p><p><strong>يحدها:</strong> شمالًا المحيط القطبى الشمالى · شرقًا الأطلنطى · جنوبًا البحر الكاريبى · غربًا الهادى.</p></div></div>
+          <div class="fact" style="--c:var(--blue)"><div class="fact-head"><div class="fact-icon">🌎</div><div class="fact-title">أمريكا الجنوبية</div></div><div class="fact-body"><p><strong>الموقع الفلكى:</strong> بين دائرتى عرض ١٢° شمالًا و٥٦° جنوبًا، وخطى طول ٣٥° و٨١° غربًا.</p><p><strong>يحدها:</strong> شمالًا البحر الكاريبى وأمريكا الشمالية · شرقًا الأطلنطى · غربًا الهادى.</p></div></div>
+          <div class="fact" style="--c:var(--blue)"><div class="fact-head"><div class="fact-icon">🧊</div><div class="fact-title">القطب الجنوبي</div></div><div class="fact-body"><p>تقع فى أقصى جنوب الكرة الأرضية، ويحيط بها المحيط القطبى الجنوبى من كل الجهات.</p></div></div>
+          <div class="fact" style="--c:var(--blue)"><div class="fact-head"><div class="fact-icon">🦘</div><div class="fact-title">أستراليا</div></div><div class="fact-body"><p><strong>الموقع الفلكى:</strong> بين دائرتى عرض ١٠° و٤٤° جنوبًا، وخطى طول ١١٣° و١٧٨° شرقًا.</p><p><strong>يحدها:</strong> شمالًا بحرا آرافورا وتيمور · شرقًا الهادى · جنوبًا وغربًا الهادى والهندى.</p></div></div>
+          <div class="quote"><strong>دلل:</strong> تظهر أستراليا على شكل جزيرة كبيرة؛ حيث تحيط بها المياه من جميع الجهات.</div>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--blue)"><summary><span class="sec-num">04</span><span class="sec-title">أهمية الموقع</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <div class="fact" style="--c:var(--green)"><div class="fact-head"><div class="fact-icon">🛡️</div><div class="fact-title">الأهمية الاستراتيجية</div></div><div class="fact-body"><p>بسبب تيسير التجارة العالمية عن طريق <strong>قناة بنما</strong> التى تربط بين المحيطين الأطلنطى والهادى.</p></div></div>
+          <div class="fact" style="--c:var(--orange)"><div class="fact-head"><div class="fact-icon">💰</div><div class="fact-title">الأهمية الاقتصادية</div></div><div class="fact-body"><p>تنوع النظم البيئية، ومصادر الطاقة الأحفورية، ومساحات واسعة من الأراضى الزراعية. وتمتلك احتياطيات من اليورانيوم والحديد فى أستراليا.</p></div></div>
+          <div class="fact" style="--c:var(--purple)"><div class="fact-head"><div class="fact-icon">🏺</div><div class="fact-title">الأهمية الحضارية</div></div><div class="fact-body"><p>تُعد مركزًا لالتقاء الثقافات الأوروبية والإفريقية والآسيوية، وظهرت بها حضارات قديمة مثل المايا والإنكا.</p></div></div>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--blue)"><summary><span class="sec-num">05</span><span class="sec-title">مظاهر السطح</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <div class="compare">
+            <div class="col" style="--c:var(--blue)"><h4>أمريكا الشمالية</h4><ul><li><strong>الجبال:</strong> الأبلاش والروكى</li><li><strong>الهضاب:</strong> لبرادور</li><li><strong>السهول:</strong> السهول الوسطى</li><li><strong>الجزر:</strong> جرينلاند</li></ul></div>
+            <div class="col" style="--c:var(--purple)"><h4>أمريكا الجنوبية</h4><ul><li><strong>الجبال:</strong> الإنديز</li><li><strong>الهضاب:</strong> البرازيل</li><li><strong>السهول:</strong> الأمازون</li><li><strong>الجزر:</strong> فوكلاند</li></ul></div>
+          </div>
+          <div class="col" style="--c:var(--green)"><h4>أستراليا</h4><ul><li><strong>الجبال:</strong> الحاجز الكبير (شرقًا)</li><li><strong>الهضاب:</strong> غرب أستراليا (صحراوية)</li><li><strong>السهول:</strong> مورى ودارلنج</li><li><strong>الجزر:</strong> تسمانيا</li></ul></div>
+        </div></details>
+      </div>
+    </div>
+
+    <div class="tpane tp-1b">
+      <div class="editorial">
+        <div class="q-head" style="--c:var(--blue)">
+          <div class="q-head-icon">؟</div>
+          <h2>بنك أسئلة الفصل الأول</h2>
+          <p>35 سؤال · اضغط على أي سؤال لعرض الإجابة</p>
+        </div>
+        <div class="q-list" style="--c:var(--blue)">
+          <details class="qa"><summary><span class="qa-num">01</span><span class="qa-text">ما هى قارات العالم الجديد؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">أمريكا الشمالية، أمريكا الجنوبية، القارة القطبية الجنوبية، أستراليا.</div></details>
+          <details class="qa"><summary><span class="qa-num">02</span><span class="qa-text">ما ترتيب قارات العالم الجديد من حيث المساحة؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">أمريكا الشمالية: ثالث أكبر قارة. أمريكا الجنوبية: رابع. القطب الجنوبي: خامس. أستراليا: سابع وأصغر.</div></details>
+          <details class="qa"><summary><span class="qa-num">03</span><span class="qa-text">لماذا لن يتم دراسة القارة القطبية الجنوبية من حيث السكان؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لأنها متجمدة وغير مأهولة بالسكان.</div></details>
+          <details class="qa"><summary><span class="qa-num">04</span><span class="qa-text">ما الموقع الفلكى لأمريكا الشمالية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">بين دائرتى عرض ٧°٣٠′ و٨٣° شمالًا، وخطى طول ١٠° و١٦٨° غربًا.</div></details>
+          <details class="qa"><summary><span class="qa-num">05</span><span class="qa-text">ما يحد قارة أمريكا الشمالية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">شمالًا المحيط القطبى الشمالى، شرقًا الأطلنطى، جنوبًا البحر الكاريبى وأمريكا الجنوبية، غربًا الهادى.</div></details>
+          <details class="qa"><summary><span class="qa-num">06</span><span class="qa-text">ما الموقع الفلكى لأمريكا الجنوبية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">بين دائرتى عرض ١٢° شمالًا و٥٦° جنوبًا، وخطى طول ٣٥° و٨١° غربًا.</div></details>
+          <details class="qa"><summary><span class="qa-num">07</span><span class="qa-text">ما يحد قارة أمريكا الجنوبية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">شمالًا البحر الكاريبى وأمريكا الشمالية، شرقًا الأطلنطى، غربًا الهادى.</div></details>
+          <details class="qa"><summary><span class="qa-num">08</span><span class="qa-text">ما الموقع الفلكى لأستراليا؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">بين دائرتى عرض ١٠° و٤٤° جنوبًا، وخطى طول ١١٣° و١٧٨° شرقًا.</div></details>
+          <details class="qa"><summary><span class="qa-num">09</span><span class="qa-text">ما يحد قارة أستراليا؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">شمالًا بحرا آرافورا وتيمور، شرقًا الهادى، جنوبًا وغربًا الهادى والهندى.</div></details>
+          <details class="qa"><summary><span class="qa-num">10</span><span class="qa-text">دلل: تظهر أستراليا على شكل جزيرة كبيرة.</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">تحيط بها المياه من جميع الجهات.</div></details>
+          <details class="qa"><summary><span class="qa-num">11</span><span class="qa-text">بم تفسر: لموقع قارات العالم الجديد أهمية استراتيجية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">بسبب تيسير التجارة العالمية عن طريق قناة بنما.</div></details>
+          <details class="qa"><summary><span class="qa-num">12</span><span class="qa-text">ما أهمية قناة بنما؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">تربط بين المحيطين الأطلنطى والهادى، مما ساعد على اختصار آلاف الكيلومترات.</div></details>
+          <details class="qa"><summary><span class="qa-num">13</span><span class="qa-text">متى افتُتحت قناة بنما؟ ومن حفرها؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">افتُتحت عام ١٩١٤م، وحفرتها الولايات المتحدة فى دولة بنما.</div></details>
+          <details class="qa"><summary><span class="qa-num">14</span><span class="qa-text">بم تفسر: أهمية اقتصادية للموقع؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">تنوع النظم البيئية، ومصادر الطاقة الأحفورية، ومساحات واسعة من الأراضى الزراعية.</div></details>
+          <details class="qa"><summary><span class="qa-num">15</span><span class="qa-text">ما المعادن التى تمتلكها باحتياطيات كبيرة؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">اليورانيوم والحديد فى أستراليا.</div></details>
+          <details class="qa"><summary><span class="qa-num">16</span><span class="qa-text">بم تفسر: أهمية حضارية للموقع؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">تُعد مركزًا لالتقاء الثقافات الأوروبية والإفريقية والآسيوية.</div></details>
+          <details class="qa"><summary><span class="qa-num">17</span><span class="qa-text">فيم يشترك جبال الأبلاش والروكى؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">غنيان بالمعادن، ومركزان مهمان للسياحة.</div></details>
+          <details class="qa"><summary><span class="qa-num">18</span><span class="qa-text">ما اسم أطول أنهار أمريكا الشمالية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">نهر المسيسبى.</div></details>
+          <details class="qa"><summary><span class="qa-num">19</span><span class="qa-text">ما أكبر جزيرة تابعة لقارة فى العالم؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">جرينلاند.</div></details>
+          <details class="qa"><summary><span class="qa-num">20</span><span class="qa-text">ما أطول سلسلة جبلية فى العالم؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">جبال الإنديز فى أمريكا الجنوبية.</div></details>
+          <details class="qa"><summary><span class="qa-num">21</span><span class="qa-text">ما أكبر هضاب أمريكا الجنوبية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">هضبة البرازيل.</div></details>
+          <details class="qa"><summary><span class="qa-num">22</span><span class="qa-text">ما أوسع سهول نهرية فى العالم؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">سهول نهر الأمازون.</div></details>
+          <details class="qa"><summary><span class="qa-num">23</span><span class="qa-text">بم تفسر: سهول الأمازون عائق للاستيطان؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لأنها تكثر بها المستنقعات وتغطيها غابات مدارية مطيرة.</div></details>
+          <details class="qa"><summary><span class="qa-num">24</span><span class="qa-text">ما أشهر جبال أستراليا؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">جبال الحاجز الكبير (شرقًا).</div></details>
+          <details class="qa"><summary><span class="qa-num">25</span><span class="qa-text">ما أشهر جزر أستراليا؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">جزيرة تسمانيا.</div></details>
+          <details class="qa"><summary><span class="qa-num">26</span><span class="qa-text">بم تفسر: الأهمية الاقتصادية لهضبة البرازيل؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لاحتوائها على ثروات معدنية وأراضٍ زراعية متنوعة.</div></details>
+          <details class="qa"><summary><span class="qa-num">27</span><span class="qa-text">بم تفسر: إنشاء الموانئ على السواحل الشرقية لأمريكا الشمالية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لتعرّج هذه السواحل وانتشار الخلجان بها.</div></details>
+          <details class="qa"><summary><span class="qa-num">28</span><span class="qa-text">بم تفسر: أستراليا تمتد فى خطوط طول أكثر من أمريكا الجنوبية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لأن أستراليا تمتد أفقيًا أكثر من امتدادها الرأسى.</div></details>
+          <details class="qa"><summary><span class="qa-num">29</span><span class="qa-text">دلل: تمتلك قارات العالم الجديد أهمية اقتصادية كبيرة.</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">تمتلك احتياطيات كبيرة من المعادن ومصادر الطاقة الأحفورية ومساحات واسعة من الأراضى الزراعية.</div></details>
+          <details class="qa"><summary><span class="qa-num">30</span><span class="qa-text">دلل: تتمتع بأهمية استراتيجية.</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">يوجد بها قناة بنما التى تصل بين المحيطين الأطلنطى والهادى.</div></details>
+          <details class="qa"><summary><span class="qa-num">31</span><span class="qa-text">دلل: تنوعت مظاهر سطح قارات العالم الجديد.</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">توجد بها جبال وهضاب وسهول فيضية وساحلية وجزر متنوعة.</div></details>
+          <details class="qa"><summary><span class="qa-num">32</span><span class="qa-text">قارن: أمريكا الشمالية وأستراليا من حيث الموقع والمساحة.</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">أمريكا الشمالية: يحدها القطبى والأطلنطى والهادى، الثالثة عالميًا.<br>أستراليا: يحدها آرافورا وتيمور والهادى والهندى، السابعة عالميًا.</div></details>
+          <details class="qa"><summary><span class="qa-num">33</span><span class="qa-text">قارن: السهول الساحلية الشرقية والغربية لأمريكا الشمالية.</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">الشرقية: واسعة وفيها موانئ كثيرة.<br>الغربية: أضيق لاقتراب الروكى من الساحل.</div></details>
+          <details class="qa"><summary><span class="qa-num">34</span><span class="qa-text">ماذا يحدث إذا لم تُحفر قناة بنما؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">تصعب حركة التجارة، وتضطر السفن للدوران حول أمريكا الجنوبية.</div></details>
+          <details class="qa"><summary><span class="qa-num">35</span><span class="qa-text">ماذا يحدث إذا كانت أستراليا متصلة بآسيا بريًا؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">يسهل انتقال السكان والحيوانات والنباتات بين القارتين بريًا.</div></details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ LESSON 2 ═══════════════ -->
+<section class="page pg-l2">
+  <div class="chapter ch-2">
+    <label for="pg-home" class="back-btn"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>الفهرس</label>
+    <div class="chapter-card">
+      <div class="chapter-meta"><div class="chapter-icon">🏛️</div><span class="chapter-pill">الفصل الثاني · الوحدة الأولى</span></div>
+      <h1 class="chapter-title">الحضارات القديمة في الأمريكتين</h1>
+      <p class="chapter-sub">حضارة المايا · حضارة الإنكا · أوجه التشابه مع مصر القديمة</p>
+    </div>
+  </div>
+
+  <input type="radio" name="t2" id="t2a" class="tr" checked>
+  <input type="radio" name="t2" id="t2b" class="tr">
+  <div class="tabs">
+    <label for="t2a" class="tab-btn"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>الملخص</span></label>
+    <label for="t2b" class="tab-btn"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>الأسئلة</span></label>
+  </div>
+
+  <div class="tbody">
+    <div class="tpane tp-2a">
+      <div class="editorial" style="--c:var(--purple)">
+        <div class="lede">نشأت حضارتا المايا والإنكا فى الأمريكتين <em>قبل وصول الأوروبيين</em> بعدة قرون، فى بيئات طبيعية متنوعة أثّرت فى حياتهما السياسية والاقتصادية والدينية والثقافية.</div>
+
+        <details class="sec" open style="--c:var(--purple)"><summary><span class="sec-num">01</span><span class="sec-title">حضارة المايا</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <div class="def">نشأت حضارة المايا فى <strong>أقصى جنوب قارة أمريكا الشمالية</strong>، فى البرزخ الضيق الذى يصل بين الأمريكتين.</div>
+          <div class="fact" style="--c:var(--purple)"><div class="fact-head"><div class="fact-icon">👑</div><div class="fact-title">الحياة السياسية</div></div><div class="fact-body"><ul><li>مدن مستقلة تتحالف عند الحاجة، ولكل مدينة ملك.</li><li>الملك يجمع بين السلطة السياسية والدينية.</li><li>نظام الحكم وراثى.</li></ul></div></div>
+          <div class="fact" style="--c:var(--purple)"><div class="fact-head"><div class="fact-icon">🌽</div><div class="fact-title">الحياة الاقتصادية</div></div><div class="fact-body"><ul><li>الزراعة المتنقلة ثم المستقرة.</li><li>الحرف اليدوية كالفخار والنسيج.</li><li>طرق وقنوات مائية للتجارة.</li></ul></div></div>
+          <div class="fact" style="--c:var(--purple)"><div class="fact-head"><div class="fact-icon">⛩️</div><div class="fact-title">الحياة الدينية</div></div><div class="fact-body"><ul><li>تعدد الآلهة.</li><li>الملوك والكهنة يُدفنون فى أهرامات.</li><li>عامة الناس تحت منازلهم.</li></ul></div></div>
+          <div class="fact" style="--c:var(--purple)"><div class="fact-head"><div class="fact-icon">📜</div><div class="fact-title">الحياة الثقافية والعلمية</div></div><div class="fact-body"><ul><li>الكتابة التصويرية التى تشبه الهيروغليفية.</li><li>تقويم دقيق قسّم السنة إلى 365 يومًا.</li></ul></div></div>
+          <div class="fact" style="--c:var(--purple)"><div class="fact-head"><div class="fact-icon">🏛️</div><div class="fact-title">العمارة والفنون</div></div><div class="fact-body"><ul><li>مراصد فلكية وقصور ضخمة.</li><li>أهرامات أقل ضخامة من المصرية.</li><li>هرم كوكولكان بالمكسيك.</li></ul></div></div>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--purple)"><summary><span class="sec-num">02</span><span class="sec-title">حضارة الإنكا</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <div class="def">نشأت حضارة الإنكا <strong>غرب قارة أمريكا الجنوبية</strong>، فى المنطقة المطلة على المحيط الهادى.</div>
+          <div class="fact" style="--c:var(--purple)"><div class="fact-head"><div class="fact-icon">👑</div><div class="fact-title">الحياة السياسية</div></div><div class="fact-body"><ul><li>نظام حكم مركزى قوى وراثى.</li><li>استقرار وتوسع الإمبراطورية.</li></ul></div></div>
+          <div class="fact" style="--c:var(--purple)"><div class="fact-head"><div class="fact-icon">🦙</div><div class="fact-title">الحياة الاقتصادية</div></div><div class="fact-body"><ul><li>الزراعة ومخازن الحبوب.</li><li>تربية اللاما للنقل.</li><li>زراعة المدرجات.</li><li>صناعة الأوانى.</li><li>نظام المقايضة.</li></ul></div></div>
+          <div class="fact" style="--c:var(--purple)"><div class="fact-head"><div class="fact-icon">☀️</div><div class="fact-title">الحياة الدينية</div></div><div class="fact-body"><ul><li>تعدد الآلهة وأهمها إله الشمس.</li><li>الحكام أبناء إله الشمس.</li><li>اشتهروا بالتحنيط.</li></ul></div></div>
+          <div class="fact" style="--c:var(--purple)"><div class="fact-head"><div class="fact-icon">🧵</div><div class="fact-title">الحياة الثقافية والعلمية</div></div><div class="fact-body"><ul><li>لغة «الكيتشوا» الشفهية.</li><li>«الكيبو» للتوثيق.</li><li>رصد الشمس والقمر والنجوم.</li></ul></div></div>
+          <div class="fact" style="--c:var(--purple)"><div class="fact-head"><div class="fact-icon">🏔️</div><div class="fact-title">العمارة والفنون</div></div><div class="fact-body"><ul><li>معابد وقصور ضخمة من كتل حجرية.</li><li>جسور وطرق.</li><li>مدينة ماتشو بيتشو.</li></ul></div></div>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--purple)"><summary><span class="sec-num">03</span><span class="sec-title">أوجه التشابه مع مصر القديمة</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <div class="compare">
+            <div class="col" style="--c:var(--orange)"><h4>🏛️ العمارة الضخمة</h4><p>بناء منشآت ضخمة مثل الأهرامات والمعابد.</p></div>
+            <div class="col" style="--c:var(--purple)"><h4>🕊️ المعتقدات الدينية</h4><p>تعدد الآلهة، وتقديس الحاكم، والإيمان بالبعث والخلود، والتحنيط.</p></div>
+          </div>
+          <div class="compare">
+            <div class="col" style="--c:var(--blue)"><h4>📜 الكتابة التصويرية</h4><p>استخدام رموز تصويرية لتسجيل الأحداث.</p></div>
+            <div class="col" style="--c:var(--green)"><h4>🔭 علم الفلك</h4><p>وضع تقاويم دقيقة لتنظيم الحياة الزراعية.</p></div>
+          </div>
+        </div></details>
+      </div>
+    </div>
+
+    <div class="tpane tp-2b">
+      <div class="editorial">
+        <div class="q-head" style="--c:var(--purple)">
+          <div class="q-head-icon">؟</div>
+          <h2>بنك أسئلة الفصل الثاني</h2>
+          <p>22 سؤال · اضغط على أي سؤال لعرض الإجابة</p>
+        </div>
+        <div class="q-list" style="--c:var(--purple)">
+          <details class="qa"><summary><span class="qa-num">01</span><span class="qa-text">أين نشأت حضارة المايا؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">في أقصى جنوب قارة أمريكا الشمالية، في البرزخ الضيق الذي يصل بين الأمريكتين.</div></details>
+          <details class="qa"><summary><span class="qa-num">02</span><span class="qa-text">أين نشأت حضارة الإنكا؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">غرب قارة أمريكا الجنوبية، في المنطقة المطلة على المحيط الهادي.</div></details>
+          <details class="qa"><summary><span class="qa-num">03</span><span class="qa-text">ما نظام الحكم في مدن المايا؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">مدن مستقلة، لكل مدينة ملك يجمع بين السلطة السياسية والدينية، والحكم وراثي.</div></details>
+          <details class="qa"><summary><span class="qa-num">04</span><span class="qa-text">بم تفسر: عدم وجود حكومة مركزية عند المايا؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لأنها تكوّنت من عدة مدن مستقلة، لكل منها ملكها ونظام حكمها.</div></details>
+          <details class="qa"><summary><span class="qa-num">05</span><span class="qa-text">على ماذا اعتمدت الحياة الاقتصادية عند المايا؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">الزراعة والحرف اليدوية والتجارة.</div></details>
+          <details class="qa"><summary><span class="qa-num">06</span><span class="qa-text">كيف كانت الحياة الدينية عند المايا؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">تعدد الآلهة، والملوك والكهنة يُدفنون في أهرامات.</div></details>
+          <details class="qa"><summary><span class="qa-num">07</span><span class="qa-text">بم تفسر: قيام المايا بدفن مجوهرات الملوك معهم؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">إيمانًا بفكرة الحياة بعد الموت.</div></details>
+          <details class="qa"><summary><span class="qa-num">08</span><span class="qa-text">ما أهم ما يميز الحياة الثقافية عند المايا؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">الكتابة التصويرية، والتقدم في الفلك، وتقويم 365 يومًا.</div></details>
+          <details class="qa"><summary><span class="qa-num">09</span><span class="qa-text">بم تفسر: أهمية الكتابة التصويرية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لأنها مكّنت المايا من تسجيل الأحداث على جدران المعابد.</div></details>
+          <details class="qa"><summary><span class="qa-num">10</span><span class="qa-text">ما أهم ما يميز عمارة المايا؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">مراصد فلكية وقصورًا ضخمة، وهرم كوكولكان.</div></details>
+          <details class="qa"><summary><span class="qa-num">11</span><span class="qa-text">دلل: تشابهت أهرامات المايا مع المصرية.</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">كلاهما منشأة ضخمة لدفن الملوك والكهنة، وإن كانت أهرامات المايا أقل ضخامة.</div></details>
+          <details class="qa"><summary><span class="qa-num">12</span><span class="qa-text">ما نظام الحكم عند الإنكا؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">نظام حكم مركزي قوي وراثي.</div></details>
+          <details class="qa"><summary><span class="qa-num">13</span><span class="qa-text">كيف تغلب الإنكا على طبيعة بلادهم الجبلية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">زراعة المدرجات، وشق قنوات، وإقامة جسور معلّقة.</div></details>
+          <details class="qa"><summary><span class="qa-num">14</span><span class="qa-text">ما مظاهر براعة الإنكا اقتصاديًا؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">الزراعة، ومخازن الحبوب، وتربية اللاما، وصناعة الأواني، والمقايضة.</div></details>
+          <details class="qa"><summary><span class="qa-num">15</span><span class="qa-text">ما أهم إله عند الإنكا؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">إله الشمس.</div></details>
+          <details class="qa"><summary><span class="qa-num">16</span><span class="qa-text">بم تفسر: اهتمام الإنكا بالتحنيط؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">إيمانًا بالحياة بعد الموت.</div></details>
+          <details class="qa"><summary><span class="qa-num">17</span><span class="qa-text">ما لغة الإنكا؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لغة «الكيتشوا» الشفهية.</div></details>
+          <details class="qa"><summary><span class="qa-num">18</span><span class="qa-text">بم تفسر: استخدام نظام «الكيبو»؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لتوثيق المعلومات رياضيًا في ظل عدم معرفتهم بالكتابة.</div></details>
+          <details class="qa"><summary><span class="qa-num">19</span><span class="qa-text">كيف عرف الإنكا أوقات الزراعة؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">اعتمادًا على مراقبة الشمس والقمر والنجوم.</div></details>
+          <details class="qa"><summary><span class="qa-num">20</span><span class="qa-text">ما أهم ما يميز عمارة الإنكا؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">معابد وقصور ضخمة من كتل حجرية، وجسور وطرق.</div></details>
+          <details class="qa"><summary><span class="qa-num">21</span><span class="qa-text">ما أهم آثار الإنكا الباقية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">مدينة ماتشو بيتشو في دولة بيرو.</div></details>
+          <details class="qa"><summary><span class="qa-num">22</span><span class="qa-text">قارن: نظام الكتابة عند المايا والإنكا.</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">المايا: الكتابة التصويرية.<br>الإنكا: لغة «الكيتشوا» ونظام «الكيبو».</div></details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ LESSON 3 ═══════════════ -->
+<section class="page pg-l3">
+  <div class="chapter ch-3">
+    <label for="pg-home" class="back-btn"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>الفهرس</label>
+    <div class="chapter-card">
+      <div class="chapter-meta"><div class="chapter-icon">⛵</div><span class="chapter-pill">الفصل الثالث · الوحدة الأولى</span></div>
+      <h1 class="chapter-title">الكشوف الجغرافية لقارات العالم الجديد</h1>
+      <p class="chapter-sub">رحلات كولومبوس وماجلان وكوك · دور العلماء المسلمين · النتائج</p>
+    </div>
+  </div>
+
+  <input type="radio" name="t3" id="t3a" class="tr" checked>
+  <input type="radio" name="t3" id="t3b" class="tr">
+  <div class="tabs">
+    <label for="t3a" class="tab-btn"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>الملخص</span></label>
+    <label for="t3b" class="tab-btn"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>الأسئلة</span></label>
+  </div>
+
+  <div class="tbody">
+    <div class="tpane tp-3a">
+      <div class="editorial" style="--c:var(--green)">
+        <div class="lede">بدأت أوروبا حركة كبرى من <em>الكشوف الجغرافية</em> فى القرن الخامس عشر الميلادى، أدت إلى اكتشاف العالم الجديد و<b>إعادة رسم خريطة العالم</b>.</div>
+
+        <details class="sec" open style="--c:var(--green)"><summary><span class="sec-num">01</span><span class="sec-title">تعريف الكشوف الجغرافية</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <div class="def">رحلات بحرية قام بها الأوروبيون بدأت فى <strong>القرن الخامس عشر</strong> الميلادى؛ لاكتشاف طرق بحرية جديدة ومناطق كانت مجهولة لهم.</div>
+          <p>ساعد المستكشفين: التقدم فى الرياضيات والفلك والجغرافيا، وتطور السفن والأدوات الملاحية.</p>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--green)"><summary><span class="sec-num">02</span><span class="sec-title">دوافع الكشوف</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <div class="fact" style="--c:var(--orange)"><div class="fact-head"><div class="fact-icon">🛡️</div><div class="fact-title">سياسية</div></div><div class="fact-body"><p>تنافس البرتغال وإسبانيا للتوسع وتكوين إمبراطوريات استعمارية.</p></div></div>
+          <div class="fact" style="--c:var(--green)"><div class="fact-head"><div class="fact-icon">💰</div><div class="fact-title">اقتصادية</div></div><div class="fact-body"><p>البحث عن طرق تجارية جديدة للهند وشرق آسيا بعيدًا عن طريق الحرير.</p></div></div>
+          <div class="fact" style="--c:var(--blue)"><div class="fact-head"><div class="fact-icon">🧭</div><div class="fact-title">عوامل مساعدة</div></div><div class="fact-body"><p>تطور السفن والأدوات الملاحية، وتقدّم الفلك والجغرافيا والرياضيات.</p></div></div>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--green)"><summary><span class="sec-num">03</span><span class="sec-title">أبرز المستكشفين</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <ul class="numbered">
+            <li><strong>كريستوفر كولومبوس</strong> (إيطالى · بتمويل إسباني): وصل إلى جزر البهاما عام ١٤٩٢م.</li>
+            <li><strong>أميريجو فسبوتشى</strong> (إيطالى): أثبت أن الأراضى المكتشفة قارة جديدة؛ فسُمّيت «أمريكا».</li>
+            <li><strong>ماجلان</strong> (برتغالى · بتمويل إسباني): أكمل رفاقه أول رحلة بحرية حول العالم ١٥٢٢م.</li>
+            <li><strong>جيمس كوك</strong> (بريطانى): وصل إلى الساحل الشرقى لأستراليا عام ١٧٧٠م.</li>
+          </ul>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--green)"><summary><span class="sec-num">04</span><span class="sec-title">دور العلماء المسلمين</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <ul class="numbered">
+            <li>ألّف علماء ورحّالة مسلمون (مثل أحمد بن ماجد) مؤلفات مهمة فى الجغرافيا والفلك والملاحة.</li>
+            <li>ساهم تأكيدهم على كروية الأرض فى تشجيع كولومبوس على التفكير فى الوصول للهند من جهة الغرب.</li>
+            <li>طوّروا أدوات ملاحية مثل البوصلة والإسطرلاب.</li>
+          </ul>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--green)"><summary><span class="sec-num">05</span><span class="sec-title">نتائج الكشوف</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <div class="compare">
+            <div class="col" style="--c:var(--orange)"><h4>⚔️ سياسية</h4><p>تنافس الدول الأوروبية للسيطرة على الأراضى المكتشفة، وحروب عديدة.</p></div>
+            <div class="col" style="--c:var(--green)"><h4>🪙 اقتصادية</h4><p>تحوّل الأطلنطى إلى طريق رئيسى للتجارة، وتدفق الذهب والفضة إلى أوروبا.</p></div>
+          </div>
+          <div class="compare">
+            <div class="col" style="--c:var(--blue)"><h4>🔭 علمية</h4><p>تطور علم الجغرافيا، ورسم خرائط أدق، والتعرف على نباتات وحيوانات جديدة.</p></div>
+            <div class="col" style="--c:var(--purple)"><h4>🌍 اجتماعية</h4><p>هجرات كبيرة من أوروبا، مع آثار سلبية على السكان الأصليين والأفارقة.</p></div>
+          </div>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--green)"><summary><span class="sec-num">06</span><span class="sec-title">تأثير الكشوف على السكان الأصليين</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <ul class="numbered">
+            <li><strong>الإبادة:</strong> مثلما فعل الأوروبيون ضد الهنود الحمر.</li>
+            <li><strong>وفاة أعداد كثيرة</strong> نتيجة أمراض ووبئة وافدة كالجدرى والإنفلونزا.</li>
+            <li><strong>احتلال أراضيهم وتهجيرهم.</strong></li>
+            <li><strong>تعرضهم للتمييز والاستغلال.</strong></li>
+            <li><strong>تأثر ثقافاتهم</strong> بانتشار الثقافة الأوروبية.</li>
+          </ul>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--green)"><summary><span class="sec-num">07</span><span class="sec-title">تجارة الرقيق</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <p>بعد اكتشاف الأمريكتين أصبح <strong>الرقيق الإفريقى</strong> السلعة الأهم للعمل فى المزارع والمناجم بالمستعمرات الأوروبية.</p>
+          <div class="box box-purple"><strong>تذكر:</strong> تجارة الرقيق هى بيع وشراء البشر كعبيد، واستغلالهم فى العمل الإجبارى، وحرمانهم من حريتهم.</div>
+        </div></details>
+      </div>
+    </div>
+
+    <div class="tpane tp-3b">
+      <div class="editorial">
+        <div class="q-head" style="--c:var(--green)">
+          <div class="q-head-icon">؟</div>
+          <h2>بنك أسئلة الفصل الثالث</h2>
+          <p>20 سؤال · اضغط على أي سؤال لعرض الإجابة</p>
+        </div>
+        <div class="q-list" style="--c:var(--green)">
+          <details class="qa"><summary><span class="qa-num">01</span><span class="qa-text">ما المقصود بالكشوف الجغرافية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">رحلات بحرية قام بها الأوروبيون بدأت فى القرن الخامس عشر الميلادى.</div></details>
+          <details class="qa"><summary><span class="qa-num">02</span><span class="qa-text">اذكر الدوافع السياسية للكشوف.</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">تنافس البرتغال وإسبانيا للتوسع وتكوين إمبراطوريات استعمارية.</div></details>
+          <details class="qa"><summary><span class="qa-num">03</span><span class="qa-text">بم تفسر: بحث الأوروبيين عن طرق تجارية جديدة؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لتجنب المرور بطريق الحرير البرى الخاضع لسيطرة العثمانيين والمماليك.</div></details>
+          <details class="qa"><summary><span class="qa-num">04</span><span class="qa-text">ما العوامل المساعدة على نجاح الكشوف؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">التقدم فى الرياضيات والفلك والجغرافيا، وتطور السفن والأدوات الملاحية.</div></details>
+          <details class="qa"><summary><span class="qa-num">05</span><span class="qa-text">ما أهم إنجازات كولومبوس؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">وصل إلى جزر البهاما عام ١٤٩٢م معتقدًا أنها جزء من آسيا.</div></details>
+          <details class="qa"><summary><span class="qa-num">06</span><span class="qa-text">ما أهم إنجازات فسبوتشى؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">أثبت أن الأراضى المكتشفة قارة جديدة؛ فسُمّيت «أمريكا».</div></details>
+          <details class="qa"><summary><span class="qa-num">07</span><span class="qa-text">ما أهم إنجازات ماجلان؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">أكمل رفاقه أول رحلة بحرية حول العالم ١٥٢٢م.</div></details>
+          <details class="qa"><summary><span class="qa-num">08</span><span class="qa-text">ما أهم إنجازات جيمس كوك؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">وصل إلى الساحل الشرقى لأستراليا عام ١٧٧٠م.</div></details>
+          <details class="qa"><summary><span class="qa-num">09</span><span class="qa-text">ما دور العلماء المسلمين فى الكشوف؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">ألّفوا مؤلفات فى الجغرافيا والفلك والملاحة، وأكدوا كروية الأرض، وطوّروا البوصلة والإسطرلاب.</div></details>
+          <details class="qa"><summary><span class="qa-num">10</span><span class="qa-text">اذكر النتائج السياسية للكشوف.</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">تنافس الدول الأوروبية وتكوين المستعمرات وحروب عديدة.</div></details>
+          <details class="qa"><summary><span class="qa-num">11</span><span class="qa-text">اذكر النتائج الاقتصادية.</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">تحوّل الأطلنطى إلى طريق رئيسى للتجارة، وتدفق الذهب والفضة إلى أوروبا.</div></details>
+          <details class="qa"><summary><span class="qa-num">12</span><span class="qa-text">اذكر النتائج العلمية.</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">تطور الجغرافيا، ورسم خرائط أدق، والتعرف على نباتات وحيوانات جديدة.</div></details>
+          <details class="qa"><summary><span class="qa-num">13</span><span class="qa-text">اذكر النتائج الاجتماعية.</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">هجرات كبيرة من أوروبا، وانتشار الثقافة الأوروبية، مع آثار سلبية على السكان الأصليين والأفارقة.</div></details>
+          <details class="qa"><summary><span class="qa-num">14</span><span class="qa-text">بم تفسر: أصبح الرقيق الإفريقى السلعة الأهم؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">للعمل فى المزارع والمناجم بالمستعمرات الأوروبية.</div></details>
+          <details class="qa"><summary><span class="qa-num">15</span><span class="qa-text">ما المقصود بتجارة الرقيق؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">بيع وشراء البشر كعبيد، واستغلالهم فى العمل الإجبارى، وحرمانهم من حريتهم.</div></details>
+          <details class="qa"><summary><span class="qa-num">16</span><span class="qa-text">دلل: كانت الكشوف سلاحًا ذا حدين.</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">حققت مكاسب كبيرة للدول الأوروبية، لكنها تسببت فى معاناة كثير من الشعوب الأخرى.</div></details>
+          <details class="qa"><summary><span class="qa-num">17</span><span class="qa-text">قارن: كولومبوس وجيمس كوك.</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">كولومبوس: إيطالى، مولته إسبانيا، وصل إلى جزر البهاما.<br>كوك: بريطانى، وصل إلى الساحل الشرقى لأستراليا.</div></details>
+          <details class="qa"><summary><span class="qa-num">18</span><span class="qa-text">ماذا يحدث إذا لم يقنع كولومبوس ملوك إسبانيا؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">قد يتأخر اكتشاف الأوروبيين للأمريكتين.</div></details>
+          <details class="qa"><summary><span class="qa-num">19</span><span class="qa-text">ماذا يحدث إذا لم يستكمل رفاق ماجلان الرحلة؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لَما تحققت أول رحلة بحرية حول العالم.</div></details>
+          <details class="qa"><summary><span class="qa-num">20</span><span class="qa-text">ما النتائج الاجتماعية للكشوف على السكان الأصليين؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">الإبادة، ووفاة أعداد كثيرة، واحتلال أراضيهم، والتمييز، وتأثر ثقافاتهم.</div></details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ LESSON 4 ═══════════════ -->
+<section class="page pg-l4">
+  <div class="chapter ch-4">
+    <label for="pg-home" class="back-btn"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>الفهرس</label>
+    <div class="chapter-card">
+      <div class="chapter-meta"><div class="chapter-icon">👑</div><span class="chapter-pill">الفصل الرابع · الوحدة الثانية</span></div>
+      <h1 class="chapter-title">تولية محمد علي حكم مصر</h1>
+      <p class="chapter-sub">من الحملة الفرنسية إلى مذبحة القلعة · 1801-1811م</p>
+    </div>
+  </div>
+
+  <input type="radio" name="t4" id="t4a" class="tr" checked>
+  <input type="radio" name="t4" id="t4b" class="tr">
+  <div class="tabs">
+    <label for="t4a" class="tab-btn"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>الملخص</span></label>
+    <label for="t4b" class="tab-btn"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>الأسئلة</span></label>
+  </div>
+
+  <div class="tbody">
+    <div class="tpane tp-4a">
+      <div class="editorial" style="--c:var(--orange)">
+        <div class="lede">بعد رحيل الحملة الفرنسية عام ١٨٠١م تصارعت <em>ثلاث قوى</em> على حكم مصر، وفى خضم هذا الصراع نجح «محمد على» فى كسب ثقة المصريين حتى تولى حكم مصر عام ١٨٠٥م.</div>
+
+        <details class="sec" open style="--c:var(--orange)"><summary><span class="sec-num">01</span><span class="sec-title">أحوال مصر بعد الحملة الفرنسية</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <div class="fact" style="--c:var(--red)"><div class="fact-head"><div class="fact-icon">🇬🇧</div><div class="fact-title">إنجلترا</div></div><div class="fact-body"><p>بقيت قواتها فى الإسكندرية لحماية مصالحها وتأمين طريق التجارة إلى الهند، وغادرت بعد صلح أميان ١٨٠٢م.</p></div></div>
+          <div class="fact" style="--c:var(--orange)"><div class="fact-head"><div class="fact-icon">🇹🇷</div><div class="fact-title">الدولة العثمانية</div></div><div class="fact-body"><p>عيّنت خورشيد باشا واليًا، وأرهقت المصريين بالضرائب لدفع مرتبات الجنود.</p></div></div>
+          <div class="fact" style="--c:var(--blue)"><div class="fact-head"><div class="fact-icon">⚔️</div><div class="fact-title">المماليك</div></div><div class="fact-body"><p>ضعفت قوتهم بسبب خسائرهم أمام الفرنسيين وانقسامهم إلى فرق متنافسة.</p></div></div>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--orange)"><summary><span class="sec-num">02</span><span class="sec-title">ثورة الشعب المصرى ١٨٠٤م</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <ul class="numbered">
+            <li><strong>السبب:</strong> فرض البرديسى ضرائب باهظة لدفع رواتب الجنود.</li>
+            <li><strong>الأحداث:</strong> ثار المصريون فى الأزهر، وتدخل «محمد على» ووعد بإلغاء الضريبة، ثم حاصر دار البرديسى.</li>
+            <li><strong>النتائج:</strong> مغادرة البرديسى القاهرة، وتعيين خورشيد باشا واليًا.</li>
+          </ul>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--orange)"><summary><span class="sec-num">03</span><span class="sec-title">تولية «محمد على» ١٨٠٥م</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <p>اشتد ظلم خورشيد باشا، فاجتمع المشايخ والعلماء وتوجهوا إلى «محمد على» يطلبون عزل خورشيد، فوافقهم بعد تردد.</p>
+          <ul class="numbered">
+            <li>قام السيد عمر مكرم والشيخ عبد الله الشرقاوى بإلباسه قفطان الولاية.</li>
+            <li>حاصر «محمد على» خورشيد باشا بالقلعة.</li>
+            <li>أصدر السلطان العثمانى فرمانًا عام ١٨٠٥م بتوليته حكم مصر.</li>
+          </ul>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--orange)"><summary><span class="sec-num">04</span><span class="sec-title">التحديات بعد التولية</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <div class="fact" style="--c:var(--green)"><div class="fact-head"><div class="fact-icon">①</div><div class="fact-title">محاولة نقله إلى سالونيك (١٨٠٦م)</div></div><div class="fact-body"><p>طلب المساعدة من المشايخ والعلماء، فتراجع السلطان وأصدر مرسومًا بتثبيته.</p></div></div>
+          <div class="fact" style="--c:var(--purple)"><div class="fact-head"><div class="fact-icon">②</div><div class="fact-title">حملة فريزر (١٨٠٧م)</div></div><div class="fact-body"><p>فشلت بسبب بسالة الأهالى وانضمام جيش «محمد على» لهم.</p></div></div>
+          <div class="fact" style="--c:var(--orange)"><div class="fact-head"><div class="fact-icon">③</div><div class="fact-title">الزعامة الشعبية (١٨٠٩م)</div></div><div class="fact-body"><p>عزل «محمد على» عمر مكرم ونفاه إلى دمياط.</p></div></div>
+          <div class="fact" style="--c:var(--red)"><div class="fact-head"><div class="fact-icon">④</div><div class="fact-title">مذبحة القلعة (١٨١١م)</div></div><div class="fact-body"><p>أقام حفلًا فى القلعة دعا إليه أمراء المماليك، ثم أُغلقت الأبواب وتخلص جنوده منهم.</p></div></div>
+        </div></details>
+      </div>
+    </div>
+
+    <div class="tpane tp-4b">
+      <div class="editorial">
+        <div class="q-head" style="--c:var(--orange)">
+          <div class="q-head-icon">؟</div>
+          <h2>بنك أسئلة الفصل الرابع</h2>
+          <p>22 سؤال · اضغط على أي سؤال لعرض الإجابة</p>
+        </div>
+        <div class="q-list" style="--c:var(--orange)">
+          <details class="qa"><summary><span class="qa-num">01</span><span class="qa-text">ما القوى الثلاث التى تصارعت على حكم مصر؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">إنجلترا، الدولة العثمانية، المماليك.</div></details>
+          <details class="qa"><summary><span class="qa-num">02</span><span class="qa-text">لماذا بقيت القوات الإنجليزية فى الإسكندرية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لحماية مصالحها وتأمين طريق التجارة إلى الهند.</div></details>
+          <details class="qa"><summary><span class="qa-num">03</span><span class="qa-text">بم تفسر: نجاح «محمد على» فى كسب ثقة المصريين؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لأنه رفض أن يشارك جنوده فى أعمال السلب والنهب.</div></details>
+          <details class="qa"><summary><span class="qa-num">04</span><span class="qa-text">ما سبب ثورة الشعب المصرى ضد البرديسى؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">فرض ضرائب باهظة لدفع رواتب الجنود وجمعها بالقوة.</div></details>
+          <details class="qa"><summary><span class="qa-num">05</span><span class="qa-text">كيف تولى «محمد على» حكم مصر ١٨٠٥م؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">بعد ثورة المصريين على خورشيد، اجتمع المشايخ وطلبوا توليه، ثم صدر فرمان من السلطان.</div></details>
+          <details class="qa"><summary><span class="qa-num">06</span><span class="qa-text">من قام بإلباس «محمد على» قفطان الولاية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">السيد عمر مكرم والشيخ عبد الله الشرقاوى.</div></details>
+          <details class="qa"><summary><span class="qa-num">07</span><span class="qa-text">ما التحديات التى واجهت «محمد على»؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">محاولة نقله إلى سالونيك، حملة فريزر، الزعامة الشعبية، خطر المماليك.</div></details>
+          <details class="qa"><summary><span class="qa-num">08</span><span class="qa-text">ما هدف حملة فريزر؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">احتلال مصر، ومساعدة محمد بك الألفى لإقامة حكم موالٍ للإنجليز.</div></details>
+          <details class="qa"><summary><span class="qa-num">09</span><span class="qa-text">بم تفسر: فشل حملة فريزر؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">بسبب بسالة الأهالى فى رشيد والحماد، وانضمام جيش «محمد على» لهم.</div></details>
+          <details class="qa"><summary><span class="qa-num">10</span><span class="qa-text">كيف تخلص «محمد على» من الزعامة الشعبية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">عزل عمر مكرم ونفاه إلى دمياط عام ١٨٠٩م.</div></details>
+          <details class="qa"><summary><span class="qa-num">11</span><span class="qa-text">ما هى مذبحة القلعة؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">حادثة عام ١٨١١م أقام فيها «محمد على» حفلًا فى القلعة دعا إليه أمراء المماليك، ثم أُغلقت الأبواب وتخلص جنوده منهم.</div></details>
+          <details class="qa"><summary><span class="qa-num">12</span><span class="qa-text">لماذا نجح «محمد على» فى الحصول على تأييد المصريين؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لأنه ظهر بمظهر العادل الحكيم الرافض لسياسة الوالى.</div></details>
+          <details class="qa"><summary><span class="qa-num">13</span><span class="qa-text">ما الذى فعله «محمد على» بعد ثورة ١٨٠٤م؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">توجه بجنوده لحصار دار البرديسى بعد أن هدأت الثورة.</div></details>
+          <details class="qa"><summary><span class="qa-num">14</span><span class="qa-text">ماذا فعل «محمد على» بمن تبقى من المماليك؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">أرسل قواته لمطاردتهم فى الصعيد حتى أجلاهم بعيدًا عن البلاد.</div></details>
+          <details class="qa"><summary><span class="qa-num">15</span><span class="qa-text">كيف انتهت محاولة نقل «محمد على» إلى سالونيك؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">تراجع السلطان وأصدر مرسومًا بتثبيته واليًا على مصر.</div></details>
+          <details class="qa"><summary><span class="qa-num">16</span><span class="qa-text">قارن بين موقف إنجلترا والدولة العثمانية.</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">إنجلترا: بقيت قواتها لحماية مصالحها.<br>العثمانية: استعادت سيطرتها وعيّنت خورشيد باشا واليًا.</div></details>
+          <details class="qa"><summary><span class="qa-num">17</span><span class="qa-text">دلل: لم يكن هدف القوى المتصارعة سوى تحقيق مصالحها.</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">إنجلترا لحماية مصالحها، والعثمانية لاستعادة سيطرتها، والمماليك للوصول لحكم مصر.</div></details>
+          <details class="qa"><summary><span class="qa-num">18</span><span class="qa-text">دلل: استعادت الدولة العثمانية سيطرتها الاسمية فقط.</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">عيّنت خورشيد واليًا لكنها لم تستطع ضبط الأوضاع، فثار المصريون وعزلوه.</div></details>
+          <details class="qa"><summary><span class="qa-num">19</span><span class="qa-text">ماذا يحدث إذا لم يقف «محمد على» بجانب ثورة الشعب؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لَما كسب ثقة المصريين، ولَربما لم يتمكن من الوصول إلى حكم مصر.</div></details>
+          <details class="qa"><summary><span class="qa-num">20</span><span class="qa-text">ماذا يحدث إذا نجحت حملة فريزر؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لكانت مصر خضعت للاحتلال الإنجليزى المباشر قبل ١٨٨٢م بعقود.</div></details>
+          <details class="qa"><summary><span class="qa-num">21</span><span class="qa-text">ما أهمية تنفيذ مذبحة القلعة؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">تخلص من خطر المماليك نهائيًا وأصبح الحاكم الفعلى لمصر.</div></details>
+          <details class="qa"><summary><span class="qa-num">22</span><span class="qa-text">ما الذى دفع «محمد على» للتخلص من الزعامة الشعبية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">إدراكه خطورة الزعامة على مكانته، ورغبته فى الانفراد بحكم مصر.</div></details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ LESSON 5 ═══════════════ -->
+<section class="page pg-l5">
+  <div class="chapter ch-5">
+    <label for="pg-home" class="back-btn"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>الفهرس</label>
+    <div class="chapter-card">
+      <div class="chapter-meta"><div class="chapter-icon">⚙️</div><span class="chapter-pill">الفصل الخامس · الوحدة الثانية</span></div>
+      <h1 class="chapter-title">محمد علي وبناء الدولة الحديثة</h1>
+      <p class="chapter-sub">الإصلاحات الداخلية والخارجية · معاهدة لندن 1840م</p>
+    </div>
+  </div>
+
+  <input type="radio" name="t5" id="t5a" class="tr" checked>
+  <input type="radio" name="t5" id="t5b" class="tr">
+  <div class="tabs">
+    <label for="t5a" class="tab-btn"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>الملخص</span></label>
+    <label for="t5b" class="tab-btn"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>الأسئلة</span></label>
+  </div>
+
+  <div class="tbody">
+    <div class="tpane tp-5a">
+      <div class="editorial" style="--c:var(--pink)">
+        <div class="lede">يُعد عهد «محمد على» باشا (<em>١٨٠٥ - ١٨٤٨م</em>) <b>نقطة تحول كبرى</b> فى تاريخ مصر؛ حيث أسس الدولة الحديثة بعد قرون من الفوضى والصراعات.</div>
+
+        <details class="sec" open style="--c:var(--pink)"><summary><span class="sec-num">01</span><span class="sec-title">الإصلاح الإدارى</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <div class="fact" style="--c:var(--pink)"><div class="fact-head"><div class="fact-icon">🏛️</div><div class="fact-title">تنظيم الإدارة</div></div><div class="fact-body"><p>تقسيم مصر إلى <strong>سبع مديريات</strong>، يتبع كل مديرية عدد من المراكز.</p></div></div>
+          <div class="fact" style="--c:var(--pink)"><div class="fact-head"><div class="fact-icon">📜</div><div class="fact-title">المجالس والدواوين</div></div><div class="fact-body"><p>أنشأ عدة مجالس مثل <strong>مجلس المشورة</strong>، وكان رأيه استشاريًا فقط.</p></div></div>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--pink)"><summary><span class="sec-num">02</span><span class="sec-title">الإصلاح العسكرى</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <div class="fact" style="--c:var(--pink)"><div class="fact-head"><div class="fact-icon">⚔️</div><div class="fact-title">الجيش</div></div><div class="fact-body"><p>جيش نظامى من المصريين، بعثات عسكرية، مدارس عسكرية، ترسانة بالقلعة، ديوان الجهادية.</p></div></div>
+          <div class="fact" style="--c:var(--pink)"><div class="fact-head"><div class="fact-icon">🚢</div><div class="fact-title">الأسطول</div></div><div class="fact-body"><p>ترسانة لصناعة السفن فى بولاق ثم الإسكندرية، المدرسة البحرية، بعثات بحرية.</p></div></div>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--pink)"><summary><span class="sec-num">03</span><span class="sec-title">الإصلاح الاقتصادى</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <ul class="points">
+            <li><strong>إلغاء نظام الالتزام.</strong></li>
+            <li><strong>نظام الاحتكار:</strong> فرض محاصيل محددة ثم شِراؤها بسعر محدد.</li>
+            <li><strong>الزراعة:</strong> إدخال القطن طويل التيلة.</li>
+            <li><strong>الرى:</strong> حفر الترع مثل المحمودية، وبدء القناطر الخيرية.</li>
+            <li><strong>الصناعة:</strong> طوّر الصناعات القديمة وأنشأ مصانع جديدة.</li>
+          </ul>
+          <div class="compare">
+            <div class="col" style="--c:var(--green)"><h4>مميزات الاحتكار</h4><p>زيادة دخل الدولة، تمويل الجيش، تمويل المشروعات.</p></div>
+            <div class="col" style="--c:var(--red)"><h4>عيوب الاحتكار</h4><p>إرهاق الفلاحين، وضعف التجارة الحرة، هروب بعض التجار.</p></div>
+          </div>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--pink)"><summary><span class="sec-num">04</span><span class="sec-title">الإصلاح الاجتماعى</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <div class="fact" style="--c:var(--pink)"><div class="fact-head"><div class="fact-icon">🎓</div><div class="fact-title">التعليم والثقافة</div></div><div class="fact-body"><p>المدارس العليا (الطب، الهندسة، الزراعة)، بعثات علمية إلى أوروبا، مدرسة الألسن، ديوان المدارس، المطبعة الأميرية.</p></div></div>
+          <div class="fact" style="--c:var(--pink)"><div class="fact-head"><div class="fact-icon">🏛️</div><div class="fact-title">العمران</div></div><div class="fact-body"><p>حصون وقلاع، سراى رأس التين، سراى قصر النيل.</p></div></div>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--pink)"><summary><span class="sec-num">05</span><span class="sec-title">السياسة الخارجية</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <ul class="points">
+            <li><strong>حروب شبه الجزيرة العربية:</strong> القضاء على الوهابيين.</li>
+            <li><strong>حرب السودان:</strong> مد النفوذ المصرى وإنشاء الخرطوم.</li>
+            <li><strong>حرب المورة:</strong> تحطيم الأسطولين فى نافارين ١٨٢٧م.</li>
+            <li><strong>حروب الشام:</strong> توسيع النفوذ السياسى (١٨٣١م).</li>
+          </ul>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--pink)"><summary><span class="sec-num">06</span><span class="sec-title">معاهدة لندن ١٨٤٠م</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <div class="compare">
+            <div class="col" style="--c:var(--green)"><h4>شروطها</h4><ul><li>احتفاظه بحكم مصر وراثيًا</li><li>ولاية عكا مدى حياته</li><li>الموافقة خلال ١٠ أيام</li></ul></div>
+            <div class="col" style="--c:var(--red)"><h4>نتائجها</h4><ul><li>فشل مشروع الاستقلال</li><li>الانسحاب من الأراضى</li><li>تقليل الجيش وإغلاق المدارس</li></ul></div>
+          </div>
+          <div class="quote">ورغم فشل «محمد على» فى مشروعه السياسى إلا أنه <strong>نجح فى وضع قواعد الدولة المصرية الحديثة</strong> على أسس راسخة.</div>
+        </div></details>
+      </div>
+    </div>
+
+    <div class="tpane tp-5b">
+      <div class="editorial">
+        <div class="q-head" style="--c:var(--pink)">
+          <div class="q-head-icon">؟</div>
+          <h2>بنك أسئلة الفصل الخامس</h2>
+          <p>21 سؤال · اضغط على أي سؤال لعرض الإجابة</p>
+        </div>
+        <div class="q-list" style="--c:var(--pink)">
+          <details class="qa"><summary><span class="qa-num">01</span><span class="qa-text">لماذا يُعد عهد «محمد على» نقطة تحول كبرى؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لأنه أسس الدولة الحديثة بعد قرون من الفوضى والصراعات.</div></details>
+          <details class="qa"><summary><span class="qa-num">02</span><span class="qa-text">كيف نظّم «محمد على» الإدارة؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">قسّم مصر إداريًا إلى سبع مديريات.</div></details>
+          <details class="qa"><summary><span class="qa-num">03</span><span class="qa-text">ما هو مجلس المشورة؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">مجلس أنشأه «محمد على» ورأيه استشاريًا فقط.</div></details>
+          <details class="qa"><summary><span class="qa-num">04</span><span class="qa-text">بم تفسر: اهتمام «محمد على» بالجيش؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">للحفاظ على حدود الدولة واستقلالها.</div></details>
+          <details class="qa"><summary><span class="qa-num">05</span><span class="qa-text">كيف أنشأ «محمد على» الجيش النظامى؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">جند المصريين، أرسل الضباط فى بعثات، أنشأ المدارس العسكرية وترسانة الأسلحة.</div></details>
+          <details class="qa"><summary><span class="qa-num">06</span><span class="qa-text">بم تفسر: اهتمام «محمد على» بالصناعة؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لسد احتياجات الجيش وتقليل الاعتماد على الواردات الأوروبية.</div></details>
+          <details class="qa"><summary><span class="qa-num">07</span><span class="qa-text">بم تفسر: لجوء «محمد على» إلى نظام الاحتكار؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لأنه كان وسيلة فعّالة لتوفير الاحتياجات اللازمة للنهوض بالبلاد.</div></details>
+          <details class="qa"><summary><span class="qa-num">08</span><span class="qa-text">ما مميزات نظام الاحتكار؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">زيادة دخل الدولة، تمويل الجيش، تمويل المشروعات.</div></details>
+          <details class="qa"><summary><span class="qa-num">09</span><span class="qa-text">ما عيوب نظام الاحتكار؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">إرهاق الفلاحين، وضعف التجارة الحرة، وهروب بعض التجار.</div></details>
+          <details class="qa"><summary><span class="qa-num">10</span><span class="qa-text">ما المحصول الذى أدخله «محمد على»؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">القطن طويل التيلة.</div></details>
+          <details class="qa"><summary><span class="qa-num">11</span><span class="qa-text">ما مشروعات الرى التى قام بها؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">حفر الترع، إقامة الجسور والقناطر، بدء القناطر الخيرية.</div></details>
+          <details class="qa"><summary><span class="qa-num">12</span><span class="qa-text">بم تفسر: اهتمام «محمد على» بالتعليم؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لأنه أدرك حاجته لموظفين وفنيين ومتخصصين لسد احتياجات الجيش والأسطول.</div></details>
+          <details class="qa"><summary><span class="qa-num">13</span><span class="qa-text">ما هى حروب «محمد على» الخارجية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">شبه الجزيرة العربية، السودان، المورة، الشام.</div></details>
+          <details class="qa"><summary><span class="qa-num">14</span><span class="qa-text">ما نتائج حروب شبه الجزيرة العربية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">هزيمة الوهابيين وسيطرة «محمد على» على معظم شبه الجزيرة.</div></details>
+          <details class="qa"><summary><span class="qa-num">15</span><span class="qa-text">ما نتائج حرب السودان؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">مد النفوذ المصرى إلى جنوب السودان، وإنشاء الخرطوم، واكتشاف منابع النيل.</div></details>
+          <details class="qa"><summary><span class="qa-num">16</span><span class="qa-text">ما نتائج حرب المورة؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">تحطيم الأسطولين العثمانى والمصرى فى معركة نافارين ١٨٢٧م.</div></details>
+          <details class="qa"><summary><span class="qa-num">17</span><span class="qa-text">ما الأسباب الحقيقية لحروب الشام؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">توسيع نفوذه السياسى وبناء دولة قوية مستقلة.</div></details>
+          <details class="qa"><summary><span class="qa-num">18</span><span class="qa-text">ما نتائج حروب الشام؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">الاستيلاء على مدن الشام، والتوغل فى آسيا الصغرى.</div></details>
+          <details class="qa"><summary><span class="qa-num">19</span><span class="qa-text">ما أسباب معاهدة لندن ١٨٤٠م؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">خشية الدول الأوروبية من توسعات «محمد على».</div></details>
+          <details class="qa"><summary><span class="qa-num">20</span><span class="qa-text">ما شروط معاهدة لندن؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">احتفاظه بحكم مصر وراثيًا، وولاية عكا مدى حياته، والموافقة خلال ١٠ أيام.</div></details>
+          <details class="qa"><summary><span class="qa-num">21</span><span class="qa-text">ما نتائج معاهدة لندن؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">فشل مشروع الاستقلال، والانسحاب من الأراضى، وتقليل الجيش وإغلاق المدارس.</div></details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ LESSON 6 ═══════════════ -->
+<section class="page pg-l6">
+  <div class="chapter ch-6">
+    <label for="pg-home" class="back-btn"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>الفهرس</label>
+    <div class="chapter-card">
+      <div class="chapter-meta"><div class="chapter-icon">🌳</div><span class="chapter-pill">الفصل السادس · الوحدة الثانية</span></div>
+      <h1 class="chapter-title">مصر في عصر خلفاء محمد علي</h1>
+      <p class="chapter-sub">إبراهيم باشا · عباس الأول · محمد سعيد · الخديو إسماعيل</p>
+    </div>
+  </div>
+
+  <input type="radio" name="t6" id="t6a" class="tr" checked>
+  <input type="radio" name="t6" id="t6b" class="tr">
+  <div class="tabs">
+    <label for="t6a" class="tab-btn"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>الملخص</span></label>
+    <label for="t6b" class="tab-btn"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>الأسئلة</span></label>
+  </div>
+
+  <div class="tbody">
+    <div class="tpane tp-6a">
+      <div class="editorial" style="--c:var(--teal)">
+        <div class="lede">بعد أن نجح «محمد علي» في وضع أسس الدولة المصرية الحديثة، تولى حكم مصر بعده عدد من <em>أبناء وأحفاد أسرته</em>، توالوا على مصر عبر عقود.</div>
+
+        <details class="sec" open style="--c:var(--teal)"><summary><span class="sec-num">01</span><span class="sec-title">أبرز خلفاء محمد على</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <div class="compare">
+            <div class="col" style="--c:var(--blue)"><h4>⚔️ إبراهيم باشا</h4><p>حكم عدة أشهر (١٨٤٨م)</p></div>
+            <div class="col" style="--c:var(--green)"><h4>🎩 عباس حلمى الأول</h4><p>١٨٤٨ - ١٨٥٤م</p></div>
+          </div>
+          <div class="compare">
+            <div class="col" style="--c:var(--orange)"><h4>🚢 محمد سعيد باشا</h4><p>١٨٥٤ - ١٨٦٣م</p></div>
+            <div class="col" style="--c:var(--pink)"><h4>🏛️ الخديو إسماعيل</h4><p>١٨٦٣ - ١٨٧٩م</p></div>
+          </div>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--teal)"><summary><span class="sec-num">02</span><span class="sec-title">إبراهيم باشا</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <div class="fact" style="--c:var(--blue)"><div class="fact-head"><div class="fact-icon">⚔️</div><div class="fact-title">أبرز ملامح عصره</div></div><div class="fact-body"><p>ساعد والده فى أعماله الحربية، وقاد الجيش المصرى. تولى حكم مصر بعد مرض والده، ولم يبق فى الحكم إلا عدة أشهر.</p></div></div>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--teal)"><summary><span class="sec-num">03</span><span class="sec-title">عباس حلمى باشا الأول</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <div class="fact" style="--c:var(--green)"><div class="fact-head"><div class="fact-icon">✓</div><div class="fact-title">مميزات حكمه</div></div><div class="fact-body"><ul><li>أصلح الطريق البرى القاهرة - السويس.</li><li>بدأ مد سكة حديد القاهرة - الإسكندرية.</li><li>بدأ مد الخطوط التلغرافية.</li></ul></div></div>
+          <div class="fact" style="--c:var(--red)"><div class="fact-head"><div class="fact-icon">✗</div><div class="fact-title">مساوئ حكمه</div></div><div class="fact-body"><ul><li>أغلق معظم المدارس والمصانع.</li><li>استدعى البعثات العلمية من فرنسا.</li><li>أهمل الجيش والبحرية.</li></ul></div></div>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--teal)"><summary><span class="sec-num">04</span><span class="sec-title">محمد سعيد باشا</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <div class="fact" style="--c:var(--green)"><div class="fact-head"><div class="fact-icon">🌾</div><div class="fact-title">الزراعة</div></div><div class="fact-body"><p>اللائحة السعيدية — مكّنت الفلاح من توريث الأرض وتصريف محاصيله، وخفّف الضرائب.</p></div></div>
+          <div class="fact" style="--c:var(--blue)"><div class="fact-head"><div class="fact-icon">🚢</div><div class="fact-title">التجارة والسكك</div></div><div class="fact-body"><p>شركات ملاحة نهرية وبحرية، استكمال سكة حديد القاهرة - الإسكندرية، ومد خط القاهرة - السويس.</p></div></div>
+          <div class="fact" style="--c:var(--purple)"><div class="fact-head"><div class="fact-icon">⚔️</div><div class="fact-title">الجيش</div></div><div class="fact-body"><p>قصّر الخدمة العسكرية إلى عام وجعلها إجبارية، وفتح باب الترقى للمصريين.</p></div></div>
+          <div class="box box-pink"><strong>مساوئ حكمه:</strong> ألغى ديوان المدارس، وفتح باب الاستدانة، ومنح دليسبس امتياز قناة السويس الأول ١٨٥٤م والثانى ١٨٥٦م.</div>
+        </div></details>
+
+        <details class="sec" open style="--c:var(--teal)"><summary><span class="sec-num">05</span><span class="sec-title">الخديو إسماعيل</span><span class="sec-chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="sec-body">
+          <p>يُعد عهده من أكثر الفترات <strong>تقدمًا وعمرانًا</strong> فى تاريخ مصر الحديث.</p>
+          <ul class="points">
+            <li><strong>الزراعة والرى:</strong> زيادة المساحة، ترعتا الإبراهيمية والإسماعيلية.</li>
+            <li><strong>الصناعة والتجارة:</strong> مصانع السكر، شركة ملاحة تجارية.</li>
+            <li><strong>السكك الحديدية والبريد:</strong> عدة خطوط، مصلحة البريد المصرية.</li>
+            <li><strong>النهضة الثقافية:</strong> مضاعفة ميزانية التعليم، دار الأوبرا، دار الرصد.</li>
+            <li><strong>النهضة الصحية والعمرانية:</strong> مستشفيات، قصر عابدين وقصر القبة.</li>
+            <li><strong>مجلس شورى النواب:</strong> أنشئ عام ١٨٦٦م وكان دوره استشاريًا.</li>
+          </ul>
+          <div class="box box-orange"><strong>أزمة الديون:</strong> لجأ للاقتراض لدفع تعويضات قناة السويس، والإنفاق على المشروعات، ودفع أموال للسلطان للحصول على لقب «خديو».</div>
+          <div class="box box-orange"><strong>مظاهر التدخل الأجنبى:</strong> بعثة كيف ١٨٧٥م، صندوق الدين ١٨٧٦م، المراقبة الثنائية، لجنة التحقيق العليا ١٨٧٨م، الوزارة المختلطة.</div>
+          <div class="box box-green"><strong>الحركة الوطنية ١٨٧٩م:</strong> اللائحة الوطنية طالبت بتشكيل وزارة وطنية مسئولة أمام مجلس نيابى. وافق الخديو، فصدر مرسوم بخلعه وتولية ابنه محمد توفيق.</div>
+        </div></details>
+      </div>
+    </div>
+
+    <div class="tpane tp-6b">
+      <div class="editorial">
+        <div class="q-head" style="--c:var(--teal)">
+          <div class="q-head-icon">؟</div>
+          <h2>بنك أسئلة الفصل السادس</h2>
+          <p>20 سؤال · اضغط على أي سؤال لعرض الإجابة</p>
+        </div>
+        <div class="q-list" style="--c:var(--teal)">
+          <details class="qa"><summary><span class="qa-num">01</span><span class="qa-text">من هم أبرز خلفاء «محمد على» بالترتيب؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">إبراهيم باشا، عباس حلمى الأول، محمد سعيد، الخديو إسماعيل.</div></details>
+          <details class="qa"><summary><span class="qa-num">02</span><span class="qa-text">كم استمر حكم إبراهيم باشا لمصر؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">عدة أشهر فقط (١٨٤٨م).</div></details>
+          <details class="qa"><summary><span class="qa-num">03</span><span class="qa-text">ما مميزات حكم عباس حلمى الأول؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">أصلح الطريق البرى القاهرة - السويس، وبدأ مد سكة حديد القاهرة - الإسكندرية، ومد الخطوط التلغرافية.</div></details>
+          <details class="qa"><summary><span class="qa-num">04</span><span class="qa-text">ما مساوئ حكم عباس حلمى الأول؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">أغلق المدارس والمصانع، واستدعى البعثات من فرنسا، وأهمل الجيش والبحرية.</div></details>
+          <details class="qa"><summary><span class="qa-num">05</span><span class="qa-text">ما هى اللائحة السعيدية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لائحة منحت الفلاح حق توريث الأرض وتصريف محاصيله.</div></details>
+          <details class="qa"><summary><span class="qa-num">06</span><span class="qa-text">ما إنجازات محمد سعيد فى التجارة؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">شركة نقل المحاصيل والمسافرين عبر النيل، وشركة لتسيير البواخر فى البحرين المتوسط والأحمر.</div></details>
+          <details class="qa"><summary><span class="qa-num">07</span><span class="qa-text">ما إنجازات محمد سعيد فى الجيش؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">قصّر الخدمة العسكرية إلى عام وجعلها إجبارية، وفتح باب الترقى للمصريين.</div></details>
+          <details class="qa"><summary><span class="qa-num">08</span><span class="qa-text">ما مساوئ حكم محمد سعيد؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">ألغى ديوان المدارس، وفتح باب الاستدانة، ومنح امتياز قناة السويس.</div></details>
+          <details class="qa"><summary><span class="qa-num">09</span><span class="qa-text">من منح دليسبس امتياز قناة السويس؟ ومتى؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">محمد سعيد باشا، عام ١٨٥٤م (الأول) و١٨٥٦م (الثانى).</div></details>
+          <details class="qa"><summary><span class="qa-num">10</span><span class="qa-text">لماذا يُعد عهد الخديو إسماعيل من أكثر الفترات تقدمًا؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">بسبب إنجازاته فى الزراعة والرى والصناعة والتجارة والسكك الحديدية والبريد والثقافة والعمران.</div></details>
+          <details class="qa"><summary><span class="qa-num">11</span><span class="qa-text">ما إنجازات الخديو إسماعيل فى الزراعة؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">زيادة المساحة، والتوسع فى القطن وقصب السكر، وحفر ترعتى الإبراهيمية والإسماعيلية.</div></details>
+          <details class="qa"><summary><span class="qa-num">12</span><span class="qa-text">ما إنجازات الخديو إسماعيل فى الثقافة؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">مضاعفة ميزانية التعليم، المدرسة السنية للبنات، دار الأوبرا، دار الرصد، الجمعية الجغرافية.</div></details>
+          <details class="qa"><summary><span class="qa-num">13</span><span class="qa-text">ما هو مجلس شورى النواب؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">مجلس أنشأه الخديو إسماعيل عام ١٨٦٦م، وكان دوره استشاريًا فقط.</div></details>
+          <details class="qa"><summary><span class="qa-num">14</span><span class="qa-text">لماذا لجأ الخديو إسماعيل للاقتراض؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">لدفع تعويضات قناة السويس، والإنفاق على المشروعات والقصور، ودفع أموال للسلطان للحصول على لقب «خديو».</div></details>
+          <details class="qa"><summary><span class="qa-num">15</span><span class="qa-text">ما مظاهر التدخل الأجنبى فى عهد إسماعيل؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">بعثة كيف ١٨٧٥م، صندوق الدين ١٨٧٦م، المراقبة الثنائية، لجنة التحقيق العليا ١٨٧٨م، الوزارة المختلطة.</div></details>
+          <details class="qa"><summary><span class="qa-num">16</span><span class="qa-text">ما هى اللائحة الوطنية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">مقترحات وضعتها الحركة الوطنية عام ١٨٧٩م طالبت بتشكيل وزارة وطنية مسئولة أمام مجلس نيابى.</div></details>
+          <details class="qa"><summary><span class="qa-num">17</span><span class="qa-text">ما موقف الخديو إسماعيل من اللائحة الوطنية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">وافق عليها وكلف شريف باشا بتشكيل وزارة وطنية.</div></details>
+          <details class="qa"><summary><span class="qa-num">18</span><span class="qa-text">ما موقف إنجلترا وفرنسا من اللائحة الوطنية؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">ضغطتا على الخديو للتنازل عن العرش، فلجأتا للدولة العثمانية التى أصدرت مرسومًا بخلعه.</div></details>
+          <details class="qa"><summary><span class="qa-num">19</span><span class="qa-text">من تولى الحكم بعد خلع الخديو إسماعيل؟</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">ابنه محمد توفيق.</div></details>
+          <details class="qa"><summary><span class="qa-num">20</span><span class="qa-text">دلل: كان عصر الخديو إسماعيل من أكثر الفترات تقدمًا وعمرانًا.</span><span class="qa-icon"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="qa-ans">زيادة المساحة الزراعية وحفر الترع، وإنشاء خطوط السكك الحديدية والتلغراف ومصلحة البريد، ومضاعفة ميزانية التعليم، وإنشاء دار الأوبرا وقصر عابدين.</div></details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 </div>
-<main id="app"></main>
-</div>
-</div>
 
-<script>
-const SOC_LESSONS=[
-{id:1,t:"موقع ومظاهر سطح قارات العالم الجديد",u:"الوحدة الأولى — الدرس الأول"},
-{id:2,t:"الحضارات القديمة في الأمريكتين",u:"الوحدة الأولى — الدرس الثاني"},
-{id:3,t:"الكشوف الجغرافية لقارات العالم الجديد",u:"الوحدة الأولى — الدرس الثالث"},
-{id:4,t:"تولية محمد على حكم مصر وتثبيت دعائم حكمه",u:"الوحدة الثانية — الدرس الأول"},
-{id:5,t:"محمد على وبناء الدولة الحديثة في مصر",u:"الوحدة الثانية — الدرس الثاني"},
-{id:6,t:"مصر في عصر خلفاء محمد على",u:"الوحدة الثانية — الدرس الثالث"}
-];
-</script>
+<footer class="footer">
+  <div class="footer-logo">📚</div>
+  <p>دراسات اجتماعية · الصف الثالث الإعدادي · الترم الأول</p>
+  <p class="meta">منصة المراجعة · <b>٢٠٢٦</b></p>
+</footer>
 
-<!-- ضع هنا const SOC_SUM و const SOC_P من الرد السابق -->
-
-<script>
-/* ==================== SOC_SUM (الملخصات) ==================== */
-const SOC_SUM={
-1:`<div class="callout">💡 <b>الفكرة الرئيسية:</b> أدى اكتشاف قارات العالم الجديد إلى إعادة رسم خريطة العالم، وتعدّ دراسة الموقع الجغرافي ومظاهر سطح هذه القارات من العوامل الأساسية لفهم خصائصها الطبيعية والاقتصادية والحضارية.</div>
-<section><div class="section-head"><div class="num">🌍</div><h2>ماذا تعرف عن قارات العالم الجديد؟</h2></div><div class="text-block"><p>قارات العالم الجديد هى: قارة أمريكا الشمالية، وقارة أمريكا الجنوبية، والقارة القطبية الجنوبية (أنتاركتيكا)، وقارة أستراليا. تعلمنا فيما سبق أن الموقع (فلكى - جغرافى) وتنوع مظاهر السطح من العوامل الأساسية التى أثرت فى خصائص القارات المختلفة (نظم بيئية - أنشطة سكانية...).</p></div></section>
-<section><div class="section-head"><div class="num">📏</div><h2>المساحة والترتيب بين قارات العالم</h2></div><div class="comp-card c-nicotine"><div class="comp-title"><span class="dot"></span>أمريكا الشمالية</div><p>ثالث أكبر قارة (بعد آسيا وإفريقيا).</p></div><div class="comp-card c-carb"><div class="comp-title"><span class="dot"></span>أمريكا الجنوبية</div><p>رابع أكبر قارة.</p></div><div class="comp-card c-mineral"><div class="comp-title"><span class="dot"></span>القارة القطبية الجنوبية</div><p>خامس أكبر قارة.</p></div><div class="comp-card c-radio"><div class="comp-title"><span class="dot"></span>أستراليا</div><p>سابع وأصغر قارة.</p></div><p style="margin-top:10px;font-size:14px;color:var(--ink-dim)">* هذا العام سيتم دراسة الأمريكتين وأستراليا من حيث السكان لأنها قارات مأهولة، ولن يتم دراسة القارة القطبية الجنوبية من حيث السكان لأنها متجمدة وغير مأهولة بالسكان.</p></section>
-<section><div class="section-head"><div class="num">🧭</div><h2>الموقع الفلكى والجغرافى لكل قارة</h2></div><div class="comp-card c-nicotine"><div class="comp-title"><span class="dot"></span>أمريكا الشمالية</div><p><b>الموقع الفلكى:</b> بين دائرتى عرض ٧°٣٠′ و٨٣° شمالًا، وخطى طول ١٠° و١٦٨° غربًا (تقع فى النصف الشمالى والغربى من الكرة الأرضية).</p><div class="fact"><b>يحدها:</b> شمالًا المحيط القطبى الشمالى · شرقًا الأطلنطى · جنوبًا وجنوب شرقًا البحر الكاريبى وأمريكا الجنوبية · غربًا الهادى.</div></div><div class="comp-card c-carb"><div class="comp-title"><span class="dot"></span>أمريكا الجنوبية</div><p><b>الموقع الفلكى:</b> بين دائرتى عرض ١٢° شمالًا و٥٦° جنوبًا، وخطى طول ٣٥° و٨١° غربًا (يقع معظمها فى النصف الجنوبى، وتقع كاملة فى النصف الغربى).</p><div class="fact"><b>يحدها:</b> شمالًا البحر الكاريبى وأمريكا الشمالية · شرقًا الأطلنطى · غربًا الهادى.</div></div><div class="comp-card c-mineral"><div class="comp-title"><span class="dot"></span>القارة القطبية الجنوبية</div><p>تقع فى أقصى جنوب الكرة الأرضية حول القطب الجنوبى مباشرة.</p><div class="fact"><b>يحدها:</b> يحيط بها المحيط القطبى الجنوبى من كل الجهات.</div></div><div class="comp-card c-radio"><div class="comp-title"><span class="dot"></span>أستراليا</div><p><b>الموقع الفلكى:</b> بين دائرتى عرض ١٠° و٤٤° جنوبًا، وخطى طول ١١٣° و١٧٨° شرقًا (تقع بالكامل فى النصف الجنوبى والشرقى).</p><div class="fact"><b>يحدها:</b> شمالًا بحرا آرافورا وتيمور · شرقًا الهادى · جنوبًا وغربًا الهادى والهندى.</div></div><div class="conclusion">📌 <b>دلل:</b> تظهر قارة أستراليا على شكل جزيرة كبيرة؛ حيث تحيط بها المياه من جميع الجهات.</div><div class="conclusion">📌 <b>دلل:</b> هناك تشابه بين موقعى قارتى أمريكا الشمالية والجنوبية فى الحدود الشرقية والغربية.</div></section>
-<section><div class="section-head"><div class="num">⭐</div><h2>أهمية الموقع الفلكى والجغرافى</h2></div><div class="comp-card c-nicotine"><div class="comp-title"><span class="dot"></span>🛡️ الأهمية الاستراتيجية</div><p>بسبب تيسير التجارة العالمية عن طريق قناة بنما.</p><div class="fact"><b>قناة بنما:</b> تربط بين المحيطين الأطلنطى والهادى، مما ساعد على اختصار آلاف الكيلومترات. حفرتها الولايات المتحدة وافتُتحت عام ١٩١٤م. وتُعد مع قناة السويس أهم ممرين مائيين اصطناعيين استراتيجيين فى العالم.</div></div><div class="comp-card c-mineral"><div class="comp-title"><span class="dot"></span>💰 الأهمية الاقتصادية</div><p>بسبب تنوع النظم البيئية، وامتلاك كميات كبيرة من مصادر الطاقة الأحفورية ومساحات كبيرة من الأراضى الزراعية. وتمتلك احتياطيات كبيرة من المعادن مثل اليورانيوم والحديد فى أستراليا.</p></div><div class="comp-card c-radio"><div class="comp-title"><span class="dot"></span>🏺 الأهمية الحضارية</div><p>تُعد مركزًا لالتقاء الثقافات الأوروبية والإفريقية والآسيوية نتيجة كثرة الهجرات إليها. وظهرت بها حضارات قديمة مثل المايا والإنكا.</p></div></section>
-<section><div class="section-head"><div class="num">🏔️</div><h2>أهم مظاهر سطح قارات العالم الجديد</h2></div><div class="split"><div class="col"><h3>أمريكا الشمالية</h3><ul><li>الجبال: الأبلاش (شرقًا) والروكى (غربًا)</li><li>الهضاب: لبرادور (شمال شرق)</li><li>السهول الفيضية: السهول الوسطى (نهر المسيسبى)</li><li>أشهر الجزر: جرينلاند (أكبر جزيرة تابعة لقارة)</li></ul></div><div class="col"><h3>أمريكا الجنوبية</h3><ul><li>الجبال: الإنديز (أطول سلسلة جبلية فى العالم)</li><li>الهضاب: البرازيل (أكبر هضاب القارة)</li><li>السهول: الأمازون (أوسع سهول نهرية فى العالم)</li><li>أشهر الجزر: فوكلاند</li></ul></div></div><div class="comp-card" style="--accent:var(--leaf)"><div class="comp-title"><span class="dot"></span>أستراليا</div><ul><li>الجبال: الحاجز الكبير (شرقًا)</li><li>الهضاب: غرب أستراليا (صحراوية)</li><li>السهول: نهرى مورى ودارلنج</li><li>أشهر الجزر: تسمانيا</li></ul></div><div class="conclusion">📌 يشترك كل من جبال الأبلاش وجبال الروكى فى أنهما: غنيان بالمعادن، ومركزان مهمان للسياحة.</div></section>`,
-
-2:`<div class="callout">💡 نشأت حضارتا المايا والإنكا فى الأمريكتين قبل وصول الأوروبيين إليها بعدة قرون، فى بيئات طبيعية متنوعة أثّرت فى حياتهما السياسية والاقتصادية والدينية والثقافية.</div>
-<section><div class="section-head"><div class="num">🌽</div><h2>حضارة المايا</h2></div><div class="comp-card c-nicotine"><div class="comp-title"><span class="dot"></span>الموقع</div><p>نشأت فى أقصى جنوب قارة أمريكا الشمالية، فى البرزخ الضيق الذى يصل بين الأمريكتين.</p></div><div class="comp-card"><div class="comp-title"><span class="dot"></span>الحياة السياسية</div><ul><li>مدن مستقلة تتحالف فيما بينها عند الحاجة، ولكل مدينة ملك.</li><li>الملك يجمع بين السلطة السياسية والدينية، ويُنظر إليه بوصفه ممثلًا للآلهة.</li><li>نظام الحكم وراثى، ويساعد الملك مجلس من الكهنة وكبار القادة العسكريين.</li></ul></div><div class="comp-card c-carb"><div class="comp-title"><span class="dot"></span>الحياة الاقتصادية</div><ul><li>اعتمدت بدايةً على الزراعة المتنقلة، ثم ظهرت الزراعة المستقرة والقرى.</li><li>مارسوا الحرف اليدوية مثل الفخار والنسيج.</li><li>ازداد اهتمامهم بالتجارة، فأنشأوا طرقًا وسط الغابات وقنوات مائية.</li></ul></div><div class="comp-card c-mineral"><div class="comp-title"><span class="dot"></span>الحياة الدينية</div><ul><li>تعدد الآلهة، ولكل إله دور محدد (إله المطر، إله الشمس...).</li><li>الملوك والكهنة يُدفنون فى أهرامات مع مجوهراتهم وأدواتهم.</li><li>عامة الناس يُدفنون تحت منازلهم مع ممتلكاتهم.</li></ul></div><div class="comp-card c-radio"><div class="comp-title"><span class="dot"></span>الحياة الثقافية والعلمية</div><ul><li>استخدموا الكتابة التصويرية التى تشبه الهيروغليفية عند المصريين القدماء.</li><li>دوّنوا الأحداث المهمة على جدران المعابد.</li><li>تقدّموا فى علم الفلك، ووضعوا تقويمًا دقيقًا قسّم السنة إلى 365 يومًا.</li></ul></div><div class="comp-card"><div class="comp-title"><span class="dot"></span>العمارة والفنون</div><ul><li>شيّدوا مراصد فلكية وقصورًا ضخمة.</li><li>بنوا أهرامات تشبه الأهرامات المصرية لكنها أقل ضخامة، وبُنيت المعابد فوقها.</li><li>من أبرز آثارهم هرم كوكولكان بالمكسيك، واهتموا بالنحت على الحجر والطين.</li></ul></div></section>
-<section><div class="section-head"><div class="num">🦙</div><h2>حضارة الإنكا</h2></div><div class="comp-card c-nicotine"><div class="comp-title"><span class="dot"></span>الموقع</div><p>نشأت غرب قارة أمريكا الجنوبية، فى المنطقة المطلة على المحيط الهادى.</p></div><div class="comp-card"><div class="comp-title"><span class="dot"></span>الحياة السياسية</div><ul><li>نظام حكم مركزى قوى وراثى داخل الأسرة الحاكمة.</li><li>أسهم فى استقرار وتوسع الإمبراطورية حتى أصبحت من أقوى إمبراطوريات أمريكا الجنوبية.</li></ul></div><div class="comp-card c-carb"><div class="comp-title"><span class="dot"></span>الحياة الاقتصادية</div><ul><li>برعوا فى الزراعة، وبنوا مخازن للحبوب ضمانًا للغذاء وقت الشدة.</li><li>ربّوا الحيوانات وخاصة اللاما التى استخدموها فى النقل.</li><li>تغلّبوا على طبيعة بلادهم الجبلية بزراعة المدرجات وشق قنوات لنقل المياه.</li><li>أبدعوا فى صناعة الأوانى الفخارية والمعدنية (الذهبية والنحاسية)، وبرعوا فى نسج القطن.</li><li>اعتمدوا فى تجارتهم على نظام المقايضة.</li></ul></div><div class="comp-card c-mineral"><div class="comp-title"><span class="dot"></span>الحياة الدينية</div><ul><li>تعدد الآلهة المرتبطة بالطبيعة، وأهمها إله الشمس.</li><li>كان حكام الإنكا يعدّون أنفسهم أبناء إله الشمس.</li><li>اشتُهروا بالتحنيط إيمانًا بالحياة بعد الموت، لكن تحنيطهم لم يبلغ دقة تحنيط المايا.</li></ul></div><div class="comp-card c-radio"><div class="comp-title"><span class="dot"></span>الحياة الثقافية والعلمية</div><ul><li>لم يعرفوا الكتابة التقليدية، وتحدثوا بلغة «الكيتشوا» الشفهية.</li><li>استخدموا وسيلة تُعرف بـ«الكيبو»: حبال ملوّنة وعقد لتدوين المعلومات رياضيًا.</li><li>عرفوا الأوقات المُثلى للزراعة والطقوس الدينية اعتمادًا على مراقبة الشمس والقمر والنجوم.</li></ul></div><div class="comp-card"><div class="comp-title"><span class="dot"></span>العمارة والفنون</div><ul><li>شيّدوا معابد وقصورًا ضخمة من كتل حجرية نُحتت بدقة عالية.</li><li>اهتموا ببناء الجسور وشق الطرق.</li><li>من أبرز آثارهم مدينة ماتشو بيتشو فى بيرو.</li></ul></div></section>
-<section><div class="section-head"><div class="num">🏺</div><h2>أوجه التشابه مع الحضارة المصرية القديمة</h2></div><div class="split"><div class="col"><h3>العمارة الضخمة</h3><p>بناء منشآت ضخمة مثل الأهرامات والمعابد.</p></div><div class="col"><h3>المعتقدات الدينية</h3><p>تعدد الآلهة، وتقديس الحاكم، والإيمان بالبعث والخلود، والتحنيط.</p></div></div><div class="split"><div class="col"><h3>الكتابة التصويرية</h3><p>استخدام رموز تصويرية لتسجيل الأحداث.</p></div><div class="col"><h3>علم الفلك</h3><p>وضع تقاويم دقيقة لتنظيم الحياة الزراعية.</p></div></div></section>`,
-
-3:`<div class="callout">💡 بدأت أوروبا حركة كبرى من الكشوف الجغرافية فى القرن الخامس عشر الميلادى، أدت إلى اكتشاف العالم الجديد وإعادة رسم خريطة العالم.</div>
-<section><div class="section-head"><div class="num">🧭</div><h2>تعريف الكشوف الجغرافية</h2></div><div class="text-block"><p>رحلات بحرية قام بها الأوروبيون بدأت فى القرن الخامس عشر الميلادى؛ لاكتشاف طرق بحرية جديدة ومناطق كانت مجهولة لهم.</p></div></section>
-<section><div class="section-head"><div class="num">💰</div><h2>دوافع الكشوف الجغرافية</h2></div><div class="comp-card c-nicotine"><div class="comp-title"><span class="dot"></span>🛡️ دوافع سياسية</div><p>تنافس دول مثل البرتغال وإسبانيا للتوسع وتكوين إمبراطوريات استعمارية خارج أوروبا.</p></div><div class="comp-card c-mineral"><div class="comp-title"><span class="dot"></span>💰 دوافع اقتصادية</div><p>البحث عن طرق تجارية جديدة للهند وشرق آسيا بعيدًا عن طريق الحرير الخاضع للعثمانيين والمماليك، وعن الذهب والفضة والتوابل.</p></div><div class="comp-card c-radio"><div class="comp-title"><span class="dot"></span>🧭 عوامل مساعدة</div><p>تطور السفن والأدوات الملاحية، وتقدّم علم الفلك والجغرافيا والرياضيات.</p></div></section>
-<section><div class="section-head"><div class="num">⛵</div><h2>رحلات أبرز المستكشفين</h2></div><ul class="steps"><li><span class="n">١</span><span><b>كريستوفر كولومبوس (إيطالى · بتمويل إسبانى):</b> انطلق من فكرة كروية الأرض، ووصل إلى جزر البهاما عام ١٤٩٢م معتقدًا أنها جزء من آسيا.</span></li><li><span class="n">٢</span><span><b>أميريجو فسبوتشى (إيطالى):</b> شارك فى عدة رحلات، وأثبت أن الأراضى المكتشفة قارة جديدة مستقلة؛ فسُمّيت «أمريكا» تقديرًا لجهوده.</span></li><li><span class="n">٣</span><span><b>ماجلان (برتغالى · بتمويل إسبانى):</b> عبر المحيط الأطلنطى، ووصل إلى المضيق الذى عُرف باسمه جنوب أمريكا الجنوبية، ومنه دخل الهادى. أكمل رفاقه الرحلة بعد وفاته وحققوا أول رحلة بحرية حول العالم عام ١٥٢٢م.</span></li><li><span class="n">٤</span><span><b>جيمس كوك (بريطانى):</b> وصل إلى الساحل الشرقى لأستراليا عام ١٧٧٠م، ورسم خرائط تفصيلية له، وأعلن تبعيته لبريطانيا.</span></li></ul></section>
-<section><div class="section-head"><div class="num">🕌</div><h2>دور العلماء المسلمين</h2></div><ul class="steps"><li><span class="n">١</span><span>ألّف علماء ورحّالة مسلمون (مثل أحمد بن ماجد) مؤلفات مهمة فى الجغرافيا والفلك والملاحة.</span></li><li><span class="n">٢</span><span>ساهم تأكيدهم على كروية الأرض فى تشجيع كولومبوس على التفكير فى الوصول للهند من جهة الغرب.</span></li><li><span class="n">٣</span><span>طوّروا أدوات ملاحية مثل البوصلة والإسطرلاب، استفاد منها الأوروبيون.</span></li></ul></section>
-<section><div class="section-head"><div class="num">🌍</div><h2>نتائج الكشوف الجغرافية</h2></div><div class="split"><div class="col danger"><h3>⚔️ سياسية</h3><p>تنافس الدول الأوروبية للسيطرة على الأراضى المكتشفة، وتكوين المستعمرات، وحروب عديدة.</p></div><div class="col safe"><h3>🪙 اقتصادية</h3><p>تحوّل المحيط الأطلنطى إلى طريق رئيسى للتجارة، وتدفق الذهب والفضة إلى أوروبا.</p></div></div><div class="split"><div class="col"><h3>🔭 علمية</h3><p>تطور علم الجغرافيا، ورسم خرائط أكثر دقة، والتعرف على نباتات وحيوانات جديدة.</p></div><div class="col"><h3>🌍 اجتماعية</h3><p>هجرات كبيرة من أوروبا إلى العالم الجديد، مع آثار سلبية على السكان الأصليين والأفارقة.</p></div></div></section>
-<section><div class="section-head"><div class="num">💭</div><h2>تأثير الكشوف على السكان الأصليين</h2></div><ul class="steps"><li><span class="n">١</span><span><b>الإبادة:</b> مثلما فعل الأوروبيون ضد الهنود الحمر فى أمريكا الشمالية.</span></li><li><span class="n">٢</span><span><b>وفاة أعداد كثيرة</b> نتيجة أمراض ووبئة وافدة كالجدرى والإنفلونزا.</span></li><li><span class="n">٣</span><span><b>احتلال أراضيهم وتهجيرهم،</b> وتراجع حضاراتهم.</span></li><li><span class="n">٤</span><span><b>تعرضهم للتمييز والاستغلال</b> فى المزارع والمناجم.</span></li><li><span class="n">٥</span><span><b>تأثر ثقافاتهم</b> بانتشار الثقافة الأوروبية.</span></li></ul></section>
-<section><div class="section-head"><div class="num">⛓️</div><h2>تجارة الرقيق</h2></div><div class="text-block"><p>فى بداية الكشوف، كان اهتمام البرتغال وإسبانيا منصبًا على الحصول على الذهب والتوابل والسلع التجارية.</p><p><b>بعد اكتشاف الأمريكتين:</b> أصبح الرقيق الإفريقى السلعة الأهم للعمل فى المزارع والمناجم بالمستعمرات الأوروبية.</p><p>واستغلت القوى الأوروبية الصراعات الداخلية فى المجتمعات الإفريقية ومنعت قيام وحدات سياسية قوية؛ لضمان استمرار استغلال البشر.</p></div><div class="obs-box"><b>💭 تذكر أن:</b> تجارة الرقيق هى بيع وشراء البشر كعبيد، واستغلالهم فى العمل الإجبارى، وحرمانهم من حريتهم.</div></section>`,
-
-4:`<div class="callout">💡 <b>الفكرة الرئيسية:</b> بعد رحيل الحملة الفرنسية عام ١٨٠١م تصارعت ثلاث قوى (إنجلترا، الدولة العثمانية، المماليك) على حكم مصر، وفى خضم هذا الصراع نجح «محمد على» فى كسب ثقة المصريين حتى تولى حكم مصر عام ١٨٠٥م.</div>
-<section><div class="section-head"><div class="num">🕊️</div><h2>أحوال مصر بعد الحملة الفرنسية (١٨٠١م)</h2></div><div class="comp-card" style="--accent:var(--toxic)"><div class="comp-title"><span class="dot"></span>إنجلترا</div><p>بقيت قواتها فى الإسكندرية من أجل حماية مصالحها وتأمين طريق التجارة إلى الهند، وغادرت بعد صلح أميان ١٨٠٢م.</p></div><div class="comp-card c-mineral"><div class="comp-title"><span class="dot"></span>الدولة العثمانية</div><p>استعادت سيطرتها وعيّنت خورشيد باشا واليًا، لكنها أرهقت المصريين بالضرائب لدفع مرتبات الجنود.</p></div><div class="comp-card c-carb"><div class="comp-title"><span class="dot"></span>المماليك</div><p>رأوا أحقيتهم فى حكم مصر، لكن ضعفت قوتهم بسبب خسائرهم أمام الفرنسيين وانقسامهم إلى فرق متنافسة.</p></div></section>
-<section><div class="section-head"><div class="num">🔥</div><h2>ثورة الشعب المصرى ١٨٠٤م ضد البرديسى</h2></div><ul class="steps"><li><span class="n">١</span><span><b>السبب:</b> فرض البرديسى ضرائب باهظة على المصريين لدفع رواتب الجنود وجمعها بالقوة.</span></li><li><span class="n">٢</span><span><b>الأحداث:</b> ثار المصريون وتجمعوا فى الأزهر، وتدخل «محمد على» ووعد بإلغاء الضريبة، ثم حاصر دار البرديسى.</span></li><li><span class="n">٣</span><span><b>النتائج:</b> مغادرة البرديسى القاهرة عام ١٨٠٤م، وتعيين خورشيد باشا واليًا.</span></li></ul></section>
-<section><div class="section-head"><div class="num">👑</div><h2>دور الشعب فى تولية «محمد على» ١٨٠٥م</h2></div><p>اشتد ظلم خورشيد باشا، فاجتمع المشايخ والعلماء وتوجهوا إلى «محمد على» يطلبون عزل خورشيد، فوافقهم بعد تردد.</p><ul class="steps"><li><span class="n">١</span><span>قام السيد عمر مكرم والشيخ عبد الله الشرقاوى بإلباسه قفطان الولاية.</span></li><li><span class="n">٢</span><span>حاصر «محمد على» خورشيد باشا بالقلعة بعد رفضه التنازل.</span></li><li><span class="n">٣</span><span>أصدر السلطان العثمانى فرمانًا عام ١٨٠٥م بتوليته حكم مصر وعزل خورشيد.</span></li></ul><div class="conclusion">✅ وبذلك انتصرت إرادة الشعب المصرى فى اختيار «محمد على» واليًا على مصر.</div></section>
-<section><div class="section-head"><div class="num">🛡️</div><h2>التحديات بعد التولية</h2></div><div class="comp-card c-nicotine"><div class="comp-title"><span class="dot"></span>١) محاولة نقله إلى سالونيك (١٨٠٦م)</div><p>طلب المساعدة من المشايخ والعلماء لكتابة رسالة للسلطان، فتراجع السلطان وأصدر مرسومًا بتثبيته.</p></div><div class="comp-card c-radio"><div class="comp-title"><span class="dot"></span>٢) حملة فريزر (١٨٠٧م)</div><p>أرسلت إنجلترا حملة بقيادة فريزر لاحتلال مصر ومساعدة الألفى، لكنها فشلت بسبب بسالة الأهالى وانضمام جيش «محمد على» لهم، فانسحبت فى نفس العام.</p></div><div class="comp-card c-mineral"><div class="comp-title"><span class="dot"></span>٣) الزعامة الشعبية (١٨٠٩م)</div><p>تضامن المشايخ بزعامة عمر مكرم مع الأهالى ضد الضرائب، فعزل «محمد على» عمر مكرم ونفاه إلى دمياط.</p></div><div class="comp-card" style="--accent:var(--toxic)"><div class="comp-title"><span class="dot"></span>٤) خطر المماليك — مذبحة القلعة (١٨١١م)</div><p>أقام «محمد على» حفلًا فى القلعة دعا إليه أمراء المماليك، ثم أُغلقت الأبواب وتخلص جنوده منهم، ثم طارد من تبقى فى الصعيد.</p></div></section>`,
-
-5:`<div class="callout">📌 <b>دلل:</b> يُعد عهد «محمد على» باشا (١٨٠٥ - ١٨٤٨م) نقطة تحول كبرى فى تاريخ مصر؛ حيث أسس الدولة الحديثة بعد قرون من الفوضى والصراعات الداخلية.</div>
-<section><div class="section-head"><div class="num">🏛️</div><h2>أولًا: الإصلاح الإدارى</h2></div><div class="comp-card"><div class="comp-title"><span class="dot"></span>تنظيم الإدارة</div><p>تقسيم مصر إداريًا إلى سبع مديريات، يتبع كل مديرية عدد من المراكز، وجعل الحكومة المركزية فى القاهرة على رأس هذا النظام.</p></div><div class="comp-card c-carb"><div class="comp-title"><span class="dot"></span>المجالس والدواوين</div><p>أنشأ عدة مجالس مثل مجلس المشورة، وكان رأيه استشاريًا فقط، والرأى النهائى لـ«محمد على».</p></div></section>
-<section><div class="section-head"><div class="num">⚙️</div><h2>ثانيًا: الإصلاح العسكرى</h2></div><div class="comp-card c-nicotine"><div class="comp-title"><span class="dot"></span>الجيش</div><p>أنشأ جيشًا نظاميًا حديثًا من المصريين، وأرسل الضباط فى بعثات إلى أوروبا، وأنشأ المدارس العسكرية المتخصصة، وترسانة لصنع الأسلحة بالقلعة، وديوان الجهادية.</p></div><div class="comp-card c-radio"><div class="comp-title"><span class="dot"></span>الأسطول</div><p>أنشأ ترسانة لصناعة السفن فى بولاق ثم الإسكندرية، وإدارة خاصة للأساطيل، والمدرسة البحرية، وأرسل الضباط البحريين فى بعثات.</p></div></section>
-<section><div class="section-head"><div class="num">💰</div><h2>ثالثًا: الإصلاح الاقتصادى</h2></div><div class="comp-card c-mineral"><div class="comp-title"><span class="dot"></span>إلغاء نظام الالتزام</div><p>حلّت الدولة محل الملتزم، وعادت إليها الأموال التى كان يحصلها الملتزمون.</p></div><div class="comp-card"><div class="comp-title"><span class="dot"></span>نظام الاحتكار</div><p>فرضت الحكومة على الفلاحين زراعة محاصيل مُحددة (خاصة القطن) ثم تشتريها بسعر مُحدَّد.</p></div><div class="split"><div class="col safe"><h3>مميزات</h3><p>زيادة دخل الدولة، تمويل الجيش، تمويل المشروعات.</p></div><div class="col danger"><h3>عيوب</h3><p>إرهاق الفلاحين، وضعف التجارة الحرة وهروب بعض التجار.</p></div></div><div class="comp-card c-carb"><div class="comp-title"><span class="dot"></span>الزراعة والرى</div><p>أدخل القطن طويل التيلة، وحفر الترع مثل المحمودية، وأقام الجسور والقناطر، وبدأ القناطر الخيرية لتطبيق نظام الرى الدائم.</p></div><div class="comp-card c-radio"><div class="comp-title"><span class="dot"></span>الصناعة</div><p>طوّر الصناعات القديمة، واستعان بخبراء أوروبيين، وأنشأ مصانع جديدة.</p></div></section>
-<section><div class="section-head"><div class="num">🎓</div><h2>رابعًا: الإصلاح الاجتماعى</h2></div><div class="comp-card c-nicotine"><div class="comp-title"><span class="dot"></span>التعليم والثقافة</div><p>أنشأ المدارس العليا (الطب، الهندسة، الزراعة)، والمدارس الابتدائية والتجهيزية، وأرسل البعثات العلمية، وأنشأ مدرسة الألسن وديوان المدارس والمطبعة الأميرية.</p></div><div class="comp-card c-carb"><div class="comp-title"><span class="dot"></span>العمران</div><p>شيّد الحصون والقلاع، والسرايات مثل سراى رأس التين وسراى قصر النيل.</p></div></section>
-<section><div class="section-head"><div class="num">🗺️</div><h2>السياسة الخارجية</h2></div><div class="comp-card"><div class="comp-title"><span class="dot"></span>١) حروب شبه الجزيرة العربية</div><p>للقضاء على الوهابيين. النتائج: هزيمة الوهابيين وسيطرته على معظم شبه الجزيرة.</p></div><div class="comp-card c-carb"><div class="comp-title"><span class="dot"></span>٢) حرب السودان</div><p>النتائج: مد النفوذ المصرى إلى جنوب السودان، وإنشاء مدينة الخرطوم، واكتشاف منابع نهر النيل.</p></div><div class="comp-card" style="--accent:var(--toxic)"><div class="comp-title"><span class="dot"></span>٣) حرب المورة (اليونان)</div><p>لإخماد الثورة فى المورة. النتائج: تحطيم الأسطولين العثمانى والمصرى فى معركة نافارين ١٨٢٧م.</p></div><div class="comp-card c-radio"><div class="comp-title"><span class="dot"></span>٤) حروب الشام</div><p>أسبابها الحقيقية: توسيع نفوذه السياسى. النتائج: الاستيلاء على مدن الشام والتوغل فى آسيا الصغرى.</p></div></section>
-<section><div class="section-head"><div class="num">📜</div><h2>معاهدة لندن ١٨٤٠م</h2></div><div class="text-block"><p><b>أسبابها:</b> خشية الدول الأوروبية من توسعات «محمد على».</p></div><div class="split"><div class="col safe"><h3>شروطها</h3><ul><li>احتفاظه بحكم مصر وراثيًا فى أسرته.</li><li>احتفاظه بولاية عكا مدى حياته.</li><li>الموافقة خلال ١٠ أيام وإلا سُحبت منه عكا.</li></ul></div><div class="col danger"><h3>نتائجها</h3><ul><li>فشل مشروع الاستقلال بحكم مصر.</li><li>انسحابه من كل الأراضى التى سيطر عليها.</li><li>تقليل عدد الجيش وإغلاق المدارس والمصانع.</li></ul></div></div><div class="conclusion">✅ ورغم فشل «محمد على» فى مشروعه السياسى إلا أنه نجح فى وضع قواعد الدولة المصرية الحديثة على أسس راسخة.</div></section>`,
-
-6:`<div class="callout">💡 بعد أن نجح «محمد على» فى وضع أسس الدولة المصرية الحديثة، تولى حكم مصر بعده عدد من أبناء وأحفاد أسرته.</div>
-<section><div class="section-head"><div class="num">👥</div><h2>من أبرز خلفاء «محمد على»</h2></div><div class="split"><div class="col"><h3>⚔️ إبراهيم باشا</h3><p>حكم عدة أشهر فقط (١٨٤٨م)</p></div><div class="col"><h3>🎩 عباس حلمى باشا الأول</h3><p>١٨٤٨ - ١٨٥٤م</p></div></div><div class="split"><div class="col"><h3>🚢 محمد سعيد باشا</h3><p>١٨٥٤ - ١٨٦٣م</p></div><div class="col"><h3>🏛️ الخديو إسماعيل</h3><p>١٨٦٣ - ١٨٧٩م</p></div></div></section>
-<section><div class="section-head"><div class="num">١</div><h2>إبراهيم باشا</h2></div><div class="comp-card"><div class="comp-title"><span class="dot"></span>أبرز ملامح عصره</div><p>ساعد والده فى أعماله الحربية، وقاد الجيش المصرى فى كثير من المعارك. تولى حكم مصر بعد مرض والده، ولم يبق فى الحكم إلا عدة أشهر ومات قبل وفاة والده.</p></div></section>
-<section><div class="section-head"><div class="num">٢</div><h2>عباس حلمى باشا الأول (١٨٤٨ - ١٨٥٤م)</h2></div><div class="comp-card c-nicotine"><div class="comp-title"><span class="dot"></span>مميزات حكمه</div><p>أصلح الطريق البرى بين القاهرة والسويس، وبدأ فى مد خط سكة حديد القاهرة - الإسكندرية، ومد الخطوط التلغرافية.</p></div><div class="comp-card" style="--accent:var(--toxic)"><div class="comp-title"><span class="dot"></span>مساوئ حكمه: الرجعية والجمود</div><p>أغلق معظم المدارس والمصانع، واستدعى البعثات العلمية من فرنسا، وأهمل الجيش والبحرية.</p></div></section>
-<section><div class="section-head"><div class="num">٣</div><h2>محمد سعيد باشا (١٨٥٤ - ١٨٦٣م)</h2></div><div class="comp-card c-nicotine"><div class="comp-title"><span class="dot"></span>الزراعة</div><p>أصدر اللائحة السعيدية التى منحت الفلاح حق توريث الأرض وتصريف محاصيله، وخفّف الضرائب.</p></div><div class="comp-card c-carb"><div class="comp-title"><span class="dot"></span>التجارة والسكك الحديدية</div><p>أنشأ شركات الملاحة النهرية والبحرية، واستكمل خط السكة الحديدية القاهرة - الإسكندرية، ومد خط القاهرة - السويس.</p></div><div class="comp-card c-mineral"><div class="comp-title"><span class="dot"></span>الجيش والثقافة</div><p>قصّر مدة الخدمة العسكرية إلى عام وجعلها إجبارية، وفتح باب الترقى للمصريين، وجهّز مخازن ببولاق لحفظ الآثار.</p></div><div class="comp-card" style="--accent:var(--toxic)"><div class="comp-title"><span class="dot"></span>مساوئ حكمه</div><p>ألغى ديوان المدارس، وفتح باب الاستدانة، ومنح دليسبس امتياز قناة السويس الأول ١٨٥٤م والثانى ١٨٥٦م.</p></div></section>
-<section><div class="section-head"><div class="num">٤</div><h2>الخديو إسماعيل (١٨٦٣ - ١٨٧٩م)</h2></div><div class="comp-card c-nicotine"><div class="comp-title"><span class="dot"></span>الزراعة والرى والصناعة</div><p>زيادة المساحة الزراعية، والتوسع فى القطن وقصب السكر، وحفر ترعتى الإبراهيمية والإسماعيلية، وإعادة فتح المصانع.</p></div><div class="comp-card c-carb"><div class="comp-title"><span class="dot"></span>السكك الحديدية والبريد</div><p>إنشاء عدة خطوط للسكك الحديدية، ومد الخطوط التلغرافية، وإنشاء مصلحة البريد المصرية.</p></div><div class="comp-card c-radio"><div class="comp-title"><span class="dot"></span>النهضة الثقافية والعلمية</div><p>مضاعفة ميزانية التعليم، وإنشاء المدرسة السنية للبنات، ودار الأوبرا، ودار الرصد، والجمعية الجغرافية، ودار الآثار العربية.</p></div><div class="comp-card c-mineral"><div class="comp-title"><span class="dot"></span>النهضة العمرانية ومجلس شورى النواب</div><p>إعادة تخطيط أحياء القاهرة وإنشاء حى عابدين وقصر عابدين وقصر القبة. أنشأ مجلس شورى النواب ١٨٦٦م وكان دوره استشاريًا.</p></div><div class="comp-card" style="--accent:var(--toxic)"><div class="comp-title"><span class="dot"></span>مساوئ حكمه: أزمة الديون</div><p>لجأ للاقتراض لدفع تعويضات قناة السويس، والإنفاق على المشروعات والقصور، ودفع أموال للسلطان العثمانى للحصول على لقب «خديو».</p></div><div class="comp-card"><div class="comp-title"><span class="dot"></span>مظاهر التدخل الأجنبى</div><p>بعثة كيف ١٨٧٥م، صندوق الدين ١٨٧٦م، المراقبة الثنائية، لجنة التحقيق العليا ١٨٧٨م، الوزارة المختلطة.</p></div><div class="comp-card c-nicotine"><div class="comp-title"><span class="dot"></span>الحركة الوطنية واللائحة الوطنية ١٨٧٩م</div><p>طالبت بتشكيل وزارة وطنية مسئولة أمام مجلس نيابى حقيقى. وافق الخديو وكلف شريف باشا بتشكيل وزارة وطنية. ضغطت إنجلترا وفرنسا، فصدر مرسوم بخلعه وتولية ابنه محمد توفيق.</p></div></section>`
-};
-
-/* ==================== SOC_P (بنوك الأسئلة) ==================== */
-const SOC_P={
-1:[
-["١) صح و خطأ",[
-["تشتهر جبال الأبلاش وجبال روكى بغناهما بالمعادن، وأنهما مركزان مهمان للسياحة بقارة أمريكا الشمالية.","(✓) صحيحة."],
-["تقع هضبة لبرادور جنوب قارة أمريكا الشمالية.","(✗) خطأ: تقع هضبة لبرادور فى الشمال الشرقى من القارة."],
-["يُعد نهر المسيسيبى أقصر أنهار قارة أمريكا الشمالية.","(✗) خطأ: يُعد نهر المسيسيبى من أطول أنهار القارة."],
-["تتسم مظاهر السطح بقارة أمريكا الجنوبية بالتنوع.","(✓) صحيحة."],
-["تمتد هضبة البرازيل فى شرق قارة أمريكا الشمالية.","(✗) خطأ: تمتد هضبة البرازيل فى شرق قارة أمريكا الجنوبية."],
-["يصب نهر الأمازون فى المحيط الهادى.","(✗) خطأ: يصب نهر الأمازون فى المحيط الأطلنطى."],
-["تُعد معظم أنهار قارة أستراليا أنهارًا دائمة الجريان.","(✗) خطأ: معظم أنهار أستراليا غير دائمة الجريان."]
-]],
-["٢) اختر الإجابة الصحيحة",[
-["تمتلك قارات العالم الجديد احتياطيات كبيرة من المعادن ومصادر الطاقة نتيجة: (أ) موقعها الفلكى والجغرافى (ب) صغر مساحتها (ج) كثافتها السكانية العالية (د) قلة عدد أنهارها","(أ) موقعها الفلكى والجغرافى"],
-["يمتد أطول سلاسل الجبال بقارة أمريكا الشمالية فى جهتها: (أ) الشرقية (ب) الغربية (ج) الشمالية (د) الجنوبية","(ب) الغربية"],
-["تُعد سهول حوض نهر الأمازون أوسع سهول نهرية فى العالم بسبب: (أ) طول النهر فقط (ب) شدة انحدار النهر (ج) تعدد روافده وانتشار الغابات حوله (د) قربه من المحيط الهادى","(ج) تعدد روافده وانتشار الغابات حوله"],
-["حدد أى الظاهرات التالية توجد بشكل أكبر فى قارة أمريكا الجنوبية عن أمريكا الشمالية وأستراليا: (أ) الأنهار (ب) البحيرات (ج) الهضاب (د) الجزر","(أ) الأنهار"],
-["يصب معظم أنهار قارة أمريكا الجنوبية فى: (أ) المحيط الهادى (ب) المحيط الأطلنطى (ج) البحر الكاريبى (د) خليج المكسيك","(ب) المحيط الأطلنطى"],
-["المظهر التضاريسى الذى يشغل نحو ثلثى مساحة قارة أستراليا هو: (أ) جبال الحاجز الكبير (ب) هضبة غرب أستراليا (ج) السهول الفيضية (د) السهول الساحلية","(ب) هضبة غرب أستراليا"],
-["تمتد أطول سلسلة جبلية فى العالم (الإنديز) على طول ساحل أمريكا الجنوبية المطل على المحيط: (أ) الأطلنطى (ب) الهادى (ج) الهندى (د) القطبى الشمالى","(ب) الهادى"]
-]],
-["٣) بم تفسر",[
-["لموقع قارات العالم الجديد أهمية استراتيجية؟","بسبب تيسير التجارة العالمية عن طريق قناة بنما التى تربط بين المحيطين الأطلنطى والهادى."],
-["لموقع قارات العالم الجديد أهمية اقتصادية؟","بسبب الموقع الفلكى للأمريكتين الذى أدى إلى تنوع النظم البيئية بهما، وامتلاك كميات كبيرة من مصادر الطاقة الأحفورية ومساحات كبيرة من الأراضى الزراعية."],
-["الأهمية الاقتصادية لهضبة البرازيل؟","لاحتوائها على ثروات معدنية وأراضٍ زراعية متنوعة تدعم النشاط الاقتصادى لدول أمريكا الجنوبية."],
-["إنشاء الكثير من الموانئ الطبيعية على السواحل الشرقية لقارة أمريكا الشمالية؟","لتعرّج هذه السواحل وانتشار الخلجان بها، مما يوفر مواقع طبيعية مناسبة لإقامة الموانئ وتيسير حركة الملاحة والتجارة."],
-["رغم صغر مساحة أستراليا إلا أنها تمتد فى عدد خطوط طول أكثر من قارة أمريكا الجنوبية؟","لأن أستراليا تمتد أفقيًا (شرقًا وغربًا) أكثر من امتدادها الرأسى، بعكس أمريكا الجنوبية التى تمتد رأسيًا أكثر من امتدادها الأفقى."],
-["تُعد قناة بنما ذات أهمية استراتيجية كبرى؟","لأنها تصل بين المحيطين الأطلنطى والهادى، مما يختصر المسافة والوقت لحركة الملاحة والتجارة العالمية بدلًا من الدوران حول قارة أمريكا الجنوبية."]
-]],
-["٤) دلل",[
-["تمتلك قارات العالم الجديد أهمية اقتصادية كبيرة.","تمتلك احتياطيات كبيرة من المعادن ومصادر الطاقة الأحفورية، كما تضم مساحات واسعة من الأراضى الزراعية الخصبة."],
-["تتمتع قارات العالم الجديد بأهمية استراتيجية.","يوجد بها قناة بنما التى تصل بين المحيطين الأطلنطى والهادى وتيسّر حركة التجارة العالمية."],
-["تنوعت مظاهر سطح قارات العالم الجديد.","توجد بها جبال شاهقة (الروكى، الإنديز، الحاجز الكبير)، وهضاب (لبرادور، البرازيل، غرب أستراليا)، وسهول فيضية وساحلية، وجزر متنوعة كجرينلاند وتسمانيا."]
-]],
-["٥) قارن",[
-["بين أمريكا الشمالية وأستراليا من حيث الموقع الجغرافى وترتيبهما بين قارات العالم من حيث المساحة.","أمريكا الشمالية: يحدها المحيط القطبى الشمالى شمالًا والأطلنطى شرقًا والهادى غربًا، وتحتل المرتبة الثالثة عالميًا.<br>أستراليا: يحدها بحرا آرافورا وتيمور شمالًا، والمحيطان الهادى والهندى من باقى الجهات، وتحتل المرتبة السابعة (الأصغر)."],
-["بين السهول الساحلية الشرقية والغربية لقارة أمريكا الشمالية.","الشرقية: واسعة نسبيًا وتنتشر بها موانئ طبيعية كثيرة.<br>الغربية: أضيق نتيجة اقتراب جبال الروكى من الساحل مباشرة."]
-]],
-["٦) ماذا يحدث إذا",[
-["لم تُحفر قناة بنما؟","تصعب حركة التجارة العالمية بين المحيطين الأطلنطى والهادى، وتضطر السفن للدوران حول أمريكا الجنوبية، مما يزيد تكلفة النقل ووقته."],
-["كانت قارة أستراليا متصلة بآسيا بريًا؟","يسهل انتقال السكان والحيوانات والنباتات بين القارتين بريًا، ولن تكون أستراليا معزولة كما هى الآن."],
-["لم تتوافر لقارات العالم الجديد ثروات معدنية وزراعية كبيرة؟","تقل أهميتها الاقتصادية العالمية، ويقل اهتمام الدول الأخرى بالتعامل والاستثمار معها."]
-]]
-],
-2:[
-["١) صح و خطأ",[
-["كانت المدن المستقلة فى حضارة المايا تتحالف فيما بينها عند الحاجة.","(✓) صحيحة."],
-["كان عامة الشعب فى حضارة المايا يُدفنون فى الأهرامات مع ممتلكاتهم.","(✗) خطأ: كان الملوك والكهنة من يُدفنون فى الأهرامات، أما عامة الناس فيُدفنون تحت منازلهم."],
-["أنشأت حضارة المايا أهرامات أضخم ودقة من الأهرامات المصرية القديمة.","(✗) خطأ: أهرامات المايا أقل ضخامة من الأهرامات المصرية."],
-["لم يعرف شعب الإنكا الكتابة التقليدية، واستخدموا لغة الكيتشوا الشفهية.","(✓) صحيحة."],
-["كان لكل مدينة فى حضارة المايا جيشها الخاص بها.","(✓) صحيحة."],
-["أهمل شعب المايا الزخرفة بالنقوش.","(✗) خطأ: اهتم شعب المايا بالزخرفة بالنقوش، وازدهر لديهم فن النحت."]
-]],
-["٢) اختر الإجابة الصحيحة",[
-["نشأت حضارة المايا فى أقصى جنوب قارة أمريكا الشمالية بالجهة: (أ) الشمالية (ب) الجنوبية (ج) الشرقية (د) الغربية","(ب) الجنوبية"],
-["ظهرت القرى المستقرة فى حضارة المايا نتيجة معرفة شعبها بـ: (أ) الزراعة المتنقلة (ب) الزراعة المستقرة (ج) التجارة الداخلية فقط (د) الصناعة فقط","(ب) الزراعة المستقرة"],
-["استخدم شعب الإنكا لتوثيق المعلومات رياضيًا وسيلة تُعرف باسم: (أ) الكتابة الهيروغليفية (ب) الكيبو (الحبال المعقودة) (ج) الكتابة المسمارية (د) الألواح الطينية","(ب) الكيبو (الحبال المعقودة)"],
-["تميزت حضارة المايا بموقعها بالقرب من عدة مسطحات مائية منها: (أ) المحيط الهندى (ب) خليج المكسيك (ج) بحر تيمور (د) خليج هدسن","(ب) خليج المكسيك"],
-["نشأت حضارة الإنكا فى الجزء ...... من قارة أمريكا الجنوبية: (أ) الشمالى (ب) الجنوبى (ج) الشرقى (د) الغربى","(د) الغربى"]
-]],
-["٣) بم تفسر",[
-["عدم وجود حكومة مركزية موحدة عند حضارة المايا؟","لأن حضارة المايا تكوّنت من عدة مدن مستقلة، لكل منها ملكها ونظام حكمها الخاص، وكانت تتحالف فيما بينها فقط عند الحاجة."],
-["أهمية الكتابة التصويرية فى حضارة المايا؟","لأنها مكّنت شعب المايا من تسجيل وتوثيق الأحداث المهمة وعلومهم على جدران المعابد لتبقى مرجعًا لهم وللأجيال التالية."],
-["قيام شعب المايا بدفن مجوهرات وأدوات الملوك والكهنة معهم عند وفاتهم؟","إيمانًا منهم بفكرة الحياة بعد الموت، واعتقادهم أن هذه الأدوات ستكون فى خدمتهم فى حياتهم الأخرى."],
-["تعدد الآلهة عند شعبَى المايا والإنكا؟","لاعتقادهم بارتباط الآلهة بمظاهر الطبيعة المختلفة، ولكل إله دور محدد فى حياتهم اليومية."]
-]],
-["٤) دلل",[
-["تشابهت أهرامات حضارة المايا مع الأهرامات المصرية القديمة.","كلاهما منشأة ضخمة استُخدمت لدفن الملوك والكهنة مع ممتلكاتهم، وإن كانت أهرامات المايا أقل ضخامة وبُنيت المعابد فوقها."],
-["برعت حضارة الإنكا فى التغلب على طبيعة بلادها الجبلية.","برعوا فى زراعة المدرجات، وشقّوا قنوات لنقل المياه إلى الأراضى المرتفعة، وأقاموا جسورًا معلّقة من ألياف النباتات."],
-["اهتم شعب المايا بعلم الفلك.","طوروا نظامًا دقيقًا للتقويم قسّم السنة إلى 365 يومًا، ورصدوا حركة النجوم والكواكب مثل المصريين القدماء."]
-]],
-["٥) قارن",[
-["بين حضارتَى المايا والإنكا من حيث نظام الكتابة.","المايا: عرفوا الكتابة التصويرية التى تشبه الهيروغليفية، ودوّنوا بها أحداثهم على جدران المعابد.<br>الإنكا: لم يعرفوا الكتابة التقليدية، وتحدثوا بلغة «الكيتشوا» الشفهية، واستخدموا «الكيبو»."],
-["بين الحياة الاقتصادية عند حضارتَى المايا والإنكا.","المايا: اعتمدوا على الزراعة (متنقلة ثم مستقرة) والحرف اليدوية كالفخار والنسيج.<br>الإنكا: برعوا فى الزراعة الجبلية (المدرجات)، وتربية اللاما، والصناعات المعدنية والنسيجية، واعتمدوا نظام المقايضة."]
-]],
-["٦) ماذا يحدث إذا",[
-["لم يؤمن شعب المايا بفكرة الحياة الأخرى بعد الموت؟","لَما اهتموا بدفن الملوك والكهنة فى الأهرامات مع مجوهراتهم وأدواتهم الشخصية."],
-["لم يطوّر شعب الإنكا نظام «الكيبو»؟","تصعب عليهم عملية توثيق المعلومات والإحصاءات المهمة فى ظل عدم معرفتهم بالكتابة التقليدية."]
-]]
-],
-3:[
-["١) صح و خطأ",[
-["بدأت أوروبا حركة كبرى من الكشوف الجغرافية فى القرن الخامس عشر الميلادى.","(✓) صحيحة."],
-["وصل كريستوفر كولومبوس إلى جزر بريطانية بعد رحلة مليئة بالصعوبات.","(✗) خطأ: وصل كولومبوس إلى جزر البهاما بالقرب من سواحل أمريكا الشمالية."],
-["أطلق ماجلان اسم «الهادى» على المحيط الذى وصل إليه لأن أمواجه بدت هادئة.","(✓) صحيحة."],
-["توصل ماجلان إلى أن الأراضى المكتشفة قارة جديدة مستقلة وليست جزءًا من آسيا.","(✗) خطأ: أميريجو فسبوتشى هو من توصل إلى ذلك."],
-["يُعد تكوين إمبراطوريات استعمارية خارج أوروبا أحد الدوافع الاقتصادية للكشوف الجغرافية.","(✗) خطأ: هو أحد الدوافع السياسية وليس الاقتصادية."],
-["رسم جيمس كوك خرائط تفصيلية للساحل الغربى لقارة أستراليا.","(✗) خطأ: رسم خرائط تفصيلية للساحل الشرقى لأستراليا."]
-]],
-["٢) اختر الإجابة الصحيحة",[
-["من الدوافع السياسية لقيام أوروبا بالكشوف الجغرافية: (أ) البحث عن طرق تجارية جديدة (ب) فرض النفوذ وتكوين إمبراطوريات استعمارية (ج) الحصول على المعادن النفيسة (د) تجنب طريق الحرير البرى","(ب) فرض النفوذ وتكوين إمبراطوريات استعمارية"],
-["اعتمد كولومبوس على فكرة كروية الأرض متجهًا نحو الهند من جهة: (أ) الشمال (ب) الجنوب (ج) الشرق (د) الغرب","(د) الغرب"],
-["وصل جيمس كوك عام 1770م إلى الساحل الشرقى لقارة: (أ) أمريكا الشمالية (ب) أمريكا الجنوبية (ج) أستراليا (د) آسيا","(ج) أستراليا"],
-["الموطن الأصلى لكل من كريستوفر كولومبوس وأميريجو فسبوتشى هو دولة: (أ) إيطاليا (ب) البرتغال (ج) إسبانيا (د) بريطانيا","(أ) إيطاليا"],
-["يتمثل وجه الشبه بين رحلتَى كريستوفر كولومبوس وماجلان فى: (أ) الوصول لجزر الفلبين (ب) عبورهم المحيط الهادى (ج) جهة تمويل رحلاتهم (د) الوصول لشرق آسيا","(ج) جهة تمويل رحلاتهم"]
-]],
-["٣) بم تفسر",[
-["بحث الأوروبيين عن طرق تجارية جديدة للوصول إلى الهند وشرق آسيا؟","لتجنب المرور بطريق الحرير البرى أو الأراضى الخاضعة لسيطرة العثمانيين والمماليك."],
-["أصبح الرقيق الإفريقى السلعة الأهم بعد اكتشاف الأمريكتين؟","للعمل فى المزارع والمناجم بالمستعمرات الأوروبية بالأمريكتين."],
-["أهمية تطور السفن والأدوات الملاحية فى نجاح الكشوف الجغرافية؟","لأنها ساعدت المستكشفين على تحديد الاتجاهات والمواقع بدقة أثناء رحلاتهم البحرية الطويلة."],
-["الأهمية العلمية لرحلة ماجلان ورفاقه حول العالم؟","لأنها قدّمت دليلًا عمليًا على كروية الأرض بعد أن أكملوا أول رحلة بحرية حول العالم عام 1522م."]
-]],
-["٤) دلل",[
-["كانت الكشوف الجغرافية للعالم الجديد سلاحًا ذا حدين.","حققت مكاسب كبيرة للدول الأوروبية (ذهب وفضة وأسواق جديدة)، لكنها فى المقابل تسببت فى معاناة كبيرة للسكان الأصليين والشعوب الإفريقية."],
-["كان للعلماء المسلمين دور فى نجاح الكشوف الجغرافية الأوروبية.","ألّفوا كتبًا فى الجغرافيا والفلك والملاحة، وأكدوا على كروية الأرض، وطوروا أدوات ملاحية كالبوصلة والإسطرلاب."]
-]],
-["٥) قارن",[
-["بين كريستوفر كولومبوس وجيمس كوك من حيث الدولة التى ينتمى إليها كل منهما وأهم إنجازاته الاستكشافية.","كولومبوس: إيطالى الأصل ومولته إسبانيا، ووصل إلى جزر البهاما عام 1492م.<br>كوك: بريطانى، وصل إلى الساحل الشرقى لأستراليا عام 1770م ورسم له خرائط تفصيلية."],
-["بين النتائج الاقتصادية والاجتماعية للكشوف الجغرافية.","الاقتصادية: تدفق الذهب والفضة إلى أوروبا، وازدهار التجارة العالمية.<br>الاجتماعية: هجرات أوروبية كبيرة، وإبادة وأمراض للسكان الأصليين، وظهور تجارة الرقيق."]
-]],
-["٦) ماذا يحدث إذا",[
-["لم يقنع كريستوفر كولومبوس ملوك إسبانيا بتمويل رحلته؟","قد لا تتم رحلته الاستكشافية فى ذلك الوقت، وقد يتأخر اكتشاف الأوروبيين للأمريكتين."],
-["لم يستكمل رفاق ماجلان رحلته البحرية بعد وفاته؟","لَما تحققت أول رحلة بحرية حول العالم فى ذلك الوقت، ولَما توفّرت برهنة عملية سريعة على كروية الأرض."]
-]]
-],
-4:[
-["١) صح و خطأ",[
-["غادرت القوات الإنجليزية مصر بعد خروج الحملة الفرنسية مباشرة دون انتظار أى صلح.","(✗) خطأ: بقيت القوات الإنجليزية فى الإسكندرية حتى صلح أميان عام ١٨٠٢م ثم غادرت."],
-["كان هدف إنجلترا من البقاء فى مصر بعد الحملة الفرنسية حماية مصالحها وتأمين طريق التجارة إلى الهند.","(✓) صحيحة."],
-["تولى «محمد على» حكم مصر بعد صدور فرمان من السلطان العثمانى عام ١٨٠٥م.","(✓) صحيحة."],
-["كان سبب ثورة الشعب المصرى ضد البرديسى عام ١٨٠٤م هو رفضه دفع رواتب الجنود.","(✗) خطأ: كان السبب فرض البرديسى ضرائب باهظة على المصريين لدفع رواتب الجنود وجمعها بالقوة."],
-["قاد «محمد على» جنوده لحصار دار البرديسى بعد ثورة الشعب المصرى عام ١٨٠٤م.","(✓) صحيحة."],
-["استمر خورشيد باشا فى حكم مصر بعد ثورة المصريين ضده حتى وفاته.","(✗) خطأ: عُزل خورشيد باشا وتولى «محمد على» حكم مصر بدلًا منه عام ١٨٠٥م."],
-["أصدر السلطان العثمانى فرمانًا عام ١٨٠٦م بنقل «محمد على» إلى ولاية سالونيك وتعيين موسى باشا واليًا على مصر.","(✓) صحيحة."],
-["نجحت حملة فريزر الإنجليزية عام ١٨٠٧م فى احتلال مصر.","(✗) خطأ: فشلت حملة فريزر واضطر قائدها للانسحاب من مصر فى نفس العام."],
-["نُفى السيد عمر مكرم إلى دمياط عام ١٨٠٩م بعد تصادمه مع «محمد على» بسبب الضرائب.","(✓) صحيحة."],
-["تخلص «محمد على» من خطر المماليك نهائيًا بحادثة عُرفت بمذبحة القلعة عام ١٨١١م.","(✓) صحيحة."]
-]],
-["٢) اختر الإجابة الصحيحة",[
-["عادت القوات الإنجليزية للانسحاب من مصر بعد خروج الحملة الفرنسية عقب: (أ) ثورة البرديسى (ب) صلح أميان ١٨٠٢م (ج) مذبحة القلعة (د) معاهدة لندن","(ب) صلح أميان ١٨٠٢م"],
-["صدر الفرمان العثمانى بتولية «محمد على» حكم مصر وعزل خورشيد باشا فى عام: (أ) ١٨٠٤م (ب) ١٨٠٥م (ج) ١٨٠٧م (د) ١٨١١م","(ب) ١٨٠٥م"],
-["كان السبب الرئيسى لثورة الشعب المصرى ضد البرديسى عام ١٨٠٤م: (أ) مساعدة الإنجليز له (ب) فرض الضرائب الباهظة لدفع رواتب الجنود (ج) رغبته فى تولية «محمد على» (د) رفضه دفع رواتب الجنود","(ب) فرض الضرائب الباهظة لدفع رواتب الجنود"],
-["من قام بإلباس «محمد على» قفطان الولاية؟ (أ) خورشيد باشا وموسى باشا (ب) السيد عمر مكرم والشيخ عبد الله الشرقاوى (ج) البرديسى والألفى (د) السلطان العثمانى شخصيًا","(ب) السيد عمر مكرم والشيخ عبد الله الشرقاوى"],
-["حاول السلطان العثمانى نقل «محمد على» إلى ولاية سالونيك بموجب فرمان صدر عام: (أ) ١٨٠٥م (ب) ١٨٠٦م (ج) ١٨٠٧م (د) ١٨٠٩م","(ب) ١٨٠٦م"],
-["قائد الحملة الإنجليزية التى فشلت فى احتلال مصر عام ١٨٠٧م هو: (أ) نلسون (ب) فريزر (ج) كيتشنر (د) دليسبس","(ب) فريزر"],
-["عُزل السيد عمر مكرم من منصبه ونُفى إلى دمياط عام: (أ) ١٨٠٥م (ب) ١٨٠٧م (ج) ١٨٠٩م (د) ١٨١١م","(ج) ١٨٠٩م"],
-["تخلص «محمد على» من خطر المماليك نهائيًا بمذبحة القلعة الشهيرة عام: (أ) ١٨٠٥م (ب) ١٨٠٧م (ج) ١٨٠٩م (د) ١٨١١م","(د) ١٨١١م"]
-]],
-["٣) بم تفسر",[
-["نجاح «محمد على» فى كسب ثقة المصريين أثناء ولاية خورشيد باشا؟","لأنه رفض أن يشارك جنوده فى أعمال السلب والنهب، ووقف إلى جانب الشعب فى مطالبه ضد ظلم الولاة العثمانيين."],
-["عدم استسلام «محمد على» لقرار السلطان العثمانى بنقله إلى ولاية سالونيك عام ١٨٠٦م؟","لأنه طلب المساعدة من المشايخ والعلماء وحثّهم على كتابة رسالة للسلطان العثمانى يطالبون فيها بإلغاء الفرمان والإبقاء عليه واليًا على مصر."],
-["فشل الفرقتين العسكريتين اللتين أرسلهما فريزر إلى رشيد والحماد عام ١٨٠٧م؟","بسبب بسالة الأهالى فى الدفاع عن مدينتيهم، وانضمام جيش «محمد على» لأهالى الحماد."],
-["رغبة «محمد على» فى التخلص من الزعامة الشعبية عام ١٨٠٩م؟","لأنه أدرك خطورة الزعامة الشعبية على مكانته، ورغب فى الانفراد بحكم مصر دون منازع."]
-]],
-["٤) دلل",[
-["استعادت الدولة العثمانية سيطرتها الاسمية فقط على مصر بعد خروج الحملة الفرنسية.","عيّنت خورشيد باشا واليًا لكنها لم تستطع ضبط الأوضاع؛ فتأخرت مرتبات الحامية العثمانية فأرهق الوالى المصريين بالضرائب، مما أدى إلى ثورتهم ضده، ثم نجح الشعب فى عزله وتولية «محمد على» بدلًا منه."]
-]],
-["٥) ماذا يحدث إذا",[
-["لم يقف «محمد على» إلى جانب ثورة الشعب المصرى عام ١٨٠٤م؟","لَما كسب ثقة المصريين وتأييدهم، ولَربما لم يتمكن من الوصول إلى حكم مصر عام ١٨٠٥م."],
-["نجحت حملة فريزر فى احتلال مصر عام ١٨٠٧م؟","لكانت مصر خضعت للاحتلال الإنجليزى المباشر قبل عام ١٨٨٢م بعقود، ولربما لم تقم دولة «محمد على» الحديثة من الأساس."]
-]]
-],
-5:[
-["١) صح و خطأ",[
-["ألغى «محمد على» نظام الالتزام وحلّت الدولة محل الملتزم فى تحصيل الأموال.","(✓) صحيحة."],
-["اعتمد «محمد على» فى اقتصاده على نظام الاحتكار الذى جعل الدولة المالك الوحيد للإنتاج والتجارة.","(✓) صحيحة."],
-["كانت أراضى مصر الزراعية فى عهد «محمد على» تورث بحرية كاملة لأبناء الفلاحين.","(✗) خطأ: لم تكن الأرض تورث، وكان انتقالها لأبناء الفلاح مشروطًا بقدرتهم على زراعتها ودفع المال المقرر عليها."],
-["أنشأ «محمد على» مدرسة الألسن لتنشيط حركة الترجمة من اللغات الأوروبية إلى العربية.","(✓) صحيحة."],
-["اعتمد «محمد على» فى بناء جيشه النظامى فى البداية على تجنيد المصريين مباشرة قبل أى محاولات أخرى.","(✗) خطأ: حاول أولًا الاعتماد على الألبان ثم السودانيين، ولم تنجح المحاولتان، فاتجه أخيرًا لتجنيد المصريين."],
-["انتهت حرب المورة (اليونان) بتحطيم الأسطولين العثمانى والمصرى فى معركة نافارين عام ١٨٢٧م.","(✓) صحيحة."],
-["كانت الأسباب الحقيقية لحروب الشام هى الخلاف الشخصى بين «محمد على» ووالى عكا فقط.","(✗) خطأ: كانت الأسباب الحقيقية توسيع نفوذه السياسى وبناء دولة قوية مستقلة، أما الخلاف مع والى عكا فكان سببًا ظاهريًا فقط."],
-["انتهت معاهدة لندن ١٨٤٠م باحتفاظ «محمد على» بحكم مصر وراثيًا لأسرته.","(✓) صحيحة."],
-["احتفظ «محمد على» بموجب معاهدة لندن بولاية عكا مدى حياته.","(✓) صحيحة."]
-]],
-["٢) اختر الإجابة الصحيحة",[
-["النظام الاقتصادى الذى اتبعه «محمد على» وجعل الدولة المالك الوحيد للإنتاج والتجارة يسمى نظام: (أ) الالتزام (ب) الاحتكار (ج) المديريات (د) اللائحة","(ب) الاحتكار"],
-["عدد المديريات التى قسّم «محمد على» مصر إليها إداريًا: (أ) خمس (ب) سبع (ج) تسع (د) إحدى عشرة","(ب) سبع"],
-["الترعة التى حفرها «محمد على» ضمن مشروعات الرى: (أ) ترعة الإسماعيلية (ب) ترعة الإبراهيمية (ج) ترعة المحمودية (د) ترعة السويس","(ج) ترعة المحمودية"],
-["المحصول الذى أدخله «محمد على» وأصبحت مصر من أهم الدول المنتجة له: (أ) الأرز (ب) قصب السكر (ج) القطن طويل التيلة (د) القمح","(ج) القطن طويل التيلة"],
-["الحرب التى استعان فيها السلطان العثمانى بـ«محمد على» للقضاء على الوهابيين: (أ) حرب السودان (ب) حروب شبه الجزيرة العربية (ج) حرب المورة (د) حروب الشام","(ب) حروب شبه الجزيرة العربية"],
-["تحطم الأسطولان العثمانى والمصرى فى معركة نافارين خلال: (أ) حروب شبه الجزيرة العربية (ب) حرب السودان (ج) حرب المورة (اليونان) (د) حروب الشام","(ج) حرب المورة (اليونان)"],
-["السبب الظاهرى لحروب الشام كان الخلاف بين «محمد على» ووالى عكا: (أ) خورشيد باشا (ب) عبد الله باشا (ج) موسى باشا (د) محمد بك الألفى","(ب) عبد الله باشا"],
-["بموجب معاهدة لندن ١٨٤٠م احتفظ «محمد على» وأسرته بحكم مصر مقابل: (أ) التخلى عن الجيش والأسطول بالكامل (ب) دفع مبلغ سنوى للدولة العثمانية (ج) التنازل عن السودان (د) فتح قناة السويس","(ب) دفع مبلغ سنوى للدولة العثمانية"],
-["المدة التى مُنحت لـ«محمد على» للموافقة على شروط معاهدة لندن وإلا سُحبت منه ولاية عكا: (أ) ٥ أيام (ب) ١٠ أيام (ج) شهر (د) عام","(ب) ١٠ أيام"]
-]],
-["٣) بم تفسر",[
-["لجوء «محمد على» إلى نظام الاحتكار الاقتصادى؟","لأنه كان وسيلة اقتصادية فعّالة لتوفير الاحتياجات اللازمة للنهوض بالبلاد، وأدى إلى زيادة دخل الدولة وتمويل الجيش والمشروعات الاقتصادية."],
-["اهتمام «محمد على» بالتعليم والثقافة؟","لأنه أدرك حاجته لموظفين فى المصالح الحكومية، وفنيين ومتخصصين فى المجالات المختلفة لسد احتياجات الجيش والأسطول."],
-["اهتمام «محمد على» بالصناعة؟","بهدف سد احتياجات الجيش، وتقليل الاعتماد على الواردات الأوروبية."],
-["ازدهار التجارة الداخلية والخارجية لمصر فى عهد «محمد على»؟","بسبب ازدهار الزراعة والصناعة، واستقرار الأمن الداخلى، وتمهيد الطرق البرية، وشق الترع."]
-]],
-["٤) دلل",[
-["اهتم «محمد على» ببناء نهضة صناعية وتعليمية حديثة فى مصر.","أنشأ ديوان المدارس والمدارس التجهيزية والعالية، وأرسل بعثات علمية إلى أوروبا، وأقام المصانع والترسانة البحرية ببولاق ثم الإسكندرية."],
-["اهتم «محمد على» بشئون الرى فى مصر.","حفر عديدًا من الترع مثل ترعة المحمودية، وأقام الجسور، وأنشأ القناطر، وبدأ فى إنشاء القناطر الخيرية."],
-["اهتم «محمد على» بالبحرية المصرية.","أنشأ ترسانة لصناعة السفن فى بولاق ثم الإسكندرية، وإدارة خاصة للأساطيل، والمدرسة البحرية."]
-]],
-["٥) قارن",[
-["بين حروب شبه الجزيرة العربية وحروب الشام من حيث الأسباب.","حروب شبه الجزيرة العربية: استجابة لطلب السلطان العثمانى للقضاء على خطر الوهابيين.<br>حروب الشام: أسبابها الحقيقية توسيع نفوذ «محمد على» وبناء دولة مستقلة عن الدولة العثمانية."]
-]],
-["٦) ماذا يحدث إذا",[
-["لم توقّع الدول الأوروبية معاهدة لندن ١٨٤٠م؟","لربما نجح «محمد على» فى تأسيس دولة مستقلة قوية تضم مصر والشام والجزيرة العربية، ولَربما تغيّر شكل خريطة المنطقة السياسية بالكامل."]
-]]
-],
-6:[
-["١) صح و خطأ",[
-["حكم إبراهيم باشا مصر لعدة سنوات طويلة بعد مرض والده «محمد على».","(✗) خطأ: لم يحكم إبراهيم باشا سوى عدة أشهر فقط، وتوفى قبل وفاة والده."],
-["أغلق عباس حلمى باشا الأول معظم المدارس والمصانع التى أنشأها «محمد على».","(✓) صحيحة."],
-["أصدر محمد سعيد باشا اللائحة السعيدية التى منحت الفلاح حق توريث الأرض الزراعية.","(✓) صحيحة."],
-["منح الخديو إسماعيل الامتياز الأول لحفر قناة السويس عام ١٨٥٤م.","(✗) خطأ: محمد سعيد باشا هو من منح الامتياز الأول عام ١٨٥٤م، أما إسماعيل فباع نصيب مصر من أسهم القناة لبريطانيا."],
-["أنشأ الخديو إسماعيل مجلس شورى النواب عام ١٨٦٦م وكان له حق إصدار قرارات ملزمة للحكومة.","(✗) خطأ: كان دور المجلس استشاريًا فقط دون حق الاعتراض أو إصدار قرارات ملزمة."],
-["تشكّلت لجنة التحقيق العليا الأوروبية عام ١٨٧٨م لدراسة أسباب العجز المستمر فى إيرادات الدولة المصرية.","(✓) صحيحة."],
-["وافق الخديو إسماعيل على مقترحات اللائحة الوطنية عام ١٨٧٩م وكلّف شريف باشا بتشكيل وزارة وطنية.","(✓) صحيحة."],
-["انتهى الأمر بعزل الخديو إسماعيل وتولية ابنه محمد توفيق حكم مصر بدلًا منه.","(✓) صحيحة."]
-]],
-["٢) اختر الإجابة الصحيحة",[
-["تولى إبراهيم باشا حكم مصر بعد: (أ) وفاة محمد على مباشرة (ب) مرض والده محمد على (ج) خلع الخديو إسماعيل (د) عزل خورشيد باشا","(ب) مرض والده محمد على"],
-["أول خط سكة حديد فى مصر بدأ إنشاءه بين القاهرة والإسكندرية فى عهد: (أ) إبراهيم باشا (ب) عباس حلمى باشا الأول (ج) محمد سعيد باشا (د) الخديو إسماعيل","(ب) عباس حلمى باشا الأول"],
-["من هو صاحب اللائحة السعيدية التى منحت الفلاح حق ملكية الأرض وتوريثها؟ (أ) إبراهيم باشا (ب) عباس حلمى باشا الأول (ج) محمد سعيد باشا (د) الخديو إسماعيل","(ج) محمد سعيد باشا"],
-["الخديوى الذى منح امتياز حفر قناة السويس الأول عام ١٨٥٤م هو: (أ) إبراهيم باشا (ب) عباس حلمى باشا الأول (ج) محمد سعيد باشا (د) الخديو إسماعيل","(ج) محمد سعيد باشا"],
-["اقترضت مصر أول قرض خارجى من أحد البنوك البريطانية فى عهد: (أ) عباس حلمى باشا الأول (ب) محمد سعيد باشا (ج) الخديو إسماعيل (د) الخديو توفيق","(ب) محمد سعيد باشا"],
-["اشتهر عصر هذا الخديوى بتوسع النهضة الثقافية والعمرانية وتفاقم أزمة الديون فى آن واحد: (أ) عباس حلمى باشا الأول (ب) محمد سعيد باشا (ج) الخديو إسماعيل (د) إبراهيم باشا","(ج) الخديو إسماعيل"],
-["أنشأ الخديو إسماعيل مجلس شورى النواب عام: (أ) ١٨٦٣م (ب) ١٨٦٦م (ج) ١٨٧٦م (د) ١٨٧٩م","(ب) ١٨٦٦م"],
-["البعثة التى أرسلتها إنجلترا عام ١٨٧٥م لمساعدة وزير المالية المصرى تُعرف باسم: (أ) بعثة كيف (ب) صندوق الدين (ج) لجنة التحقيق العليا (د) الوزارة المختلطة","(أ) بعثة كيف"],
-["كان لا يحق لمصر الحصول على قرض إلا بموافقة أغلبية أعضاء: (أ) مجلس شورى النواب (ب) صندوق الدين (ج) الوزارة المختلطة (د) لجنة التحقيق العليا","(ب) صندوق الدين"],
-["رئيس الوزارة المختلطة التى شُكّلت بالاتفاق بين إنجلترا وفرنسا: (أ) شريف باشا (ب) نوبار باشا (ج) عمر مكرم (د) محمد توفيق","(ب) نوبار باشا"],
-["من وضع مقترحات «اللائحة الوطنية» عام ١٨٧٩م؟ (أ) الوزارة المختلطة (ب) صندوق الدين (ج) بعض أعضاء الحركة الوطنية (د) السلطان العثمانى","(ج) بعض أعضاء الحركة الوطنية"],
-["انتهى الأمر بخلع الخديو إسماعيل وتولية: (أ) أخيه (ب) ابنه محمد توفيق (ج) شريف باشا (د) نوبار باشا","(ب) ابنه محمد توفيق"]
-]],
-["٣) بم تفسر",[
-["لجوء الخديو إسماعيل إلى الاقتراض من الدول الأوروبية؟","بهدف دفع التعويضات لشركة قناة السويس، والإنفاق على المشروعات وبناء القصور والحفلات، ودفع أموال للسلطان العثمانى للحصول على لقب خديو ووراثة العرش لأبنائه."],
-["إرسال إنجلترا بعثة كيف إلى مصر عام ١٨٧٥م؟","لمساعدة وزير المالية المصرى فى إصلاح الشئون المالية للدولة بعد تفاقم أزمة الديون."],
-["تشكيل لجنة التحقيق العليا الأوروبية عام ١٨٧٨م؟","لدراسة أسباب العجز المستمر فى إيرادات الدولة المصرية."]
-]],
-["٤) دلل",[
-["كان عصر الخديو إسماعيل من أكثر الفترات تقدمًا وعمرانًا فى تاريخ مصر الحديث.","شهد عصره: زيادة المساحة الزراعية وحفر ترعتى الإبراهيمية والإسماعيلية، وإعادة فتح المصانع، وإنشاء خطوط السكك الحديدية والتلغراف ومصلحة البريد، ومضاعفة ميزانية التعليم وإنشاء دار الأوبرا ودار الرصد."],
-["أسهم مجلس شورى النواب فى زيادة الوعى السياسى لدى المصريين رغم محدودية صلاحياته.","كان دوره استشاريًا فقط دون حق الاعتراض أو إصدار قرارات ملزمة، إلا أنه أتاح مناقشة القوانين والضرائب، وأتاح للمصريين حق التعبير عن مشكلاتهم."]
-]],
-["٥) قارن",[
-["بين إنجازات محمد سعيد باشا وإخفاقاته فى الجانب الاقتصادى.","الإنجازات: خفّض الضرائب وأصدر اللائحة السعيدية التى منحت الفلاح حق ملكية الأرض وتوريثها.<br>الإخفاقات: منح امتياز قناة السويس الأول ١٨٥٤م والثانى ١٨٥٦م، واقترض أول قرض خارجى عام ١٨٦٢م."],
-["بين موقف عباس حلمى باشا الأول ومحمد سعيد باشا من التعليم والبعثات العلمية.","عباس حلمى باشا الأول: أغلق معظم المدارس واستدعى البعثات العلمية من فرنسا.<br>محمد سعيد باشا: استمر نفس الجمود فى التعليم وألغى ديوان المدارس."]
-]],
-["٦) ماذا يحدث إذا",[
-["لم يلجأ الخديو إسماعيل إلى الاقتراض المفرط من الدول الأوروبية؟","لربما لم تتفاقم أزمة الديون، ولَما زاد التدخل الأجنبى فى شئون مصر، ولَما اضطر لبيع نصيب مصر فى قناة السويس أو عزله من الحكم."]
-]]
-]
-};
-
-/* ==================== STATE & RENDERING ==================== */
-let curLesson=1,mode='sum';
-const $=id=>document.getElementById(id);
-const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
-function items(p){return SOC_P[p].flatMap(([t,qs])=>qs.map(([q,a])=>{const o={t,q,a,type:'open'};
-  if(/^\((✓|✗)\)/.test(a)){o.type='tf';o.ok=a[1];o.exp=a.replace(/^\((✓|✗)\)\s*/,'')}
-  else if(/\(أ\)/.test(q)&&/\(ب\)/.test(q)&&/^\([أبجد]\)/.test(a)){const i=q.indexOf('(أ)');o.stem=q.slice(0,i).trim();o.opts=[];
-    const re=/\(([أبجد])\)\s*([\s\S]*?)(?=\s*\([أبجد]\)\s|$)/g;let m,rest=q.slice(i);
-    while((m=re.exec(rest)))o.opts.push([m[1],m[2].trim()]);
-    if(o.opts.length>=2){o.type='mcq';o.ok=a.match(/^\(([أبجد])\)/)[1]}}
-  return o}))}
-function best(){try{return JSON.parse(localStorage.getItem('zbest')||'{}')}catch(e){return{}}}
-function saveBest(k,v){try{const b=best();b[k]=Math.max(b[k]||0,v);localStorage.setItem('zbest',JSON.stringify(b))}catch(e){}}
-function renderLessons(){document.getElementById('socialLessons').innerHTML=SOC_LESSONS.map(l=>`<a class="s-card s-ready" href="#social-${l.id}"><div class="s-ct">${l.t}</div><div class="s-meta">${l.u}</div><div class="s-chips"><span>ملخص</span><span>بطاقات</span><span>اختبار</span></div><div class="s-open">افتح الدرس</div></a>`).join('')}
-const MN={sum:'📖 الملخص',card:'🃏 بطاقات',quiz:'✅ اختبار'};
-function head(){
-  $('modes').innerHTML=Object.keys(MN).map(m=>`<button class="${m==mode?'on':''}" data-m="${m}">${MN[m]}</button>`).join('');
-  const b=best()['soc-'+curLesson];$('stat').textContent=b?'أفضل نتيجة: '+b+'%':'';
-  document.querySelectorAll('#modes button').forEach(x=>x.onclick=()=>{mode=x.dataset.m;go()})}
-function go(){head();scrollTo({top:0});({sum:renderSum,card:renderCards,quiz:renderQuiz})[mode]()}
-function renderSum(){$('app').innerHTML='<div class="tools"><button class="btn" id="tg">طي / فتح الكل</button></div>'+SOC_SUM[curLesson];
-  document.querySelectorAll('#app section').forEach(s=>s.querySelector('.section-head').onclick=()=>s.classList.toggle('closed'));
-  let c=false;$('tg').onclick=()=>{c=!c;document.querySelectorAll('#app section').forEach(s=>s.classList.toggle('closed',c))}}
-function renderCards(){let deck=shuffle(items(curLesson).filter(x=>x.type=='open')),i=0,know=0,again=0;
-  if(!deck.length){$('app').innerHTML='<p class="empty">لا توجد بطاقات.</p>';return}
-  const draw=()=>{if(i>=deck.length){$('app').innerHTML=`<div class="qz"><div class="bigscore">${know}/${deck.length}</div><p class="empty" style="padding:6px 0 16px">عرفت ${know} وراجعت ${again}</p><div class="row"><button class="btn pri" id="rp">أعد كل البطاقات</button>${again?'<button class="btn" id="ra">راجع ما لم أعرفه</button>':''}</div></div>`;
-    $('rp').onclick=()=>{deck=shuffle(deck);i=know=again=0;draw()};
-    if($('ra'))$('ra').onclick=()=>{deck=shuffle(deck.filter(d=>d.miss));deck.forEach(d=>d.miss=0);i=know=again=0;draw()};return}
-    const c=deck[i];
-    $('app').innerHTML=`<div class="cnt">${i+1} / ${deck.length}</div><div class="fc" id="fc"><div class="fc-in"><div class="face"><small>${c.t}</small><div class="t">${c.q}</div><div class="hint">اضغط لإظهار الإجابة</div></div><div class="face back"><small>الإجابة</small><div class="t">${c.a}</div></div></div></div><div class="row"><button class="btn" id="no">🔁 راجعها</button><button class="btn pri" id="yes">✔ عرفتها</button></div>`;
-    $('fc').onclick=()=>$('fc').classList.toggle('flip');
-    $('yes').onclick=()=>{know++;i++;draw()};$('no').onclick=()=>{c.miss=1;again++;i++;draw()}};draw()}
-function renderQuiz(){let pool=shuffle(items(curLesson).filter(x=>x.type!='open')),i=0,score=0,done=false;
-  if(!pool.length){$('app').innerHTML='<p class="empty">لا توجد أسئلة تفاعلية.</p>';return}
-  const key='soc-'+curLesson;
-  const draw=()=>{if(i>=pool.length){const pct=Math.round(score/pool.length*100);saveBest(key,pct);head();
-    const wrong=pool.filter(x=>x.w);
-    $('app').innerHTML=`<div class="qz"><div class="bigscore">${pct}%</div><p class="empty" style="padding:6px 0 16px">${score} صحيحة من ${pool.length} — ${pct>=85?'ممتاز 🌟':pct>=60?'جيد':'كرر المحاولة'}</p><div class="row"><button class="btn pri" id="rs">اختبار جديد</button>${wrong.length?'<button class="btn" id="rw">أعد الأسئلة الخاطئة ('+wrong.length+')</button>':''}</div></div>`;
-    $('rs').onclick=renderQuiz;
-    if($('rw'))$('rw').onclick=()=>{pool=shuffle(wrong);pool.forEach(x=>x.w=0);i=score=0;draw()};return}
-    const q=pool[i];done=false;
-    const body=q.type=='tf'?`<div class="qt">${q.q}</div><div class="tf"><button class="opt" data-v="✓">✓ صحيحة</button><button class="opt" data-v="✗">✗ خاطئة</button></div>`
-      :`<div class="qt">${q.stem}</div>`+q.opts.map(o=>`<button class="opt" data-v="${o[0]}">(${o[0]}) ${o[1]}</button>`).join('');
-    $('app').innerHTML=`<div class="prog"><i style="width:${i/pool.length*100}%"></i></div><div class="cnt">سؤال ${i+1} من ${pool.length} · الدرجة ${score}</div><div class="qz">${body}<div id="fb"></div></div>`;
-    document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if(done)return;done=true;const ok=b.dataset.v==q.ok;
-      document.querySelectorAll('.opt').forEach(x=>{x.disabled=true;if(x.dataset.v==q.ok)x.classList.add('ok')});
-      if(ok)score++;else{b.classList.add('bad');q.w=1}
-      $('fb').innerHTML=`<div class="fb">${ok?'✅ صحيحة':'❌ خاطئة'}${q.type=='tf'&&q.exp?' — '+q.exp:(!ok&&q.type=='mcq'?' — الصحيحة: '+q.a:'')}</div><div class="row" style="margin-top:12px"><button class="btn pri" id="nx">${i+1<pool.length?'التالي ⟵':'النتيجة'}</button></div>`;
-      $('nx').onclick=()=>{i++;draw()}})};draw()}
-
-function openLesson(id){
-  curLesson=id;mode='sum';
-  const l=SOC_LESSONS.find(x=>x.id===id);
-  $('readerTitle').textContent=l.t;$('readerSub').textContent=l.u;
-  document.getElementById('lessonsList').hidden=true;
-  document.getElementById('reader').hidden=false;
-  go();
-}
-function showList(){
-  document.getElementById('lessonsList').hidden=false;
-  document.getElementById('reader').hidden=true;
-  scrollTo(0,0);
-}
-(function(){
-  renderLessons();
-  var home=document.getElementById('lessonsList'),rd=document.getElementById('reader');
-  function route(){var h=location.hash;
-    if(/^#social-\d+$/.test(h)){var n=parseInt(h.split('-')[1]);openLesson(n)}
-    else{showList()}}
-  addEventListener('hashchange',route);route();
-  document.getElementById('backLink').onclick=(e)=>{e.preventDefault();location.hash='';};
-})();
-</script>
 </body>
-</html>
+                                                                       </html>
