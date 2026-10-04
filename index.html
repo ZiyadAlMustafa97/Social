@@ -241,8 +241,17 @@ function ensureAuth(){
 }
 /* صلاحيات المشرف تتحقق من الكود داخل قواعد Firestore نفسها (الأكواد غير موجودة في هذه الصفحة) */
 async function adminLogin(label,code){
-  try{await ensureAuth();await fsDb.collection('admins').doc(chatUid).set({code:String(code),name:label});return true;}
-  catch(e){return false;}
+  const timeout=new Promise((_,rej)=>setTimeout(()=>rej({code:'timeout'}),15000));
+  try{
+    await Promise.race([ensureAuth(),timeout]);
+    await Promise.race([fsDb.collection('admins').doc(chatUid).set({code:String(code),name:label}),timeout]);
+    return 'ok';
+  }catch(e){
+    console.error('adminLogin',e);
+    if(e&&e.code==='timeout')return 'timeout';
+    if(e&&e.code==='permission-denied')return 'denied';
+    return 'error:'+((e&&e.code)||'unknown');
+  }
 }
 async function adminCheck(){
   await ensureAuth();
@@ -250,3 +259,209 @@ async function adminCheck(){
   return s.exists?String(s.data().name||'المشرف'):null;
 }
 function saveAttempt(){if(adminMode||!fsDb||!chatUid||!chatName)return;fsDb.collection('attempts').add({uid:chatUid,name:chatName.slice(0,60),scope:examScope,score:score,total:quizBank.length,answers:attemptLog,ts:Date.now()}).catch(()=>{});}
+(function(){
+  const ov=document.getElementById('nameOverlay'),nameI=document.getElementById('nameInput'),codeI=document.getElementById('codeInput'),btn=document.getElementById('nameBtn'),err=document.getElementById('codeErr');
+  function enter(name){document.getElementById('whoName').textContent=name;document.getElementById('whoChip').style.display='';ov.classList.remove('show');err.textContent='';startChat(name);}
+  function check(){btn.disabled=!(nameI.value.trim()&&codeI.value.trim());}
+  nameI.addEventListener('input',()=>{err.textContent='';check();});
+  codeI.addEventListener('input',()=>{err.textContent='';check();});
+  async function verify(name,code){return VALID.has(await sha256(SALT+'|'+normName(name)+'|'+code));}
+  async function submit(){
+    const name=nameI.value.trim().replace(/\s+/g,' '),code=arDigits(codeI.value.trim());
+    if(!name||!code)return;btn.disabled=true;
+    const nn=normName(name);
+    if(nn==='admin'||nn==='مستر اسامه'){
+      const label=nn==='admin'?'المشرف':'مستر أسامة';
+      err.textContent='جارٍ التحقق...';
+      const r=await adminLogin(label,code);
+      if(r==='ok'){try{localStorage.setItem('adm',label);}catch(e){}enterAdmin(label);}
+      else if(r==='denied')err.textContent='الكود غير صحيح، أو قواعد Firestore لم تُنشر بعد.';
+      else if(r==='timeout')err.textContent='الاتصال بطيء أو محجوب، حاول مرة أخرى.';
+      else err.textContent='تعذّر الاتصال ('+r+').';
+      btn.disabled=false;return;
+    }
+    if(normName(name)==='زياد المصطفي'&&code==='1234'){try{localStorage.setItem('stu',JSON.stringify({name,code}));}catch(e){}enter(name);btn.disabled=false;return;}
+    if(name.split(' ').length<3){err.textContent='اكتب اسمك ثلاثيًا (ثلاث كلمات على الأقل).';btn.disabled=false;return;}
+    let ok=false;try{ok=await verify(name,code);}catch(e){err.textContent='تعذّر التحقق.';btn.disabled=false;return;}
+    if(!ok){err.textContent='الاسم أو الكود غير صحيح.';btn.disabled=false;return;}
+    try{localStorage.setItem('stu',JSON.stringify({name,code}));}catch(e){}
+    enter(name);
+  }
+  btn.addEventListener('click',submit);
+  [nameI,codeI].forEach(i=>i.addEventListener('keydown',e=>{if(e.key==='Enter')submit();}));
+  document.getElementById('logoutBtn').addEventListener('click',()=>{
+    try{localStorage.removeItem('stu');localStorage.removeItem('adm');}catch(e){}
+    const wasAdmin=adminMode,oldUid=chatUid;
+    (async()=>{try{if(wasAdmin&&fsDb&&oldUid)await fsDb.collection('admins').doc(oldUid).delete();if(fbAuth)await fbAuth.signOut();}catch(e){}authPromise=null;chatUid=null;})();
+    stopChat();adminMode=false;
+    document.getElementById('whoChip').style.display='none';
+    document.getElementById('admFab').style.display='none';
+    document.getElementById('admPanel').classList.remove('show');
+    nameI.value='';codeI.value='';btn.disabled=true;ov.classList.add('show');
+  });
+  (async()=>{
+    try{if(localStorage.getItem('adm')){const nm=await adminCheck();if(nm){enterAdmin(nm);return;}localStorage.removeItem('adm');}}catch(e){}
+    try{const st=JSON.parse(localStorage.getItem('stu')||'null');if(st&&await verify(st.name,st.code)){enter(st.name);return;}}catch(e){}
+    ov.classList.add('show');setTimeout(()=>nameI.focus(),50);
+  })();
+})();
+function addMsg(box,text,cls,who){const d=document.createElement('div');d.className='ms '+cls;if(who){const sm=document.createElement('small');sm.textContent=who;d.appendChild(sm);}const t=document.createElement('span');t.textContent=text;d.appendChild(t);box.appendChild(d);box.scrollTop=box.scrollHeight;return t;}
+function chatOff(msg){const box=document.getElementById('peerBox');box.innerHTML='';addMsg(box,msg,'o');document.getElementById('peerInput').disabled=true;document.getElementById('peerSend').disabled=true;}
+function muteKey(n){return normName(n||'').replace(/\//g,'');}
+function applyChatState(){
+  const input=document.getElementById('peerInput'),btn=document.getElementById('peerSend'),note=document.getElementById('peerNote'),pin=document.getElementById('peerPin');
+  const blocked=!adminMode&&(chatLocked||chatMuted);
+  input.disabled=blocked;btn.disabled=blocked;
+  input.placeholder=chatMuted&&!adminMode?'تم كتمك من الشات':(chatLocked&&!adminMode?'الشات مقفول حاليًا':'اكتب رسالتك للطلاب...');
+  note.textContent=adminMode&&chatLocked?'🔒 الشات مقفول على الطلاب (أنت تستطيع الكتابة).':(chatMuted&&!adminMode?'⛔ تم منعك من الكتابة بواسطة المشرف.':(chatLocked&&!adminMode?'🔒 الشات مقفول مؤقتًا بواسطة المشرف.':''));
+  pin.style.display=chatPin?'block':'none';pin.textContent=chatPin?'📌 '+chatPin:'';
+}
+async function deleteMsg(id){if(!adminMode)return;try{await fsDb.collection('messages').doc(id).delete();if(document.getElementById('admPanel').classList.contains('show'))loadAdmin();}catch(e){alert('تعذّر الحذف — راجع قواعد Firestore.');}}
+async function setChatSetting(o){try{await fsDb.collection('settings').doc('chat').set(o,{merge:true});loadAdmin();}catch(e){alert('تعذّر الحفظ — راجع قواعد Firestore.');}}
+async function clearAllChat(){
+  if(!confirm('مسح كل رسائل الشات نهائيًا؟'))return;
+  try{let n;do{const s=await fsDb.collection('messages').limit(400).get();n=s.size;if(n){const b=fsDb.batch();s.docs.forEach(d=>b.delete(d.ref));await b.commit();}}while(n);loadAdmin();}
+  catch(e){alert('تعذّر المسح — راجع قواعد Firestore.');}
+}
+async function muteUser(name){if(!confirm('كتم '+name+' من الشات؟'))return;try{await fsDb.collection('muted').doc(muteKey(name)).set({name:String(name).slice(0,60),ts:Date.now()});loadAdmin();}catch(e){alert('تعذّر الكتم — راجع قواعد Firestore.');}}
+async function unmuteUser(key){try{await fsDb.collection('muted').doc(key).delete();loadAdmin();}catch(e){alert('تعذّر إلغاء الكتم.');}}
+function stopChat(){if(chatUnsub){chatUnsub();chatUnsub=null;}chatName='';}
+async function startChat(name){
+  chatName=name;
+  const box=document.getElementById('peerBox'),input=document.getElementById('peerInput'),btn=document.getElementById('peerSend'),note=document.getElementById('peerNote');
+  if(firebaseConfig.apiKey.startsWith('PUT_')){chatOff('الشات غير مفعّل بعد.');return;}
+  try{
+    await ensureAuth();
+    fsDb.collection('logins').add({uid:chatUid,name:name.slice(0,60),ts:Date.now()}).catch(()=>{});
+  }catch(e){chatOff('تعذّر الاتصال بالشات.');return;}
+  input.disabled=false;btn.disabled=false;
+  stopChat();chatName=name;
+  chatLocked=false;chatMuted=false;chatPin='';applyChatState();
+  const u1=fsDb.collection('messages').orderBy('ts','desc').limit(100).onSnapshot(snap=>{
+    const rows=snap.docs.map(d=>({id:d.id,...d.data()})).reverse();
+    box.innerHTML='';
+    if(!rows.length){addMsg(box,'لا توجد رسائل بعد. كن أول من يكتب!','o');return;}
+    rows.forEach(r=>{
+      const mine=r.uid===chatUid;
+      const who=mine?'أنت':((r.admin?'👑 ':'')+(String(r.name||'').trim()||'زميل'));
+      const t=addMsg(box,String(r.text||''),mine?'m':'o',who);
+      const bub=t.parentElement;
+      if(r.admin)bub.classList.add('adm');
+      if(adminMode){const x=document.createElement('button');x.className='xb';x.textContent='حذف';x.onclick=()=>deleteMsg(r.id);bub.firstChild.appendChild(x);}
+    });
+    box.scrollTop=box.scrollHeight;
+  },()=>{note.textContent='تعذّر تحميل الرسائل.';});
+  const u2=fsDb.collection('settings').doc('chat').onSnapshot(s=>{const v=s.exists?s.data():{};chatLocked=!!v.locked;chatPin=String(v.pinned||'');applyChatState();},()=>{});
+  const u3=fsDb.collection('muted').doc(muteKey(name)).onSnapshot(s=>{chatMuted=s.exists;applyChatState();},()=>{});
+  chatUnsub=()=>{u1();u2();u3();};
+  if(chatWired)return;chatWired=true;
+  async function send(){const t=input.value.trim().slice(0,500);if(!t||!chatName)return;if(!adminMode&&(chatLocked||chatMuted))return;btn.disabled=true;input.value='';try{await fsDb.collection('messages').add({text:t,uid:chatUid,name:chatName.slice(0,60),admin:adminMode,ts:Date.now()});note.textContent='';}catch(e){note.textContent='تعذّر إرسال الرسالة.';}btn.disabled=false;input.focus();}
+  btn.addEventListener('click',send);
+  input.addEventListener('keydown',e=>{if(e.key==='Enter')send();});
+}
+async function enterAdmin(adminName){
+  document.getElementById('whoName').textContent=adminName||'المشرف';
+  document.getElementById('whoChip').style.display='';
+  document.getElementById('nameOverlay').classList.remove('show');
+  adminMode=true;document.getElementById('admFab').style.display='block';
+  try{await ensureAuth();}catch(e){console.error(e);}
+  startChat(adminName||'المشرف');
+  openAdmin();
+}
+(function(){
+  const $=id=>document.getElementById(id);
+  $('admFab').addEventListener('click',openAdmin);
+  $('admClose').addEventListener('click',()=>$('admPanel').classList.remove('show'));
+  $('admRefresh').addEventListener('click',()=>loadAdmin());
+  document.querySelectorAll('.atb button').forEach(b=>b.addEventListener('click',()=>{admTab=b.dataset.t;document.querySelectorAll('.atb button').forEach(x=>x.classList.toggle('active',x===b));renderAdmin();}));
+})();
+function openAdmin(){document.getElementById('admPanel').classList.add('show');loadAdmin();}
+async function loadAdmin(){
+  const body=document.getElementById('admBody');body.textContent='جارٍ التحميل...';
+  try{
+    await ensureAuth();
+    const[lg,at,ms,mu,se]=await Promise.all([fsDb.collection('logins').orderBy('ts','desc').limit(2000).get(),fsDb.collection('attempts').orderBy('ts','desc').limit(500).get(),fsDb.collection('messages').orderBy('ts','desc').limit(200).get(),fsDb.collection('muted').get(),fsDb.collection('settings').doc('chat').get()]);
+    admData={logins:lg.docs.map(d=>d.data()),attempts:at.docs.map(d=>d.data()),messages:ms.docs.map(d=>({id:d.id,...d.data()})),muted:mu.docs.map(d=>({key:d.id,...d.data()})),settings:se.exists?se.data():{}};
+    renderAdmin();
+  }catch(e){body.textContent='تعذّر تحميل البيانات.';}
+}
+function scopeLabel(sc){const[u,l]=String(sc).split('-');const n={'1':'الأول','2':'الثاني','3':'الثالث'};return 'الوحدة '+(n[u]||u)+' · الدرس '+(n[l]||l);}
+function fmtDate(t){try{return new Date(t).toLocaleString('ar-EG',{dateStyle:'medium',timeStyle:'short'});}catch(e){return '';}}
+function renderAdmin(){
+  const body=document.getElementById('admBody');if(!admData)return;body.innerHTML='';
+  const card=(parent)=>{const d=document.createElement('div');d.className='acd';parent.appendChild(d);return d;};
+  const{logins,attempts}=admData;
+  if(admTab==='sum'){
+    const map={};const get=n=>{const k=normName(n||'');return map[k]||(map[k]={name:n||'—',logins:0,last:0,att:0,sum:0});};
+    logins.forEach(r=>{const m=get(r.name);m.logins++;m.last=Math.max(m.last,r.ts||0);});
+    attempts.forEach(r=>{const m=get(r.name);m.att++;m.sum+=r.total?r.score/r.total*100:0;m.last=Math.max(m.last,r.ts||0);});
+    const rows=Object.values(map).sort((a,b)=>b.last-a.last);
+    const st=document.createElement('div');st.className='ast';
+    [['الطلاب',rows.length],['مرات الدخول',logins.length],['الامتحانات',attempts.length]].forEach(([t,v])=>{const d=document.createElement('div'),sp=document.createElement('span');sp.textContent=v;d.appendChild(sp);d.appendChild(document.createTextNode(t));st.appendChild(d);});
+    body.appendChild(st);
+    if(!rows.length){card(body).textContent='لا توجد بيانات بعد.';return;}
+    rows.forEach(m=>{const c=card(body);const b=document.createElement('b');b.textContent=m.name;c.appendChild(b);c.appendChild(document.createElement('br'));c.appendChild(document.createTextNode('الدخول: '+m.logins+' مرة · آخر نشاط: '+fmtDate(m.last)));c.appendChild(document.createElement('br'));c.appendChild(document.createTextNode('الامتحانات: '+m.att+(m.att?(' · متوسط النتيجة: '+Math.round(m.sum/m.att)+'%'):'')));});
+  } else if(admTab==='att'){
+    if(!attempts.length){card(body).textContent='لا توجد امتحانات بعد.';return;}
+    attempts.forEach(r=>{const c=card(body),det=document.createElement('details'),sm=document.createElement('summary');const pct=r.total?Math.round(r.score/r.total*100):0;sm.textContent=(r.name||'—')+' — '+scopeLabel(r.scope)+' — '+r.score+'/'+r.total+' ('+pct+'%) — '+fmtDate(r.ts);det.appendChild(sm);(r.answers||[]).forEach(a=>{const d=document.createElement('div');d.className='aan';let picked='';if(a.t==='tf')picked=' — اختار: '+(a.p===true?'صواب':a.p===false?'خطأ':'');else if(a.t==='mcq')picked=' — اختار: '+(a.p||'');else picked=a.ok?' — قيّم نفسه: أجاب صحيحًا':' — قيّم نفسه: يحتاج مراجعة';d.textContent=(a.ok?'✅ ':'❌ ')+a.n+'. '+(a.q||'')+picked;det.appendChild(d);});c.appendChild(det);});
+  } else if(admTab==='chat'){
+    const stg=admData.settings||{};
+    const mk=(p,txt,cls,fn)=>{const b=document.createElement('button');b.className='abtn '+(cls||'');b.textContent=txt;b.onclick=fn;p.appendChild(b);return b;};
+    const c1=card(body);
+    const h=document.createElement('b');h.textContent='⚙️ إعدادات الشات';c1.appendChild(h);c1.appendChild(document.createElement('br'));
+    mk(c1,stg.locked?'🔓 فتح الشات للطلاب':'🔒 قفل الشات على الطلاب','gd',()=>setChatSetting({locked:!stg.locked}));
+    mk(c1,'🗑 مسح كل الرسائل','dg',clearAllChat);
+    const pi=document.createElement('input');pi.className='ai';pi.maxLength=300;pi.placeholder='رسالة مثبتة تظهر لكل الطلاب أعلى الشات';pi.value=stg.pinned||'';c1.appendChild(pi);
+    mk(c1,'📌 تثبيت','gd',()=>setChatSetting({pinned:pi.value.trim().slice(0,300)}));
+    mk(c1,'إلغاء التثبيت','',()=>setChatSetting({pinned:''}));
+    const c2=card(body);const h2=document.createElement('b');h2.textContent='⛔ المكتومون ('+(admData.muted||[]).length+')';c2.appendChild(h2);
+    (admData.muted||[]).forEach(m=>{const d=document.createElement('div');d.className='aan';d.appendChild(document.createTextNode(m.name||m.key+' '));mk(d,'إلغاء الكتم','gd',()=>unmuteUser(m.key));c2.appendChild(d);});
+    const msgs=admData.messages||[];
+    const c3=card(body);const h3=document.createElement('b');h3.textContent='💬 آخر الرسائل ('+msgs.length+')';c3.appendChild(h3);
+    msgs.forEach(r=>{const d=document.createElement('div');d.className='aan';const t=document.createElement('div');t.textContent=(r.admin?'👑 ':'')+(r.name||'—')+' · '+fmtDate(r.ts)+': '+String(r.text||'');d.appendChild(t);mk(d,'حذف','dg',()=>deleteMsg(r.id));if(!r.admin)mk(d,'كتم صاحبها','',()=>muteUser(r.name));c3.appendChild(d);});
+  } else if(admTab==='log'){
+    if(!logins.length){card(body).textContent='لا توجد تسجيلات دخول بعد.';return;}
+    logins.slice(0,300).forEach(r=>{const c=card(body);c.textContent='🔐 '+(r.name||'—')+' — '+fmtDate(r.ts);});
+  }
+}
+function logAns(picked,ok){const it=quizBank[qIndex];attemptLog.push({n:qIndex+1,t:it.type,c:it.cat||'',q:String(it.text||it.q||'').slice(0,160),p:(picked===undefined?null:picked),ok:!!ok});}
+const toArabicNum=n=>n.toString().replace(/[0-9]/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]);
+function setScope(scope){
+  document.querySelectorAll('.sb').forEach(b=>b.classList.toggle('active',b.dataset.scope===scope));
+  examScope=scope;
+  document.getElementById('quizResult').style.display='none';
+  document.getElementById('quizArea').style.display='block';
+  qIndex=0;score=0;answered=false;attemptLog=[];
+  quizBank=[];
+  renderCurrentQ();
+}
+function renderCurrentQ(){
+  const box=document.getElementById('qCards');
+  if(!quizBank.length){
+    box.innerHTML='<div class="qt" style="text-align:center;padding:40px 10px;font-size:18px;">📝 الامتحانات قريبًا</div>';
+    document.getElementById('nextBtn').disabled=true;
+    document.getElementById('qCounter').textContent='٠ / ٠';
+    document.getElementById('qScoreLive').textContent='النتيجة: ٠';
+    return;
+  }
+  const item=quizBank[qIndex];
+  answered=false;
+  document.getElementById('nextBtn').disabled=true;
+  document.getElementById('nextBtn').textContent=(qIndex===quizBank.length-1)?'عرض النتيجة':'السؤال التالي';
+  if(item.type==='tf'){
+    box.innerHTML='<div class="qt">'+item.badge+' '+item.text+'</div><div class="tr"><button class="op" style="flex:1" onclick="answerTF(true,this)">✅ صواب</button><button class="op" style="flex:1" onclick="answerTF(false,this)">❌ خطأ</button></div><div class="tf" id="curTffb"></div>';
+  } else if(item.type==='mcq'){
+    box.innerHTML='<div class="qt">'+item.badge+' '+item.q+'</div>'+item.opts.map((o,i)=>'<button class="op" onclick="answerMCQ('+i+',this)">'+o+'</button>').join('');
+  }
+  updateHeader();
+}
+function updateHeader(){document.getElementById('qCounter').textContent=toArabicNum(qIndex+1)+' / '+toArabicNum(quizBank.length);document.getElementById('qBar').style.width=((qIndex)/quizBank.length*100)+'%';document.getElementById('qScoreLive').textContent='النتيجة: '+toArabicNum(score);}
+function answerTF(choice,btn){if(answered)return;answered=true;const item=quizBank[qIndex];const isRight=(choice===item.correct);logAns(choice,isRight);const row=btn.parentElement;row.querySelectorAll('.op').forEach(b=>{b.disabled=true;});btn.classList.add(isRight?'correct':'wrong');if(!isRight){row.querySelectorAll('.op').forEach(b=>{if(b!==btn)b.classList.add('correct');});}const fb=document.getElementById('curTffb');if(fb){fb.style.display='block';fb.textContent=item.correct?'العبارة صحيحة ✔️':('العبارة خاطئة ❌ — '+item.fix);}if(isRight)score++;document.getElementById('nextBtn').disabled=false;updateHeader();}
+function answerMCQ(choice,btn){if(answered)return;answered=true;const item=quizBank[qIndex];const buttons=btn.parentElement.querySelectorAll('.op');buttons.forEach((b,i)=>{b.disabled=true;if(i===item.a)b.classList.add('correct');else if(i===choice)b.classList.add('wrong');});if(choice===item.a)score++;logAns(item.opts[choice],choice===item.a);document.getElementById('nextBtn').disabled=false;updateHeader();}
+function nextQ(){if(!answered)return;qIndex++;if(qIndex>=quizBank.length){finishQuiz();return;}renderCurrentQ();}
+function finishQuiz(){saveAttempt();document.getElementById('quizArea').style.display='none';const res=document.getElementById('quizResult');res.style.display='block';const pct=Math.round(score/quizBank.length*100);document.getElementById('scoreRing').style.setProperty('--pct',pct);document.getElementById('scoreText').textContent=score+'/'+quizBank.length;let msg='أداء جيد، واصل المذاكرة! 💪';if(pct>=90)msg='ممتاز! إتقان رائع 🏆';else if(pct>=70)msg='جيد جدًا! راجع نقاطًا بسيطة 👍';else if(pct<50)msg='راجع الدروس ثم أعد المحاولة 📖';document.getElementById('resultMsg').textContent=msg;}
+function restartQuiz(){qIndex=0;score=0;answered=false;attemptLog=[];document.getElementById('quizResult').style.display='none';document.getElementById('quizArea').style.display='block';renderCurrentQ();}
+renderCurrentQ();
+</script>
+</body>
+  </html>
