@@ -312,8 +312,12 @@ function applyChatState(){
   const input=document.getElementById('peerInput'),btn=document.getElementById('peerSend'),note=document.getElementById('peerNote'),pin=document.getElementById('peerPin');
   const blocked=!adminMode&&(chatLocked||chatMuted);
   input.disabled=blocked;btn.disabled=blocked;
-  input.placeholder=chatMuted&&!adminMode?'تم كتمك من الشات':(chatLocked&&!adminMode?'الشات مقفول حاليًا':'اكتب رسالتك للطلاب...');
-  note.textContent=adminMode&&chatLocked?'🔒 الشات مقفول على الطلاب (أنت تستطيع الكتابة).':(chatMuted&&!adminMode?'⛔ تم منعك من الكتابة بواسطة المشرف.':(chatLocked&&!adminMode?'🔒 الشات مقفول مؤقتًا بواسطة المشرف.':''));
+  const muted=chatMuted&&!adminMode;
+  input.placeholder=muted?'لقد تم كتمك':(chatLocked&&!adminMode?'الشات مقفول حاليًا':'اكتب رسالتك للطلاب...');
+  if(muted)input.value='';
+  note.style.color=muted?'var(--br)':'';
+  note.style.fontWeight=muted?'900':'';
+  note.textContent=adminMode&&chatLocked?'🔒 الشات مقفول على الطلاب (أنت تستطيع الكتابة).':(muted?'⛔ لقد تم كتمك':(chatLocked&&!adminMode?'🔒 الشات مقفول مؤقتًا بواسطة المشرف.':''));
   pin.style.display=chatPin?'block':'none';pin.textContent=chatPin?'📌 '+chatPin:'';
 }
 async function deleteMsg(id){if(!adminMode)return;try{await fsDb.collection('messages').doc(id).delete();if(document.getElementById('admPanel').classList.contains('show'))loadAdmin();}catch(e){alert('تعذّر الحذف — راجع قواعد Firestore.');}}
@@ -355,7 +359,7 @@ async function startChat(name){
   const u3=fsDb.collection('muted').doc(muteKey(name)).onSnapshot(s=>{chatMuted=s.exists;applyChatState();},()=>{});
   chatUnsub=()=>{u1();u2();u3();};
   if(chatWired)return;chatWired=true;
-  async function send(){const t=input.value.trim().slice(0,500);if(!t||!chatName)return;if(!adminMode&&(chatLocked||chatMuted))return;btn.disabled=true;input.value='';try{await fsDb.collection('messages').add({text:t,uid:chatUid,name:chatName.slice(0,60),admin:adminMode,ts:Date.now()});note.textContent='';}catch(e){note.textContent='تعذّر إرسال الرسالة.';}btn.disabled=false;input.focus();}
+  async function send(){const t=input.value.trim().slice(0,500);if(!t||!chatName)return;if(!adminMode&&(chatLocked||chatMuted))return;btn.disabled=true;input.value='';try{await fsDb.collection('messages').add({text:t,uid:chatUid,name:chatName.slice(0,60),admin:adminMode,ts:Date.now()});applyChatState();}catch(e){applyChatState();if(!chatMuted||adminMode)note.textContent='تعذّر إرسال الرسالة.';}if(!input.disabled)input.focus();}
   btn.addEventListener('click',send);
   input.addEventListener('keydown',e=>{if(e.key==='Enter')send();});
 }
@@ -464,4 +468,4 @@ function restartQuiz(){qIndex=0;score=0;answered=false;attemptLog=[];document.ge
 renderCurrentQ();
 </script>
 </body>
-  </html>
+    </html>
