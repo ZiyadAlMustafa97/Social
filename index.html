@@ -30,18 +30,6 @@ main{max-width:920px;margin:0 auto;padding:22px 16px 10px}
 .cd h3 i{width:8px;height:8px;border-radius:50%;background:var(--gd);flex:0 0 auto;display:block}
 .cd p,.cd li{font-size:14.5px}
 .cd ul{padding-inline-start:20px;display:flex;flex-direction:column;gap:6px}
-.ld{font-size:15px;background:var(--nv);color:#eef4f2;padding:16px 18px;border-radius:14px;margin-bottom:18px;border-inline-start:5px solid var(--gd)}
-.tw{overflow-x:auto;border-radius:12px;border:1px solid var(--pl)}
-table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.5px;background:#fffdf6}
-th,td{padding:10px 12px;border-bottom:1px solid var(--pl);text-align:right;vertical-align:top}
-th{background:var(--nv);color:#f2ead4;font-weight:700}
-tr:nth-child(even) td{background:#f6efd9}
-td.hl{color:var(--tl);font-weight:700}
-.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
-.mn{background:#fffdf6;border:1px solid var(--pl);border-radius:12px;padding:14px}
-.mn .ic{font-size:22px}
-.mn h4{font-size:13.5px;color:var(--nv);margin:6px 0 4px;font-weight:800}
-.mn p{font-size:12.8px;color:var(--inks)}
 .qp{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;font-size:13px;color:var(--inks)}
 .qb{height:8px;background:var(--pp2);border-radius:999px;overflow:hidden;flex:1;margin:0 10px}
 .qb>div{height:100%;background:var(--gd);width:0%;transition:.3s}
@@ -62,8 +50,6 @@ footer{text-align:center;font-size:12px;color:var(--inks);padding:30px 16px 10px
 .lb{display:inline-block;font-size:11px;font-weight:800;color:#fff;background:var(--tl);padding:2px 9px;border-radius:999px;margin-inline-end:8px}
 .tr{display:flex;gap:8px;margin-bottom:6px}
 .tf{font-size:13px;color:var(--inks);margin-top:4px;display:none}
-.rb{background:var(--gd);color:#2a1d00;border:none;padding:7px 14px;border-radius:8px;font-family:inherit;font-weight:800;font-size:12.6px;cursor:pointer;margin-top:2px}
-.ra{display:none;margin-top:8px;background:#fbf1dc;border-inline-start:4px solid var(--gd);padding:9px 12px;border-radius:8px;font-size:13.4px}
 .sr2{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
 .sb{flex:1;min-width:100px;background:#fffdf6;border:1.5px solid var(--pl);color:var(--inks);padding:9px 10px;border-radius:10px;font-family:inherit;font-weight:800;font-size:12.8px;cursor:pointer}
 .sb.active{background:var(--gd);color:#2a1d00;border-color:var(--gd)}
@@ -147,18 +133,15 @@ nav.cats{position:sticky;top:0;z-index:32;display:flex;gap:6px;background:#08222
   <div class="chn" id="peerNote"></div>
 </section>
 <section class="pn" id="hw">
-  <div class="lt"><div class="ln">📝</div><div><h2>الواجبات</h2><span id="hwUnit"></span></div></div>
-  <div class="cd ec"><div class="bg">📝</div><p id="hwMsg"></p></div>
+  <div class="lt"><div class="ln">📝</div><div><h2>الواجبات</h2></div></div>
+  <div class="cd ec"><div class="bg">📝</div><p>لا توجد واجبات مضافة حتى الآن.</p></div>
 </section>
 <section class="pn" id="rev">
-  <div class="lt"><div class="ln">🔁</div><div><h2>المراجعات</h2><span id="revUnit"></span></div></div>
-  <div class="cd ec"><div class="bg">🔁</div><p id="revMsg"></p></div>
+  <div class="lt"><div class="ln">🔁</div><div><h2>المراجعات</h2></div></div>
+  <div class="cd ec"><div class="bg">🔁</div><p>لا توجد مراجعات مضافة حتى الآن.</p></div>
 </section>
 <section class="pn" id="quiz">
-  <div class="lt">
-    <div class="ln">✓</div>
-    <div><h2>اختبر نفسك</h2><span>اختر امتحان الدرس</span></div>
-  </div>
+  <div class="lt"><div class="ln">✓</div><div><h2>اختبر نفسك</h2><span>اختر امتحان الدرس</span></div></div>
   <div class="sr2" id="scopeToggle">
     <div class="scl">📘 الوحدة الأولى</div>
     <button class="sb active" data-scope="1-1" onclick="setScope('1-1')">الدرس الأول</button>
@@ -170,14 +153,13 @@ nav.cats{position:sticky;top:0;z-index:32;display:flex;gap:6px;background:#08222
     <button class="sb" data-scope="2-3" onclick="setScope('2-3')">الدرس الثالث</button>
   </div>
   <div id="quizArea">
-    <div class="qp"><span id="qCounter">١ / ١٠</span><div class="qb"><div id="qBar"></div></div><span id="qScoreLive">النتيجة: ٠</span></div>
+    <div class="qp"><span id="qCounter">٠ / ٠</span><div class="qb"><div id="qBar"></div></div><span id="qScoreLive">النتيجة: ٠</span></div>
     <div id="qCards"></div>
     <div class="qn"><button class="bt bp" id="nextBtn" disabled onclick="nextQ()">السؤال التالي</button></div>
   </div>
   <div class="qr" id="quizResult">
-    <div class="sr" id="scoreRing"><span id="scoreText">0/10</span></div>
+    <div class="sr" id="scoreRing"><span id="scoreText">0/0</span></div>
     <h3 id="resultMsg"></h3>
-    <p style="color:var(--inks);font-size:13.6px;margin-bottom:16px">راجع الدروس ثم أعد المحاولة.</p>
     <button class="bt bp" onclick="restartQuiz()">إعادة المحاولة</button>
   </div>
 </section>
@@ -208,8 +190,8 @@ function render(){
   if(curCat==='explain')document.getElementById('soon').classList.add('active');
   else if(curCat==='chat')document.getElementById('chat').classList.add('active');
   else if(curCat==='exam'){document.getElementById('quiz').classList.add('active');setScope(examScope);}
-  else if(curCat==='homework'){document.getElementById('hwMsg').textContent='لا توجد واجبات مضافة حتى الآن.';document.getElementById('hw').classList.add('active');}
-  else{document.getElementById('revMsg').textContent='لا توجد مراجعات مضافة حتى الآن.';document.getElementById('rev').classList.add('active');}
+  else if(curCat==='homework')document.getElementById('hw').classList.add('active');
+  else document.getElementById('rev').classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 document.querySelectorAll('#catNav .ctb').forEach(c=>c.addEventListener('click',()=>{curCat=c.dataset.cat;render();}));
@@ -231,8 +213,8 @@ function saveAttempt(){if(adminMode||!fsDb||!chatUid||!chatName)return;fsDb.coll
   async function submit(){
     const name=nameI.value.trim().replace(/\s+/g,' '),code=arDigits(codeI.value.trim());
     if(!name||!code)return;btn.disabled=true;
-    if(name.toLowerCase()==='admin'&&code==='837194'){try{localStorage.setItem('adm','المشرف');}catch(e){}enterAdmin('المشرف');btn.disabled=false;return;}
-    if(normName(name)==='مستر اسامه'&&code==='562847'){try{localStorage.setItem('adm','مستر أسامة');}catch(e){}enterAdmin('مستر أسامة');btn.disabled=false;return;}
+    if(name.toLowerCase()==='admin'&&code==='837194'){try{localStorage.setItem('adm','المشرف');}catch(e){}enterAsAdmin('المشرف');btn.disabled=false;return;}
+    if(normName(name)==='مستر اسامه'&&code==='562847'){try{localStorage.setItem('adm','مستر أسامة');}catch(e){}enterAsAdmin('مستر أسامة');btn.disabled=false;return;}
     if(normName(name)==='زياد المصطفي'&&code==='1234'){try{localStorage.setItem('stu',JSON.stringify({name,code}));}catch(e){}enter(name);btn.disabled=false;return;}
     if(name.split(' ').length<3){err.textContent='اكتب اسمك ثلاثيًا (ثلاث كلمات على الأقل).';btn.disabled=false;return;}
     let ok=false;try{ok=await verify(name,code);}catch(e){err.textContent='تعذّر التحقق.';btn.disabled=false;return;}
@@ -251,7 +233,7 @@ function saveAttempt(){if(adminMode||!fsDb||!chatUid||!chatName)return;fsDb.coll
     nameI.value='';codeI.value='';btn.disabled=true;ov.classList.add('show');
   });
   (async()=>{
-    try{const admName=localStorage.getItem('adm');if(admName){enterAdmin(admName==='1'?'المشرف':admName);return;}}catch(e){}
+    try{const admName=localStorage.getItem('adm');if(admName){enterAsAdmin(admName==='1'?'المشرف':admName);return;}}catch(e){}
     try{const st=JSON.parse(localStorage.getItem('stu')||'null');if(st&&await verify(st.name,st.code)){enter(st.name);return;}}catch(e){}
     ov.classList.add('show');setTimeout(()=>nameI.focus(),50);
   })();
@@ -260,11 +242,10 @@ const firebaseConfig={apiKey:"AIzaSyDtyIZDKSzhGHfGNmqh_piaKutMvGO5ZTI",authDomai
 let fsDb=null,fbAuth=null,chatUnsub=null,chatUid=null,chatName='',chatWired=false;
 function addMsg(box,text,cls,who){const d=document.createElement('div');d.className='ms '+cls;if(who){const sm=document.createElement('small');sm.textContent=who;d.appendChild(sm);}const t=document.createElement('span');t.textContent=text;d.appendChild(t);box.appendChild(d);box.scrollTop=box.scrollHeight;return t;}
 function chatOff(msg){const box=document.getElementById('peerBox');box.innerHTML='';addMsg(box,msg,'o');document.getElementById('peerInput').disabled=true;document.getElementById('peerSend').disabled=true;}
-function stopChat(){if(chatUnsub){chatUnsub();chatUnsub=null;}chatName='';}
+function stopChat(){if(chatUnsub){chatUnsub();chatUnsub=null;}chatName='';chatWired=false;}
 async function startChat(name){
   chatName=name;
   const box=document.getElementById('peerBox'),input=document.getElementById('peerInput'),btn=document.getElementById('peerSend'),note=document.getElementById('peerNote');
-  if(firebaseConfig.apiKey.startsWith('PUT_')){chatOff('الشات غير مفعّل بعد.');return;}
   try{
     ensureFb();
     if(!fbAuth.currentUser)await fbAuth.signInAnonymously();
@@ -272,7 +253,8 @@ async function startChat(name){
     fsDb.collection('logins').add({uid:chatUid,name:name.slice(0,60),ts:Date.now()}).catch(()=>{});
   }catch(e){chatOff('تعذّر الاتصال بالشات.');return;}
   input.disabled=false;btn.disabled=false;
-  stopChat();chatName=name;
+  if(chatUnsub){chatUnsub();chatUnsub=null;}
+  chatName=name;
   chatUnsub=fsDb.collection('messages').orderBy('ts','desc').limit(100).onSnapshot(snap=>{
     const rows=snap.docs.map(d=>d.data()).reverse();
     box.innerHTML='';
@@ -284,13 +266,14 @@ async function startChat(name){
   btn.addEventListener('click',send);
   input.addEventListener('keydown',e=>{if(e.key==='Enter')send();});
 }
-async function enterAdmin(adminName){
+function enterAsAdmin(adminName){
+  adminMode=true;
   document.getElementById('whoName').textContent=adminName||'المشرف';
   document.getElementById('whoChip').style.display='';
   document.getElementById('nameOverlay').classList.remove('show');
-  adminMode=true;document.getElementById('admFab').style.display='block';
+  document.getElementById('admFab').style.display='block';
+  startChat(adminName||'المشرف');
   openAdmin();
-  try{ensureFb();if(!fbAuth.currentUser)await fbAuth.signInAnonymously();chatUid=fbAuth.currentUser.uid;await startChat(adminName||'المشرف');}catch(e){console.error(e);}
 }
 (function(){
   const $=id=>document.getElementById(id);
@@ -335,18 +318,14 @@ function renderAdmin(){
     logins.slice(0,300).forEach(r=>{const c=card(body);c.textContent='🔐 '+(r.name||'—')+' — '+fmtDate(r.ts);});
   }
 }
-let examScope='1-1';
-let quizBank=[];
-let qIndex=0,score=0,answered=false,attemptLog=[];
+let examScope='1-1',quizBank=[],qIndex=0,score=0,answered=false,attemptLog=[];
 function logAns(picked,ok){const it=quizBank[qIndex];attemptLog.push({n:qIndex+1,t:it.type,c:it.cat||'',q:String(it.text||it.q||'').slice(0,160),p:(picked===undefined?null:picked),ok:!!ok});}
 const toArabicNum=n=>n.toString().replace(/[0-9]/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]);
 function setScope(scope){
   document.querySelectorAll('.sb').forEach(b=>b.classList.toggle('active',b.dataset.scope===scope));
-  examScope=scope;
+  examScope=scope;qIndex=0;score=0;answered=false;attemptLog=[];quizBank=[];
   document.getElementById('quizResult').style.display='none';
   document.getElementById('quizArea').style.display='block';
-  qIndex=0;score=0;answered=false;attemptLog=[];
-  quizBank=[];
   renderCurrentQ();
 }
 function renderCurrentQ(){
@@ -373,7 +352,7 @@ function updateHeader(){document.getElementById('qCounter').textContent=toArabic
 function answerTF(choice,btn){if(answered)return;answered=true;const item=quizBank[qIndex];const isRight=(choice===item.correct);logAns(choice,isRight);const row=btn.parentElement;row.querySelectorAll('.op').forEach(b=>{b.disabled=true;});btn.classList.add(isRight?'correct':'wrong');if(!isRight){row.querySelectorAll('.op').forEach(b=>{if(b!==btn)b.classList.add('correct');});}const fb=document.getElementById('curTffb');if(fb){fb.style.display='block';fb.textContent=item.correct?'العبارة صحيحة ✔️':('العبارة خاطئة ❌ — '+item.fix);}if(isRight)score++;document.getElementById('nextBtn').disabled=false;updateHeader();}
 function answerMCQ(choice,btn){if(answered)return;answered=true;const item=quizBank[qIndex];const buttons=btn.parentElement.querySelectorAll('.op');buttons.forEach((b,i)=>{b.disabled=true;if(i===item.a)b.classList.add('correct');else if(i===choice)b.classList.add('wrong');});if(choice===item.a)score++;logAns(item.opts[choice],choice===item.a);document.getElementById('nextBtn').disabled=false;updateHeader();}
 function nextQ(){if(!answered)return;qIndex++;if(qIndex>=quizBank.length){finishQuiz();return;}renderCurrentQ();}
-function finishQuiz(){saveAttempt();document.getElementById('quizArea').style.display='none';const res=document.getElementById('quizResult');res.style.display='block';const pct=Math.round(score/quizBank.length*100);document.getElementById('scoreRing').style.setProperty('--pct',pct);document.getElementById('scoreText').textContent=score+'/'+quizBank.length;let msg='أداء جيد، واصل المذاكرة! 💪';if(pct>=90)msg='ممتاز! إتقان رائع 🏆';else if(pct>=70)msg='جيد جدًا! راجع نقاطًا بسيطة 👍';else if(pct<50)msg='راجع الدروس ثم أعد المحاولة 📖';document.getElementById('resultMsg').textContent=msg;}
+function finishQuiz(){saveAttempt();document.getElementById('quizArea').style.display='none';const res=document.getElementById('quizResult');res.style.display='block';const pct=Math.round(score/quizBank.length*100);document.getElementById('scoreRing').style.setProperty('--pct',pct);document.getElementById('scoreText').textContent=score+'/'+quizBank.length;let msg='أداء جيد! 💪';if(pct>=90)msg='ممتاز! 🏆';else if(pct>=70)msg='جيد جدًا! 👍';else if(pct<50)msg='راجع وأعد المحاولة 📖';document.getElementById('resultMsg').textContent=msg;}
 function restartQuiz(){qIndex=0;score=0;answered=false;attemptLog=[];document.getElementById('quizResult').style.display='none';document.getElementById('quizArea').style.display='block';renderCurrentQ();}
 renderCurrentQ();
 </script>
