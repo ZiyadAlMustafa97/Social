@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الدراسات الاجتماعية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1c2a2a;--ink-soft:#4a5a58;--paper:#f2ead4;--paper-2:#e9dfc0;--paper-line:#cdbf98;--navy:#0d3446;--navy-2:#124a61;--teal:#1f6f6a;--gold:#b8862f;--gold-light:#e8c877;--forest:#3c6b46;--brick:#a8492f;--card-shadow:0 10px 24px -14px rgba(13,52,70,.45);box-sizing:border-box}
+*{box-sizing:inherit;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:'Cairo','Tahoma',sans-serif;background:radial-gradient(ellipse at 15% 0%,#eadfc1 0%,transparent 45%),radial-gradient(ellipse at 85% 10%,#e3d6ae 0%,transparent 40%),var(--paper);color:var(--ink);line-height:1.7;padding-bottom:60px}
+.hero{position:relative;background:linear-gradient(180deg,rgba(13,52,70,.86),rgba(13,52,70,.93)),repeating-linear-gradient(120deg,#0d3446 0 40px,#0f3c50 40px 80px);color:#f4ecd6;padding:52px 22px 40px;overflow:hidden;border-bottom:6px solid var(--gold)}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 8% 85%,rgba(232,200,119,.18) 0,transparent 22%),radial-gradient(circle at 92% 20%,rgba(232,200,119,.14) 0,transparent 20%);pointer-events:none}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--gold-light);background:rgba(0,0,0,.18);padding:6px 14px;border-radius:999px;border:1px solid rgba(232,200,119,.35)}
+.byline{font-family:'Amiri',serif;font-size:12.5px;letter-spacing:1.5px;color:#d8e6e4;opacity:.75;margin-bottom:10px;direction:ltr;text-align:left}
+.hero h1{font-size:clamp(26px,6vw,40px);font-weight:900;margin:16px 0 8px;letter-spacing:.2px}
+nav.tabs{position:sticky;top:0;z-index:30;display:flex;gap:6px;overflow-x:auto;background:var(--navy);padding:10px 12px;box-shadow:0 6px 14px -8px rgba(0,0,0,.4)}
+nav.tabs::-webkit-scrollbar{display:none}
+.tab-btn{flex:0 0 auto;background:transparent;color:#cfe2df;border:1px solid rgba(255,255,255,.18);padding:10px 16px;border-radius:10px;font-family:inherit;font-size:13.5px;font-weight:700;cursor:pointer;white-space:nowrap;transition:.2s}
+.tab-btn.active{background:var(--gold);color:#2a1d00;border-color:var(--gold)}
+main{max-width:920px;margin:0 auto;padding:22px 16px 10px}
+section.panel{display:none;animation:fade .35s ease}
+section.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.lesson-title{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.lesson-num{flex:0 0 auto;width:44px;height:44px;border-radius:12px;background:var(--navy);color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}
+.lesson-title h2{font-size:clamp(19px,4.5vw,24px);color:var(--navy);font-weight:800}
+.lesson-title span{display:block;font-size:12.5px;color:var(--ink-soft);font-weight:600;margin-top:2px}
+.card{background:linear-gradient(180deg,#fbf6e8,var(--paper));border:1px solid var(--paper-line);border-radius:14px;padding:18px;margin-bottom:16px;box-shadow:var(--card-shadow)}
+.card h3{color:var(--teal);font-size:16px;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card h3 .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex:0 0 auto}
+.card p,.card li{font-size:14.5px;color:var(--ink)}
+.card ul{padding-inline-start:20px;display:flex;flex-direction:column;gap:6px}
+.lead{font-size:15px;background:var(--navy);color:#eef4f2;padding:16px 18px;border-radius:14px;margin-bottom:18px;border-inline-start:5px solid var(--gold)}
+.table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--paper-line)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.5px;background:#fffdf6}
+th,td{padding:10px 12px;border-bottom:1px solid var(--paper-line);text-align:right;vertical-align:top}
+th{background:var(--navy);color:#f2ead4;font-weight:700;position:sticky;top:0}
+tr:nth-child(even) td{background:#f6efd9}
+td.hl{color:var(--teal);font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{background:var(--paper-2);border:1px solid var(--paper-line);border-radius:999px;padding:6px 12px;font-size:12.5px;font-weight:700;color:var(--navy)}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.mini{background:#fffdf6;border:1px solid var(--paper-line);border-radius:12px;padding:14px}
+.mini .icon{font-size:22px}
+.mini h4{font-size:13.5px;color:var(--navy);margin:6px 0 4px;font-weight:800}
+.mini p{font-size:12.8px;color:var(--ink-soft)}
+.civ-toggle{display:flex;gap:8px;margin-bottom:14px}
+.civ-btn{flex:1;padding:12px;border-radius:12px;border:1.5px solid var(--paper-line);background:#fffdf6;font-family:inherit;font-weight:800;font-size:14.5px;cursor:pointer;color:var(--ink-soft)}
+.civ-btn.active-maya{background:var(--forest);color:#fff;border-color:var(--forest)}
+.civ-btn.active-inca{background:var(--brick);color:#fff;border-color:var(--brick)}
+.civ-panel{display:none}
+.civ-panel.show{display:block}
+.accordion-item{border:1px solid var(--paper-line);border-radius:12px;margin-bottom:8px;overflow:hidden;background:#fffdf6}
+.accordion-head{width:100%;text-align:right;background:none;border:none;font-family:inherit;padding:12px 14px;font-weight:800;font-size:14px;color:var(--navy);display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+.accordion-head .arrow{transition:.25s;color:var(--gold);font-size:14px}
+.accordion-item.open .arrow{transform:rotate(180deg)}
+.accordion-body{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 14px}
+.accordion-item.open .accordion-body{padding:0 14px 14px}
+.accordion-body ul{padding-inline-start:18px;display:flex;flex-direction:column;gap:5px;font-size:13.6px}
+.compare-note{background:#fbf1dc;border:1px dashed var(--gold);border-radius:12px;padding:14px;font-size:13.6px;margin-top:6px}
+.timeline{position:relative;padding-inline-start:26px}
+.timeline::before{content:"";position:absolute;right:9px;top:4px;bottom:4px;width:2px;background:var(--paper-line)}
+.t-item{position:relative;padding-bottom:20px}
+.t-item:last-child{padding-bottom:0}
+.t-item::before{content:"";position:absolute;right:-26px;top:3px;width:12px;height:12px;border-radius:50%;background:var(--gold);border:2px solid var(--navy)}
+.t-item h4{font-size:14.5px;color:var(--navy);font-weight:800}
+.t-item span.tag{font-size:11.5px;color:#fff;background:var(--teal);padding:2px 8px;border-radius:999px;margin-inline-start:6px}
+.t-item p{font-size:13.6px;color:var(--ink-soft);margin-top:4px}
+.flip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.flip{perspective:1000px;height:118px;cursor:pointer}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.flip.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-face{position:absolute;inset:0;border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;backface-visibility:hidden;font-size:12.8px;font-weight:700}
+.flip-front{background:var(--navy);color:#f2ead4}
+.flip-back{background:var(--gold);color:#2a1d00;transform:rotateY(180deg);font-weight:600;font-size:12.2px}
+.quiz-progress{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;font-size:13px;color:var(--ink-soft)}
+.quiz-bar{height:8px;background:var(--paper-2);border-radius:999px;overflow:hidden;flex:1;margin:0 10px}
+.quiz-bar>div{height:100%;background:var(--gold);width:0%;transition:.3s}
+.q-text{font-size:15.5px;font-weight:800;color:var(--navy);margin-bottom:12px}
+.opt{display:block;width:100%;text-align:right;background:#fffdf6;border:1.5px solid var(--paper-line);padding:12px 14px;border-radius:10px;margin-bottom:8px;font-family:inherit;font-size:13.8px;cursor:pointer;color:var(--ink)}
+.opt.correct{background:#e4f3e6;border-color:var(--forest);color:#204a29;font-weight:700}
+.opt.wrong{background:#fbe6e2;border-color:var(--brick);color:#7a2a1a;font-weight:700}
+.opt[disabled]{cursor:default}
+.quiz-nav{display:flex;gap:10px;margin-top:14px}
+.btn{padding:10px 18px;border-radius:10px;border:none;font-family:inherit;font-weight:800;font-size:13.8px;cursor:pointer}
+.btn-primary{background:var(--navy);color:#f2ead4}
+.btn-primary:disabled{opacity:.4}
+.quiz-result{display:none;text-align:center;padding:30px 10px}
+.quiz-result h3{font-size:22px;color:var(--navy);margin-bottom:8px}
+.score-ring{width:120px;height:120px;margin:0 auto 16px;border-radius:50%;background:conic-gradient(var(--gold) calc(var(--pct)*1%),var(--paper-2) 0);display:flex;align-items:center;justify-content:center}
+.score-ring span{background:var(--paper);width:92px;height:92px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px;color:var(--navy)}
+footer{text-align:center;font-size:12px;color:var(--ink-soft);padding:30px 16px 10px}
+.lesson-badge{display:inline-block;font-size:11px;font-weight:800;color:#fff;background:var(--teal);padding:2px 9px;border-radius:999px;margin-inline-end:8px}
+.tf-row{display:flex;gap:8px;margin-bottom:6px}
+.tf-fb{font-size:13px;color:var(--ink-soft);margin-top:4px;display:none}
+.reveal-btn{background:var(--gold);color:#2a1d00;border:none;padding:7px 14px;border-radius:8px;font-family:inherit;font-weight:800;font-size:12.6px;cursor:pointer;margin-top:2px}
+.reveal-ans{display:none;margin-top:8px;background:#fbf1dc;border-inline-start:4px solid var(--gold);padding:9px 12px;border-radius:8px;font-size:13.4px;color:var(--ink)}
+.spotlight-au{background:linear-gradient(180deg,#fdf6e3,var(--paper-2));border:1px solid var(--gold)}
+.spotlight-au h3{color:var(--brick)}
+.flip-au .flip-front{background:var(--forest)}
+.flip-au .flip-back{background:var(--gold-light);color:#2a1d00}
+.flip-na .flip-front{background:var(--navy-2)}
+.flip-na .flip-back{background:#cfe3ea;color:#0d3446}
+.flip-sa .flip-front{background:var(--teal)}
+.flip-sa .flip-back{background:#d8ece7;color:#124a3a}
+.flip-an .flip-front{background:#3a5a68}
+.flip-an .flip-back{background:#e4eef1;color:#1c2a2a}
+.continent-toggle{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.cbtn{font-size:13px;padding:10px 8px}
+.cbtn.active{background:var(--navy);color:#f2ead4;border-color:var(--navy)}
+nav.units{position:sticky;top:0;z-index:31;display:flex;gap:8px;background:var(--gold);padding:10px 12px;box-shadow:0 6px 14px -8px rgba(0,0,0,.4)}
+.unit-btn{flex:1;background:rgba(255,255,255,.3);color:#2a1d00;border:1.5px solid rgba(42,29,0,.3);padding:10px;border-radius:10px;font-family:inherit;font-weight:900;font-size:14px;cursor:pointer}
+.unit-btn.active{background:var(--navy);color:#f2ead4;border-color:var(--navy)}
+.scope-row{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.scope-btn{flex:1;min-width:100px;background:#fffdf6;border:1.5px solid var(--paper-line);color:var(--ink-soft);padding:9px 10px;border-radius:10px;font-family:inherit;font-weight:800;font-size:12.8px;cursor:pointer}
+.scope-btn.active{background:var(--gold);color:#2a1d00;border-color:var(--gold)}
+.ruler-card{border:1px solid var(--paper-line);border-radius:12px;margin-bottom:10px;overflow:hidden;background:#fffdf6}
+.ruler-head{width:100%;text-align:right;border:none;font-family:inherit;cursor:pointer;padding:12px 14px;font-weight:800;font-size:14.5px;color:#fff;background:var(--navy-2);display:flex;justify-content:space-between;align-items:center}
+.ruler-head .arrow{transition:.25s}
+.ruler-card.open .arrow{transform:rotate(180deg)}
+.ruler-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.ruler-card.open .ruler-body{max-height:900px}
+.ruler-in{padding:14px;display:grid;grid-template-columns:1fr;gap:10px}
+.ruler-good{border-inline-start:4px solid var(--forest);background:#eef7ef;padding:10px 12px;border-radius:8px;font-size:13.4px}
+.ruler-bad{border-inline-start:4px solid var(--brick);background:#fbeee9;padding:10px 12px;border-radius:8px;font-size:13.4px}
+.ruler-good b,.ruler-bad b{display:block;margin-bottom:4px}
+nav.cats{position:sticky;top:0;z-index:32;display:flex;gap:6px;background:#08222f;padding:10px 12px;box-shadow:0 6px 14px -8px rgba(0,0,0,.5)}
+.cat-btn{flex:1;background:transparent;color:#cfe2df;border:1px solid rgba(255,255,255,.2);padding:10px 4px;border-radius:10px;font-family:inherit;font-size:clamp(12px,3.3vw,14.5px);font-weight:800;cursor:pointer;white-space:nowrap}
+.cat-btn.active{background:var(--gold-light);color:#2a1d00;border-color:var(--gold-light)}
+nav.units{top:56px!important;z-index:31}
+nav.tabs{top:112px!important;z-index:30}
+html{scroll-padding-top:170px!important}
+.empty-card{text-align:center;padding:34px 18px}
+.empty-card .big{font-size:40px;margin-bottom:8px}
+.empty-card p{color:var(--ink-soft);font-weight:600}
+nav.units{position:static!important;background:transparent;box-shadow:none;padding:0 0 16px}
+nav.units .unit-btn{background:#fffdf6;border-color:var(--paper-line);color:var(--ink-soft)}
+nav.units .unit-btn.active{background:var(--navy);color:#f2ead4;border-color:var(--navy)}
+nav.tabs{top:56px!important}
+html{scroll-padding-top:120px!important}
+.cat-btn{padding:10px 2px!important;font-size:clamp(11px,3vw,14px)!important}
+.chat-box{height:min(58vh,460px);overflow-y:auto;background:#fffdf6;border:1px solid var(--paper-line);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:10px}
+.msg{max-width:88%;padding:9px 12px;border-radius:12px;font-size:14px;line-height:1.7;white-space:pre-wrap;word-break:break-word}
+.msg.me{align-self:flex-start;background:var(--navy);color:#f2ead4;border-end-start-radius:4px}
+.msg.other{align-self:flex-end;background:#f1e6c6;color:var(--ink);border-end-end-radius:4px}
+.msg small{display:block;font-size:11px;font-weight:800;color:var(--teal);margin-bottom:2px}
+.msg.me small{color:var(--gold-light)}
+.chat-row{display:flex;gap:8px;margin-top:10px}
+.chat-row input{flex:1;min-width:0;padding:11px 12px;border-radius:10px;border:1.5px solid var(--paper-line);font-family:inherit;font-size:14px;background:#fffdf6;color:var(--ink)}
+.chat-row button{padding:0 18px;border:0;border-radius:10px;background:var(--gold);color:#2a1d00;font-family:inherit;font-weight:900;cursor:pointer}
+.chat-row button:disabled{opacity:.5}
+.chat-note{font-size:12.5px;color:var(--ink-soft);margin-top:8px;font-weight:600}
+.scope-label{flex:0 0 100%;font-weight:900;color:var(--navy);font-size:14px;margin-top:4px}
+.name-overlay{position:fixed;inset:0;z-index:100;background:rgba(8,34,47,.92);display:none;align-items:center;justify-content:center;padding:20px}
+.name-overlay.show{display:flex}
+.name-box{background:linear-gradient(180deg,#fbf6e8,var(--paper));border:2px solid var(--gold);border-radius:18px;padding:26px 22px;width:100%;max-width:380px;text-align:center;box-shadow:0 20px 50px -10px rgba(0,0,0,.6)}
+.name-box .big{font-size:44px}
+.name-box h2{color:var(--navy);font-size:21px;font-weight:900;margin:6px 0 4px}
+.name-box p{color:var(--ink-soft);font-size:13.5px;font-weight:600;margin-bottom:14px}
+.name-box input{width:100%;padding:12px;border-radius:10px;border:1.5px solid var(--paper-line);font-family:inherit;font-size:16px;text-align:center;background:#fffdf6;color:var(--ink)}
+.name-box button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:10px;background:var(--gold);color:#2a1d00;font-family:inherit;font-weight:900;font-size:15px;cursor:pointer}
+.name-box button:disabled{opacity:.5}
+.who-chip{display:inline-flex;gap:8px;align-items:center;margin-top:14px;background:rgba(255,255,255,.1);border:1px solid rgba(232,200,119,.4);color:#f4ecd6;padding:6px 12px;border-radius:999px;font-size:13px;font-weight:700}
+.who-chip button{background:none;border:0;color:var(--gold-light);font-family:inherit;font-weight:800;font-size:12.5px;cursor:pointer;text-decoration:underline}
+.adm-fab{position:fixed;left:14px;bottom:14px;z-index:90;display:none;background:var(--navy);color:#f2ead4;border:2px solid var(--gold);border-radius:999px;padding:10px 16px;font-family:inherit;font-weight:900;font-size:14px;cursor:pointer;box-shadow:0 8px 20px -6px rgba(0,0,0,.5)}
+.adm-panel{position:fixed;inset:0;z-index:110;background:var(--paper);overflow-y:auto;display:none;padding:14px 14px 40px}
+.adm-panel.show{display:block}
+.adm-top{display:flex;gap:8px;align-items:center;margin-bottom:12px}
+.adm-top h2{flex:1;font-size:19px;color:var(--navy);font-weight:900}
+.adm-top button{border:0;border-radius:10px;padding:9px 14px;font-family:inherit;font-weight:800;cursor:pointer;background:var(--gold);color:#2a1d00}
+.adm-tabs{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.adm-tabs button{flex:1;min-width:70px;padding:9px 4px;border-radius:10px;border:1.5px solid var(--paper-line);background:#fffdf6;font-family:inherit;font-weight:800;color:var(--ink-soft);cursor:pointer;font-size:12.5px}
+.adm-tabs button.active{background:var(--navy);color:#f2ead4;border-color:var(--navy)}
+.adm-card{background:#fffdf6;border:1px solid var(--paper-line);border-radius:12px;padding:10px 12px;margin-bottom:8px;font-size:13.5px;line-height:1.8}
+.adm-card b{color:var(--navy)}
+.adm-card details summary{cursor:pointer;font-weight:800}
+.adm-ans{padding:6px 0;border-top:1px dashed var(--paper-line);font-size:13px}
+.adm-stat{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.adm-stat div{flex:1;min-width:90px;background:var(--navy);color:#f2ead4;border-radius:12px;padding:10px;text-align:center;font-weight:800;font-size:13px}
+.adm-stat div span{display:block;font-size:20px;color:var(--gold-light)}
+</style>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+</head>
+<body>
+<div class="hero">
+  <div class="byline">Programmed by ZIAD AlMostafa</div>
+  <span class="hero-eyebrow">📘 دراسات اجتماعية · الصف الثالث الإعدادي · الترم الأول</span>
+  <h1>الدراسات الاجتماعية</h1>
+  <div class="who-chip" id="whoChip" style="display:none">👤 <span id="whoName"></span> <button id="logoutBtn">خروج</button></div>
+</div>
+<nav class="cats" id="catNav">
+  <button class="cat-btn active" data-cat="explain">📖 الشرح</button>
+  <button class="cat-btn" data-cat="homework">📝 الواجبات</button>
+  <button class="cat-btn" data-cat="review">🔁 المراجعات</button>
+  <button class="cat-btn" data-cat="exam">🎯 الامتحانات</button>
+  <button class="cat-btn" data-cat="chat">💬 الشات</button>
+</nav>
+<nav class="tabs" id="tabsNav">
+  <button class="tab-btn active" data-group="1" data-target="l1">🗺️ الدرس الأول</button>
+  <button class="tab-btn" data-group="1" data-target="l2">🏛️ الدرس الثاني</button>
+  <button class="tab-btn" data-group="1" data-target="l3">⛵ الدرس الثالث</button>
+  <button class="tab-btn" data-group="2" data-target="u2l1" style="display:none">🏰 الدرس الأول</button>
+  <button class="tab-btn" data-group="2" data-target="u2l2" style="display:none">⚙️ الدرس الثاني</button>
+  <button class="tab-btn" data-group="2" data-target="u2l3" style="display:none">👑 الدرس الثالث</button>
+</nav>
+<main>
+<nav class="units" id="unitNav">
+  <button class="unit-btn active" data-unit="1">📘 الوحدة الأولى</button>
+  <button class="unit-btn" data-unit="2">📗 الوحدة الثانية</button>
+</nav>
+<!-- ================= LESSON 1 ================= -->
+<section class="panel active" id="l1">
+  <div class="lesson-title">
+    <div class="lesson-num">١</div>
+    <div><h2>موقع ومظاهر سطح قارات العالم الجديد</h2><span>قارات العالم الجديد: أمريكا الشمالية · أمريكا الجنوبية · القارة القطبية الجنوبية (أنتاركتيكا) · أستراليا</span></div>
+  </div>
+  <div class="lead">💡 الفكرة الرئيسية: أدى اكتشاف قارات العالم الجديد إلى إعادة رسم خريطة العالم، وتعدّ دراسة الموقع الجغرافي ومظاهر سطح هذه القارات من العوامل الأساسية لفهم خصائصها الطبيعية والاقتصادية والحضارية.</div>
+  <div class="card">
+    <h3><span class="dot"></span> خريطة الدرس الذهنية</h3>
+    <div class="grid3">
+      <div class="mini"><div class="icon">📏</div><h4>١) مساحة قارات العالم الجديد</h4><p>ترتيبها بين قارات العالم من حيث المساحة.</p></div>
+      <div class="mini"><div class="icon">🧭</div><h4>٢) الموقع الفلكى والجغرافى</h4><p>دوائر العرض وخطوط الطول، والحدود لكل قارة.</p></div>
+      <div class="mini"><div class="icon">⭐</div><h4>٣) أهمية الموقع</h4><p>استراتيجية، اقتصادية، حضارية.</p></div>
+      <div class="mini"><div class="icon">🏔️</div><h4>٤) مظاهر سطح القارات</h4><p>جبال، هضاب، سهول، جزر.</p></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3><span class="dot"></span> ماذا تعرف عن قارات العالم الجديد؟</h3>
+    <p>قارات العالم الجديد هى: قارة أمريكا الشمالية، وقارة أمريكا الجنوبية، والقارة القطبية الجنوبية (أنتاركتيكا)، وقارة أستراليا. تعلمنا فيما سبق أن الموقع (فلكى - جغرافى) وتنوع مظاهر السطح من العوامل الأساسية التى أثرت فى خصائص القارات المختلفة (نظم بيئية - أنشطة سكانية...).</p>
+  </div>
+  <div class="card">
+    <h3><span class="dot"></span> المساحة والترتيب بين قارات العالم</h3>
+    <div class="chips">
+      <div class="chip">أمريكا الشمالية · ثالث أكبر قارة (بعد آسيا وإفريقيا)</div>
+      <div class="chip">أمريكا الجنوبية · رابع أكبر قارة</div>
+      <div class="chip">القارة القطبية الجنوبية · خامس أكبر قارة</div>
+      <div class="chip">أستراليا · سابع وأصغر قارة</div>
+    </div>
+    <p style="margin-top:10px;font-size:13px;color:var(--ink-soft)">* هذا العام سيتم دراسة الأمريكتين وأستراليا من حيث السكان لأنها قارات مأهولة، ولن يتم دراسة القارة القطبية الجنوبية من حيث السكان لأنها متجمدة وغير مأهولة بالسكان.</p>
+  </div>
+  <div class="card">
+    <h3><span class="dot"></span> الموقع الفلكي والجغرافي لكل قارة</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>القارة</th><th>الموقع الفلكي (تقريبًا)</th><th>يحدها</th></tr></thead>
+        <tbody>
+          <tr><td class="hl">أمريكا الشمالية</td><td>بين دائرتي عرض ٧°٣٠′ و٨٣° شمالًا، وخطي طول ١٠° و١٦٨° غربًا (تقع فى النصف الشمالى والغربى من الكرة الأرضية)</td><td>شمالًا: المحيط القطبي الشمالي · شرقًا: الأطلنطي · جنوبًا وجنوب شرقًا: البحر الكاريبي وأمريكا الجنوبية · غربًا: الهادي</td></tr>
+          <tr><td class="hl">أمريكا الجنوبية</td><td>بين دائرتي عرض ١٢° شمالًا و٥٦° جنوبًا، وخطي طول ٣٥° و٨١° غربًا (يقع معظمها فى النصف الجنوبى، وتقع كاملة فى النصف الغربى)</td><td>شمالًا: البحر الكاريبي وأمريكا الشمالية · شرقًا: الأطلنطي · غربًا: الهادي</td></tr>
+          <tr><td class="hl">القارة القطبية الجنوبية</td><td>تقع فى أقصى جنوب الكرة الأرضية حول القطب الجنوبى مباشرة</td><td>يحيط بها المحيط القطبي الجنوبي من كل الجهات</td></tr>
+          <tr><td class="hl">أستراليا</td><td>بين دائرتي عرض ١٠° و٤٤° جنوبًا، وخطي طول ١١٣° و١٧٨° شرقًا (تقع بالكامل فى النصف الجنوبى والشرقى)</td><td>شمالًا: بحرا آرافورا وتيمور · شرقًا: الهادي · جنوبًا وغربًا: الهادي والهندي</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="lead" style="margin-top:12px;font-size:13.5px">📌 دلل: تظهر قارة أستراليا على شكل جزيرة كبيرة؛ حيث تحيط بها المياه من جميع الجهات.</p>
+    <p class="lead" style="margin-top:8px;font-size:13.5px">📌 دلل: هناك تشابه بين موقعى قارتى أمريكا الشمالية والجنوبية فى الحدود الشرقية والغربية؛ حيث يحدهما شرقًا المحيط الأطلنطى ويحدهما غربًا المحيط الهادى، وتقعان معًا فى النصف الغربى من الكرة الأرضية.</p>
+  </div>
+  <div class="card">
+    <h3><span class="dot"></span> أهمية الموقع الفلكي والجغرافي لقارات العالم الجديد</h3>
+    <div class="ruler-card open" id="imp1">
+      <button class="ruler-head" onclick="toggleRuler('imp1')"><span>🛡️ ١) الأهمية الاستراتيجية</span><span class="arrow">▾</span></button>
+      <div class="ruler-body"><div class="ruler-in">
+        <div class="ruler-good"><b>بم تفسر: لموقع قارات العالم الجديد أهمية استراتيجية؟</b>بسبب تيسير التجارة العالمية عن طريق قناة بنما.</div>
+        <div class="ruler-good"><b>قناة بنما</b>تُعد من أهم الممرات المائية فى العالم؛ لأنها تربط بين المحيطين الأطلنطى والهادى؛ مما ساعد على اختصار آلاف الكيلومترات التى كانت تقطعها السفن.</div>
+        <div class="mini" style="margin-top:8px"><div class="icon">📖</div><h4>نص إثرائى: قناة بنما</h4><p>حفرت الولايات المتحدة قناة مائية فى دولة بنما فى جنوب قارة أمريكا الشمالية، وافتُتحت فى عام ١٩١٤م. وتُعد قناة بنما مع قناة السويس أهم ممرين مائيين اصطناعيين استراتيجيين فى العالم.</p></div>
+      </div></div>
+    </div>
+    <div class="ruler-card" id="imp2">
+      <button class="ruler-head" onclick="toggleRuler('imp2')"><span>💰 ٢) الأهمية الاقتصادية</span><span class="arrow">▾</span></button>
+      <div class="ruler-body"><div class="ruler-in">
+        <div class="ruler-good"><b>بم تفسر: لموقع قارات العالم الجديد أهمية اقتصادية؟</b>بسبب: الموقع الفلكى للأمريكتين الذى أدى إلى تنوع النظم البيئية بهما، وامتلاك الأمريكتين كميات كبيرة من مصادر الطاقة الأحفورية ومساحات كبيرة من الأراضى الزراعية.</div>
+        <div class="ruler-good"><b>المعادن</b>تمتلك قارات العالم الجديد احتياطيات كبيرة من بعض المعادن، مثل: اليورانيوم والحديد فى أستراليا.</div>
+      </div></div>
+    </div>
+    <div class="ruler-card" id="imp3">
+      <button class="ruler-head" onclick="toggleRuler('imp3')"><span>🏺 ٣) الأهمية الحضارية</span><span class="arrow">▾</span></button>
+      <div class="ruler-body"><div class="ruler-in">
+        <div class="ruler-good"><b>بم تفسر / دلل: لموقع قارات العالم الجديد أهمية حضارية؟</b>حيث: تُعد قارات العالم الجديد مركزًا لالتقاء الثقافات الأوروبية والإفريقية والآسيوية؛ نتيجة لكثرة الهجرات إليها. وظهرت عديد من الحضارات القديمة فى قارات العالم الجديد، مثل: حضارة المايا، وحضارة الإنكا فى الأمريكتين.</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3><span class="dot"></span> أهم مظاهر سطح قارات العالم الجديد</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>المظهر</th><th>أمريكا الشمالية</th><th>أمريكا الجنوبية</th><th>أستراليا</th></tr></thead>
+        <tbody>
+          <tr><td class="hl">الجبال</td><td>جبال الأبلاش (شرقًا) وجبال الروكى (غربًا)</td><td>سلاسل جبال الإنديز (غربًا)</td><td>جبال الحاجز الكبير (شرقًا)</td></tr>
+          <tr><td class="hl">الهضاب</td><td>هضبة لبرادور (شمال شرق القارة)</td><td>هضبة البرازيل (شرقًا)</td><td>هضبة غرب أستراليا (يغلب عليها الطابع الصحراوى)</td></tr>
+          <tr><td class="hl">السهول الفيضية</td><td>السهول الوسطى</td><td>سهول نهر الأمازون (أوسع سهول نهرية فى العالم)</td><td>سهول نهرى مورى ودارلنج</td></tr>
+          <tr><td class="hl">السهول الساحلية</td><td>على المحيطين الأطلنطي والهادي</td><td>غربية (على الهادي) وشرقية (على الأطلنطي)</td><td>ممتدة حول القارة فى شكل شريطى ضيق</td></tr>
+          <tr><td class="hl">أشهر الجزر</td><td>جزيرة جرينلاند (أكبر جزيرة تابعة لقارة فى العالم)</td><td>جزر فوكلاند</td><td>جزيرة تسمانيا</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid3" style="margin-top:12px">
+      <div class="mini"><div class="icon">🏞️</div><h4>السهول الوسطى</h4><p>يجرى بها نهر المسيسبى وروافده، وهو أطول أنهار القارة، ويصب فى خليج المكسيك.</p></div>
+      <div class="mini"><div class="icon">⛰️</div><h4>جبال الإنديز</h4><p>أطول سلسلة جبلية فى العالم، وتُعد مخزنًا عالميًا للنحاس والقصدير.</p></div>
+      <div class="mini"><div class="icon">🌊</div><h4>سهول الأمازون</h4><p>من أوسع السهول الفيضية فى العالم، وتغطيها غابات مدارية مطيرة كبيرة عائق للاستيطان البشرى والزراعة.</p></div>
+      <div class="mini"><div class="icon">💎</div><h4>هضبة البرازيل</h4><p>أكبر هضاب القارة مساحة، وتُعد المصدر الرئيسى لعديد من الثروات المعدنية بالبرازيل.</p></div>
+      <div class="mini"><div class="icon">🏔️</div><h4>جبال الحاجز الكبير</h4><p>تسقط عليها الأمطار، وتنبع منها الأنهار الكبرى بأستراليا، وتُعد منطقة جذب سياحى.</p></div>
+      <div class="mini"><div class="icon">🏝️</div><h4>جزيرة تسمانيا</h4><p>من أشهر جزر أستراليا؛ لأنها تتميز بجمالها الطبيعى وتنوع تضاريسها.</p></div>
+    </div>
+  </div>
+  <div class="card spotlight-au">
+    <h3><span class="dot"></span> 🌎 بطاقات تعريفية لقارات العالم الجديد</h3>
+    <p>اختر قارة لعرض بطاقتها التعريفية:</p>
+    <div class="civ-toggle continent-toggle" id="continentToggle">
+      <button class="civ-btn cbtn" data-c="na">🦬 أمريكا الشمالية</button>
+      <button class="civ-btn cbtn" data-c="sa">🦙 أمريكا الجنوبية</button>
+      <button class="civ-btn cbtn" data-c="an">🧊 القطبية الجنوبية</button>
+      <button class="civ-btn cbtn" data-c="au">🦘 أستراليا</button>
+    </div>
+    <div class="chips" id="continentChips" style="margin-top:12px"></div>
+    <p style="margin-top:10px">اضغط على كل بطاقة من البطاقات التالية لعرض التفاصيل:</p>
+    <div class="flip-grid" id="flipContinent" style="margin-top:10px"></div>
+  </div>
+</section>
+
+<!-- ================= LESSON 2 ================= -->
+<section class="panel" id="l2">
+  <div class="lesson-title">
+    <div class="lesson-num">٢</div>
+    <div><h2>الحضارات القديمة في الأمريكتين</h2><span>نشأت حضارتا المايا والإنكا قبل وصول الأوروبيين بعدة قرون، في بيئات طبيعية متنوعة</span></div>
+  </div>
+  <div class="lead">💡 اضغط على اسم الحضارة لعرض تفاصيلها، ثم اضغط على كل عنصر لعرض معلوماته.</div>
+  <div class="card">
+    <h3><span class="dot"></span> خريطة الدرس الذهنية</h3>
+    <div class="grid3">
+      <div class="mini"><div class="icon">🌽</div><h4>١) حضارة المايا</h4><p>الحياة السياسية، الاقتصادية، الدينية، الثقافية، العمارة.</p></div>
+      <div class="mini"><div class="icon">🦙</div><h4>٢) حضارة الإنكا</h4><p>الحياة السياسية، الاقتصادية، الدينية، الثقافية، العمارة.</p></div>
+      <div class="mini"><div class="icon">🏺</div><h4>٣) أوجه التشابه</h4><p>بين المايا والإنكا والحضارة المصرية القديمة.</p></div>
+    </div>
+  </div>
+  <div class="civ-toggle">
+    <button class="civ-btn active-maya" id="btnMaya" onclick="showCiv('maya')">🌽 حضارة المايا</button>
+    <button class="civ-btn" id="btnInca" onclick="showCiv('inca')">🦙 حضارة الإنكا</button>
+  </div>
+  <div class="civ-panel show" id="panelMaya">
+    <div class="card">
+      <h3><span class="dot"></span> الموقع</h3>
+      <p>نشأت حضارة المايا في أقصى جنوب قارة أمريكا الشمالية، في البرزخ الضيق الذي يصل بين الأمريكتين، ويفصل بين خليج المكسيك والبحر الكاريبي شرقًا والمحيط الهادي غربًا.</p>
+    </div>
+    <div id="accMaya"></div>
+  </div>
+  <div class="civ-panel" id="panelInca">
+    <div class="card">
+      <h3><span class="dot"></span> الموقع</h3>
+      <p>نشأت حضارة الإنكا غرب قارة أمريكا الجنوبية، في المنطقة المطلة على المحيط الهادي، وتُعد من أعرق الحضارات في تلك القارة.</p>
+    </div>
+    <div id="accInca"></div>
+  </div>
+  <div class="card compare-note">
+    <h3><span class="dot"></span> أوجه التشابه بين حضارتَي المايا والإنكا والحضارة المصرية القديمة</h3>
+    <div class="flip-grid" id="flipGrid"></div>
+  </div>
+</section>
+
+<!-- ================= LESSON 3 ================= -->
+<section class="panel" id="l3">
+  <div class="lesson-title">
+    <div class="lesson-num">٣</div>
+    <div><h2>الكشوف الجغرافية لقارات العالم الجديد</h2><span>حركة أوروبية كبرى بدأت في القرن الخامس عشر الميلادي لاكتشاف طرق ومناطق جديدة</span></div>
+  </div>
+  <div class="lead">💡 بدأت أوروبا حركة كبرى من الكشوف الجغرافية فى القرن الخامس عشر الميلادى، أدت إلى اكتشاف العالم الجديد وإعادة رسم خريطة العالم.</div>
+  <div class="card">
+    <h3><span class="dot"></span> خريطة الدرس الذهنية</h3>
+    <div class="grid3">
+      <div class="mini"><div class="icon">🧭</div><h4>١) دوافع الكشوف</h4><p>سياسية، اقتصادية، وعوامل مساعدة.</p></div>
+      <div class="mini"><div class="icon">⛵</div><h4>٢) اكتشاف العالم الجديد</h4><p>رحلات كولومبوس، فسبوتشى، ماجلان، كوك.</p></div>
+      <div class="mini"><div class="icon">🕌</div><h4>٣) دور العلماء المسلمين</h4><p>فى الجغرافيا والفلك والملاحة البحرية.</p></div>
+      <div class="mini"><div class="icon">🌍</div><h4>٤) نتائج الكشوف</h4><p>سياسية، اقتصادية، علمية، اجتماعية.</p></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3><span class="dot"></span> ما المقصود بـ: الكشوف الجغرافية؟</h3>
+    <p>رحلات بحرية قام بها الأوروبيون بدأت فى القرن الخامس عشر الميلادى؛ لاكتشاف طرق بحرية جديدة ومناطق كانت مجهولة لهم من العالم.</p>
+    <p style="margin-top:8px">بدأت أوروبا حركة كبرى من الكشوف الجغرافية شملت مناطق لم تكن معروفة بالنسبة إليهم، وقد ساعد المستكشفين على القيام برحلاتهم البحرية عدة عوامل تمثلت فى: التقدم فى علم الرياضيات وعلم الفلك وعلم الجغرافيا، وتطور السفن والأدوات الملاحية.</p>
+  </div>
+  <div class="card">
+    <h3><span class="dot"></span> دوافع الكشوف الجغرافية</h3>
+    <div class="grid3">
+      <div class="mini"><div class="icon">🛡️</div><h4>دوافع سياسية</h4><p>تنافس دول مثل البرتغال وإسبانيا للتوسع وتكوين إمبراطوريات استعمارية خارج أوروبا.</p></div>
+      <div class="mini"><div class="icon">💰</div><h4>دوافع اقتصادية</h4><p>البحث عن طرق تجارية جديدة للهند وشرق آسيا بعيدًا عن طريق الحرير الخاضع للعثمانيين والمماليك، وعن الذهب والفضة والتوابل.</p></div>
+      <div class="mini"><div class="icon">🧭</div><h4>عوامل مساعدة</h4><p>تطور السفن والأدوات الملاحية، وتقدّم علم الفلك والجغرافيا والرياضيات.</p></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3><span class="dot"></span> رحلات أبرز المستكشفين</h3>
+    <div class="timeline">
+      <div class="t-item"><h4>كريستوفر كولومبوس <span class="tag">إيطالي · بتمويل إسباني</span></h4><p>انطلق من فكرة كروية الأرض، ووصل إلى جزر البهاما عام ١٤٩٢م معتقدًا أنها جزء من آسيا.</p></div>
+      <div class="t-item"><h4>أميريجو فسبوتشي <span class="tag">إيطالي</span></h4><p>شارك في عدة رحلات استكشافية، وأثبت أن الأراضي المكتشفة قارة جديدة مستقلة وليست جزءًا من آسيا؛ فسُمّيت «أمريكا» تقديرًا لجهوده.</p></div>
+      <div class="t-item"><h4>ماجلان <span class="tag">برتغالي · بتمويل إسباني</span></h4><p>عبر المحيط الأطلنطي، ووصل إلى المضيق الذي عُرف باسمه جنوب أمريكا الجنوبية، ومنه دخل المحيط الهادي. أكمل رفاقه الرحلة بعد وفاته وحققوا أول رحلة بحرية حول العالم عام ١٥٢٢م.</p></div>
+      <div class="t-item"><h4>جيمس كوك <span class="tag">بريطاني</span></h4><p>وصل إلى الساحل الشرقي لأستراليا عام ١٧٧٠م، ورسم خرائط تفصيلية له، وأعلن تبعيته لبريطانيا، مما مهّد للاستيطان الأوروبي هناك.</p></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3><span class="dot"></span> دور العلماء المسلمين في الكشوف الجغرافية</h3>
+    <ul>
+      <li>ألّف علماء ورحّالة مسلمون (مثل أحمد بن ماجد) مؤلفات مهمة في الجغرافيا والفلك والملاحة البحرية.</li>
+      <li>ساهم تأكيد العلماء المسلمين على كروية الأرض في تشجيع كولومبوس على التفكير في الوصول إلى الهند من جهة الغرب.</li>
+      <li>طوّر العلماء المسلمون أدوات ملاحية مهمة مثل البوصلة والإسطرلاب، استفاد منها الأوروبيون في تحسين الملاحة البحرية.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3><span class="dot"></span> نتائج الكشوف الجغرافية</h3>
+    <div class="grid3">
+      <div class="mini"><div class="icon">⚔️</div><h4>نتائج سياسية</h4><p>تنافس الدول الأوروبية للسيطرة على الأراضى المكتشفة، وتكوين المستعمرات فى الأمريكتين، مما تسبب فى حروب عديدة.</p></div>
+      <div class="mini"><div class="icon">🪙</div><h4>نتائج اقتصادية</h4><p>تحوّل المحيط الأطلنطى إلى طريق رئيسى للتجارة العالمية، وتدفقت كميات كبيرة من الذهب والفضة إلى أوروبا.</p></div>
+      <div class="mini"><div class="icon">🔭</div><h4>نتائج علمية</h4><p>تطور علم الجغرافيا، وتقديم أدلة عملية على كروية الأرض، ورسم خرائط أكثر دقة، والتعرف على أنواع جديدة من النباتات والحيوانات.</p></div>
+      <div class="mini"><div class="icon">🌍</div><h4>نتائج اجتماعية</h4><p>هجرات كبيرة من أوروبا للعالم الجديد، مع آثار سلبية على السكان الأصليين والأفارقة (تجارة الرقيق).</p></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3><span class="dot"></span> ١) تأثير الكشوف الجغرافية على السكان الأصليين</h3>
+    <ul>
+      <li><b>الإبادة:</b> مثلما فعل الأوروبيون ضد الهنود الحمر فى أمريكا الشمالية.</li>
+      <li><b>وفاة أعداد كثيرة منهم نتيجة انتشار أمراض ووبئة وافدة:</b> كالجدرى والإنفلونزا، ولم تكن لديهم مناعة طبيعية ضدها.</li>
+      <li><b>احتلال أراضيهم وتهجيرهم منها، وتراجع حضاراتهم نتيجة السيطرة الأوروبية.</b></li>
+      <li><b>تعرضهم للتمييز والاستغلال:</b> حيث استُغلوا للعمل فى ظروف عمل شاقة.</li>
+      <li><b>تأثر ثقافاتهم وعاداتهم المحلية بانتشار الثقافة الأوروبية.</b></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3><span class="dot"></span> ٢) الكشوف الجغرافية وتجارة الرقيق</h3>
+    <p><b>بعد اكتشاف الأمريكتين:</b> بم تفسر: أصبح الرقيق الإفريقى هو السلعة الأهم؟ للعمل فى المزارع والمناجم بالمستعمرات الأوروبية بالأمريكتين، ولذلك نُقلت أعداد كبيرة من الأفارقة قسرًا للعمل فى هذه المستعمرات.</p>
+    <div class="mini" style="margin-top:8px"><div class="icon">💭</div><h4>تذكر أن: تجارة الرقيق</h4><p>عملية بيع وشراء البشر كعبيد، واستغلالهم فى العمل الإجبارى، وحرمانهم من حريتهم وحقوقهم.</p></div>
+  </div>
+  <div class="card">
+    <h3><span class="dot"></span> أكّد فهمك</h3>
+    <p class="lead" style="font-size:14px">📌 دلل: كانت الكشوف الجغرافية للعالم الجديد سلاحًا ذا حدين؟</p>
+    <p style="margin-top:8px">حيث حققت الكشوف الجغرافية مكاسب كبيرة للدول الأوروبية، لكنها تسببت فى معاناة كثير من الشعوب الأخرى مثل الشعوب الإفريقية والسكان الأصليين للعالم الجديد.</p>
+  </div>
+</section>
+
+<!-- ================= UNIT 2 / LESSON 1 ================= -->
+<section class="panel" id="u2l1">
+  <div class="lesson-title">
+    <div class="lesson-num">١</div>
+    <div><h2>تولية «محمد على» حكم مصر وتثبيت دعائم حكمه</h2><span>الوحدة الثانية: مصر فى عصر «محمد على» وخلفائه</span></div>
+  </div>
+  <div class="lead">💡 الفكرة الرئيسية: بعد رحيل الحملة الفرنسية عام ١٨٠١م تصارعت ثلاث قوى (إنجلترا، الدولة العثمانية، المماليك) على حكم مصر، وفى خضم هذا الصراع نجح «محمد على» فى كسب ثقة المصريين حتى تولى حكم مصر عام ١٨٠٥م.</div>
+  <div class="card">
+    <h3><span class="dot"></span> خريطة الدرس الذهنية</h3>
+    <div class="grid3">
+      <div class="mini"><div class="icon">🕊️</div><h4>١) أحوال مصر بعد الحملة الفرنسية</h4><p>صراع إنجلترا والعثمانيين والمماليك على حكم مصر.</p></div>
+      <div class="mini"><div class="icon">🔥</div><h4>٢) ثورة الشعب المصرى ١٨٠٤م</h4><p>ضد البرديسى، ووقوف «محمد على» مع الثوار.</p></div>
+      <div class="mini"><div class="icon">👑</div><h4>٣) دور الشعب فى التولية ١٨٠٥م</h4><p>عزل خورشيد باشا وتولية «محمد على» حكم مصر.</p></div>
+      <div class="mini"><div class="icon">🛡️</div><h4>٤) التحديات بعد التولية</h4><p>نقله إلى سالونيك، حملة فريزر، الزعامة الشعبية، خطر المماليك.</p></div>
+    </div>
+    <p class="lead" style="margin-top:12px;font-size:13px">🧠 تذكر أن: «محمد على» ضابط من أصل ألبانى، جاء إلى مصر ضمن فرقة عسكرية أرسلها السلطان العثمانى لطرد الفرنسيين من مصر.</p>
+  </div>
+  <div class="card">
+    <h3><span class="dot"></span> ١) أحوال مصر بعد خروج الحملة الفرنسية (١٨٠١م)</h3>
+    <p>بعد رحيل الحملة الفرنسية من مصر عام ١٨٠١م، عاشت مصر فترة من الاضطرابات السياسية؛ بسبب الصراع بين ثلاث قوى للسيطرة على الحكم.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>القوة</th><th>موقفها</th></tr></thead>
+        <tbody>
+          <tr><td class="hl">إنجلترا</td><td>بقيت فى الإسكندرية من أجل حماية مصالحها وتأمين طريق التجارة إلى الهند، وغادرت البلاد بعد صلح أميان ١٨٠٢م.</td></tr>
+          <tr><td class="hl">الدولة العثمانية</td><td>استعادت سيطرتها على مصر، وعيّنت خورشيد باشا واليًا، وتأخرت مرتبات الحامية العثمانية فكان الوالة يرهقون المصريين بالضرائب.</td></tr>
+          <tr><td class="hl">المماليك</td><td>رأوا أحقيتهم فى حكم مصر، ولكن ضعفت قوتهم بسبب خسائرهم أمام الفرنسيين وانقسامهم إلى فرق متنافسة.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card">
+    <h3><span class="dot"></span> ٢) ثورة الشعب المصرى ١٨٠٤م ضد البرديسى</h3>
+    <ul>
+      <li><b>سببها:</b> قيام البرديسى بفرض الضرائب الباهظة على المصريين من أجل دفع رواتب الجنود.</li>
+      <li><b>أحداثها:</b> ثار المصريون ضد البرديسى وتجمهروا فى الجامع الأزهر، وتدخل «محمد على» فسار إلى الثوار ووعد العلماء بالسعي لإلغاء الضريبة، ثم توجه بجنوده لحصار دار البرديسى.</li>
+      <li><b>نتائجها:</b> اضطر البرديسى لمغادرة القاهرة عام ١٨٠٤م، وعُيّن خورشيد باشا واليًا على مصر.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3><span class="dot"></span> ٣) دور الشعب المصرى فى تولية «محمد على» حكم مصر ١٨٠٥م</h3>
+    <p>اشتد ظلم خورشيد باشا وجنوده للمصريين، مما أدى إلى اجتماع المشايخ والعلماء فى بيت القاضى، ثم توجهوا إلى «محمد على» وأخبروه برغبتهم فى عزل خورشيد باشا.</p>
+    <ul>
+      <li>قام السيد عمر مكرم والشيخ عبد الله الشرقاوى بإلباسه قفطان الولاية.</li>
+      <li>أرسل المشايخ إلى خورشيد باشا يطلبون منه التنازل ولكنه رفض، فحاصره «محمد على» بالقلعة.</li>
+      <li>أصدر السلطان العثمانى فرمانًا عام ١٨٠٥م بتولية «محمد على» حكم مصر وعزل خورشيد باشا.</li>
+    </ul>
+    <p class="lead" style="margin-top:12px;font-size:13.5px">✅ وبذلك انتصرت إرادة الشعب المصرى فى اختيار «محمد على» واليًا على مصر.</p>
+  </div>
+  <div class="card">
+    <h3><span class="dot"></span> ٤) التحديات التى واجهت «محمد على»</h3>
+    <div class="ruler-card" id="ch1">
+      <button class="ruler-head" onclick="toggleRuler('ch1')"><span>١) محاولة نقله إلى ولاية سالونيك (١٨٠٦م)</span><span class="arrow">▾</span></button>
+      <div class="ruler-body"><div class="ruler-in">
+        <div class="ruler-good"><b>الفرمان</b>أصدر السلطان العثمانى فرمانًا عام ١٨٠٦م تضمّن تعيين موسى باشا واليًا على مصر ونقل «محمد على» إلى سالونيك.</div>
+        <div class="ruler-good"><b>موقفه</b>طلب المساعدة من المشايخ والعلماء لكتابة رسالة للسلطان يطالبون فيها بإلغاء الفرمان، فتراجع السلطان وأصدر مرسومًا بتثبيته.</div>
+      </div></div>
+    </div>
+    <div class="ruler-card" id="ch2">
+      <button class="ruler-head" onclick="toggleRuler('ch2')"><span>٢) حملة فريزر (١٨٠٧م)</span><span class="arrow">▾</span></button>
+      <div class="ruler-body"><div class="ruler-in">
+        <div class="ruler-good"><b>أهدافها</b>أرسلت إنجلترا حملة بقيادة فريزر لاحتلال مصر ومساعدة محمد بك الألفى.</div>
+        <div class="ruler-good"><b>أحداثها</b>استولى فريزر على الإسكندرية وأرسل فرقتين إلى رشيد والحماد، ولكنهما فشلتا بسبب بسالة الأهالى وانضمام جيش «محمد على» لأهالى الحماد.</div>
+        <div class="ruler-bad"><b>نتائجها</b>انسحبت الحملة من مصر عام ١٨٠٧م بعد فشلها.</div>
+      </div></div>
+    </div>
+    <div class="ruler-card" id="ch3">
+      <button class="ruler-head" onclick="toggleRuler('ch3')"><span>٣) الزعامة الشعبية (١٨٠٩م)</span><span class="arrow">▾</span></button>
+      <div class="ruler-body"><div class="ruler-in">
+        <div class="ruler-good"><b>السبب</b>واجه «محمد على» أزمة مالية كبيرة، فاتجه إلى فرض ضرائب جديدة ومصادرة بعض الممتلكات.</div>
+        <div class="ruler-good"><b>موقف الزعامة</b>تضامن المشايخ والعلماء بزعامة السيد «عمر مكرم» مع الأهالى ورفضوا دعوة «محمد على» للتفاوض حتى يُلغى الضرائب.</div>
+        <div class="ruler-bad"><b>النتائج</b>عزل عمر مكرم من منصبه، وأصدر حكمًا بنفيه إلى دمياط عام ١٨٠٩م.</div>
+      </div></div>
+    </div>
+    <div class="ruler-card" id="ch4">
+      <button class="ruler-head" onclick="toggleRuler('ch4')"><span>٤) خطر المماليك (١٨١١م) — مذبحة القلعة</span><span class="arrow">▾</span></button>
+      <div class="ruler-body"><div class="ruler-in">
+        <div class="ruler-bad"><b>مذبحة القلعة (مارس ١٨١١م)</b>أقام «محمد على» حفلًا كبيرًا فى القلعة دعا إليه كبار رجال الدولة وأمراء المماليك، وبعد انتهاء الاحتفال أُغلقت أبواب القلعة وتخلص جنوده من أمراء المماليك.</div>
+        <div class="ruler-good"><b>وبذلك...</b>استطاع «محمد على» مواجهة أهم التحديات التى واجهته بعد تولية حكم مصر.</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= UNIT 2 / LESSON 2 ================= -->
+<section class="panel" id="u2l2">
+  <div class="lesson-title">
+    <div class="lesson-num">٢</div>
+    <div><h2>«محمد على» وبناء الدولة الحديثة فى مصر</h2><span>الوحدة الثانية: مصر فى عصر «محمد على» وخلفائه</span></div>
+  </div>
+  <div class="lead">📌 دلل: يُعد عهد «محمد على» باشا (١٨٠٥ - ١٨٤٨م) نقطة تحول كبرى فى تاريخ مصر؛ حيث أسس الدولة الحديثة بعد قرون من الفوضى والصراعات الداخلية.</div>
+  <div class="card">
+    <h3><span class="dot"></span> خريطة الدرس الذهنية</h3>
+    <div class="grid3">
+      <div class="mini"><div class="icon">🏛️</div><h4>أولًا: السياسة الداخلية</h4><p>الإصلاح الإدارى، العسكرى، الاقتصادى، الاجتماعى.</p></div>
+      <div class="mini"><div class="icon">🗺️</div><h4>ثانيًا: السياسة الخارجية</h4><p>حروب الجزيرة العربية، السودان، المورة، الشام.</p></div>
+      <div class="mini"><div class="icon">📜</div><h4>معاهدة لندن ١٨٤٠م</h4><p>شروطها ونتائجها وموقف «محمد على» منها.</p></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3><span class="dot"></span> أولًا: السياسة الداخلية</h3>
+    <div class="ruler-card open" id="in1">
+      <button class="ruler-head" onclick="toggleRuler('in1')"><span>١) الإصلاح الإدارى</span><span class="arrow">▾</span></button>
+      <div class="ruler-body"><div class="ruler-in">
+        <div class="ruler-good"><b>تنظيم الإدارة</b>قسّم مصر إلى سبع مديريات، يتبع كل مديرية عدد من المراكز، وجعل الحكومة المركزية فى القاهرة على رأس النظام الإدارى.</div>
+        <div class="ruler-good"><b>المجالس والدواوين</b>أنشأ عدة مجالس ودواوين مثل مجلس المشورة، وكان رأيه استشاريًا فقط.</div>
+      </div></div>
+    </div>
+    <div class="ruler-card" id="in2">
+      <button class="ruler-head" onclick="toggleRuler('in2')"><span>٢) الإصلاح العسكرى</span><span class="arrow">▾</span></button>
+      <div class="ruler-body"><div class="ruler-in">
+        <div class="ruler-good"><b>الجيش</b>أنشأ جيشًا نظاميًا حديثًا من المصريين، وأرسل الضباط فى بعثات إلى أوروبا، وأنشأ المدارس العسكرية، وترسانة لصنع الأسلحة، وديوان الجهادية.</div>
+        <div class="ruler-good"><b>الأسطول</b>أنشأ ترسانة لصناعة السفن فى بولاق ثم الإسكندرية، وأنشأ المدرسة البحرية.</div>
+      </div></div>
+    </div>
+    <div class="ruler-card" id="in3">
+      <button class="ruler-head" onclick="toggleRuler('in3')"><span>٣) الإصلاح الاقتصادى</span><span class="arrow">▾</span></button>
+      <div class="ruler-body"><div class="ruler-in">
+        <div class="ruler-good"><b>إلغاء نظام الالتزام</b>حلّت الدولة محل الملتزم.</div>
+        <div class="ruler-good"><b>وضع نظام الاحتكار</b>فرضت الحكومة زراعة محاصيل مُحددة (خاصة القطن) وتشتريها بسعر مُحدَّد.</div>
+        <div class="ruler-good"><b>الزراعة</b>أدخل محاصيل جديدة مثل «القطن طويل التيلة».</div>
+        <div class="ruler-good"><b>الرى</b>حفر الترع مثل ترعة المحمودية، وأنشأ القناطر الخيرية التى ساعدت على تطبيق نظام «الرى الدائم».</div>
+        <div class="ruler-good"><b>الصناعة</b>طوّر الصناعات القديمة وأنشأ مصانع جديدة بهدف سد احتياجات الجيش.</div>
+      </div></div>
+    </div>
+    <div class="ruler-card" id="in4">
+      <button class="ruler-head" onclick="toggleRuler('in4')"><span>٤) الإصلاح الاجتماعى</span><span class="arrow">▾</span></button>
+      <div class="ruler-body"><div class="ruler-in">
+        <div class="ruler-good"><b>التعليم</b>أنشأ المدارس العليا (الطب، الهندسة، الزراعة)، والمدارس الابتدائية والتجهيزية، وأرسل البعثات العلمية، وأنشأ مدرسة الألسن وديوان المدارس والمطبعة الأميرية.</div>
+        <div class="ruler-good"><b>العمران</b>شيّد الحصون والقلاع، والسرايات مثل سراى رأس التين وقصر النيل.</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3><span class="dot"></span> ثانيًا: السياسة الخارجية</h3>
+    <div class="ruler-card" id="fw1">
+      <button class="ruler-head" onclick="toggleRuler('fw1')"><span>١) حروب شبه الجزيرة العربية (١٨١١ - ١٨١٩م)</span><span class="arrow">▾</span></button>
+      <div class="ruler-body"><div class="ruler-in">
+        <div class="ruler-good"><b>أسبابها</b>استعان السلطان العثمانى بـ«محمد على» للقضاء على الوهابيين فى شبه الجزيرة العربية.</div>
+        <div class="ruler-good"><b>نتائجها</b>نجاح «محمد على» فى هزيمة الوهابيين، وسيطرته على معظم شبه الجزيرة العربية.</div>
+      </div></div>
+    </div>
+    <div class="ruler-card" id="fw2">
+      <button class="ruler-head" onclick="toggleRuler('fw2')"><span>٢) حرب السودان</span><span class="arrow">▾</span></button>
+      <div class="ruler-body"><div class="ruler-in">
+        <div class="ruler-good"><b>النتائج</b>مد النفوذ المصرى إلى جنوب السودان، وإنشاء مدينة الخرطوم، واكتشاف منابع نهر النيل.</div>
+      </div></div>
+    </div>
+    <div class="ruler-card" id="fw3">
+      <button class="ruler-head" onclick="toggleRuler('fw3')"><span>٣) حرب المورة (اليونان)</span><span class="arrow">▾</span></button>
+      <div class="ruler-body"><div class="ruler-in">
+        <div class="ruler-good"><b>أحداثها</b>أرسل «محمد على» أسطولًا بقيادة ابنه إبراهيم باشا الذى حقق انتصارات كبيرة، وساندت الدول الأوروبية الثوار اليونانيين.</div>
+        <div class="ruler-bad"><b>نتائجها</b>تحطيم الأسطولين العثمانى والمصرى فى معركة نافارين عام ١٨٢٧م.</div>
+      </div></div>
+    </div>
+    <div class="ruler-card" id="fw4">
+      <button class="ruler-head" onclick="toggleRuler('fw4')"><span>٤) حروب الشام</span><span class="arrow">▾</span></button>
+      <div class="ruler-body"><div class="ruler-in">
+        <div class="ruler-good"><b>الأسباب الحقيقية</b>توسيع نفوذه السياسى وبناء دولة قوية مستقلة عن الدولة العثمانية.</div>
+        <div class="ruler-good"><b>النتائج</b>الاستيلاء على مدن الشام، والتوغل فى آسيا الصغرى مهددة «الآستانة».</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3><span class="dot"></span> معاهدة لندن ١٨٤٠م</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>شروطها</th><th>النتائج</th></tr></thead>
+        <tbody>
+          <tr><td>احتفاظ «محمد على» بحكم مصر وأن يكون الحكم وراثيًا فى أسرته، بشرط أن تظل مصر ولاية عثمانية وتدفع مبلغًا ماليًا سنويًا.</td><td>فشل مشروع «محمد على» فى الاستقلال بحكم مصر.</td></tr>
+          <tr><td>احتفاظ «محمد على» بولاية عكا مدى حياته.</td><td>انسحاب «محمد على» من كل الأراضى التى سيطر عليها.</td></tr>
+          <tr><td>الموافقة على شروط المعاهدة خلال ١٠ أيام وإلا سُحبت منه ولاية عكا.</td><td>تقليل عدد الجيش المصرى، وإغلاق عدد كبير من المدارس والمصانع.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= UNIT 2 / LESSON 3 ================= -->
+<section class="panel" id="u2l3">
+  <div class="lesson-title">
+    <div class="lesson-num">٣</div>
+    <div><h2>مصر فى عصر خلفاء «محمد على»</h2><span>الوحدة الثانية: مصر فى عصر «محمد على» وخلفائه</span></div>
+  </div>
+  <div class="lead">💡 بعد أن نجح «محمد على» فى وضع أسس الدولة المصرية الحديثة، تولى حكم مصر بعده عدد من أبناء وأحفاد أسرته.</div>
+  <div class="card">
+    <h3><span class="dot"></span> من أبرز خلفاء «محمد على» (بالترتيب)</h3>
+    <div class="grid3">
+      <div class="mini"><div class="icon">⚔️</div><h4>إبراهيم باشا</h4><p>حكم عدة أشهر فقط (١٨٤٨م)</p></div>
+      <div class="mini"><div class="icon">🎩</div><h4>عباس حلمى باشا الأول</h4><p>١٨٤٨ - ١٨٥٤م</p></div>
+      <div class="mini"><div class="icon">🚢</div><h4>محمد سعيد باشا</h4><p>١٨٥٤ - ١٨٦٣م</p></div>
+      <div class="mini"><div class="icon">🏛️</div><h4>الخديو إسماعيل</h4><p>١٨٦٣ - ١٨٧٩م</p></div>
+    </div>
+  </div>
+  <div class="ruler-card" id="rulerIbrahim">
+    <button class="ruler-head" onclick="toggleRuler('rulerIbrahim')"><span>١) إبراهيم باشا</span><span class="arrow">▾</span></button>
+    <div class="ruler-body"><div class="ruler-in">
+      <div class="ruler-good"><b>أبرز ملامح عصره</b>ساعد والده «محمد على» فى أعماله الحربية، وقاد الجيش المصرى فى كثير من المعارك. تولى حكم مصر بعد مرض والده، ولم يبق فى حكم مصر إلا عدة أشهر ومات قبل وفاة والده.</div>
+    </div></div>
+  </div>
+  <div class="ruler-card" id="rulerAbbas">
+    <button class="ruler-head" onclick="toggleRuler('rulerAbbas')"><span>٢) عباس حلمى باشا الأول (١٨٤٨ - ١٨٥٤م)</span><span class="arrow">▾</span></button>
+    <div class="ruler-body"><div class="ruler-in">
+      <div class="ruler-good"><b>مميزات حكمه</b>أصلح الطريق البرى بين القاهرة والسويس، وبدأ مد خط سكة حديد بين القاهرة والإسكندرية، ومد الخطوط التلغرافية.</div>
+      <div class="ruler-bad"><b>مساوئ حكمه</b>أغلق معظم المدارس والمصانع التى أنشأها «محمد على»، واستدعى البعثات العلمية من فرنسا، وأهمل الجيش والبحرية.</div>
+    </div></div>
+  </div>
+  <div class="ruler-card" id="rulerSaid">
+    <button class="ruler-head" onclick="toggleRuler('rulerSaid')"><span>٣) محمد سعيد باشا (١٨٥٤ - ١٨٦٣م)</span><span class="arrow">▾</span></button>
+    <div class="ruler-body"><div class="ruler-in">
+      <div class="ruler-good"><b>الزراعة</b>أصدر اللائحة السعيدية التى منحت الفلاح حق توريث الأرض، وخفّف الضرائب.</div>
+      <div class="ruler-good"><b>الجيش</b>قصّر مدة الخدمة العسكرية إلى عام واحد، وفتح باب الترقى أمام الضباط المصريين.</div>
+      <div class="ruler-bad"><b>القروض الأجنبية</b>اقترض أول قرض من أحد البنوك البريطانية عام ١٨٦٢م.</div>
+      <div class="ruler-bad"><b>امتياز قناة السويس</b>منح دليسبس عقد الامتياز الأول عام ١٨٥٤م والثانى ١٨٥٦م.</div>
+    </div></div>
+  </div>
+  <div class="ruler-card open" id="rulerIsmail">
+    <button class="ruler-head" onclick="toggleRuler('rulerIsmail')"><span>٤) الخديو إسماعيل (١٨٦٣ - ١٨٧٩م)</span><span class="arrow">▾</span></button>
+    <div class="ruler-body"><div class="ruler-in">
+      <div class="ruler-good"><b>من هو؟</b>هو إسماعيل بن إبراهيم بن «محمد على». يُعد عهده من أكثر الفترات تقدمًا وعمرانًا فى تاريخ مصر الحديث.</div>
+      <div class="ruler-good"><b>النهضة الثقافية والعلمية</b>مضاعفة ميزانية التعليم، وإنشاء المدارس، وإنشاء دار الأوبرا ودار الرصد والجمعية الجغرافية.</div>
+      <div class="ruler-good"><b>النهضة العمرانية</b>أعيد تخطيط أحياء القاهرة، وأنشئت أحياء جديدة مثل حى عابدين، وأنشئت قصور مثل قصر عابدين وقصر القبة.</div>
+      <div class="ruler-good"><b>مجلس شورى النواب</b>أنشأه عام ١٨٦٦م وكان دوره استشاريًا، وأسهم فى زيادة الوعى السياسى.</div>
+      <h4 style="margin-top:16px;color:var(--brick)">مساوئ حكمه: أزمة الديون وزيادة التدخل الأجنبى</h4>
+      <div class="ruler-bad"><b>لماذا لجأ إسماعيل للاقتراض؟</b>دفع التعويضات لشركة قناة السويس، والإنفاق على المشروعات والقصور والحفلات، ودفع أموال للسلطان العثمانى للحصول على لقب «خديو».</div>
+      <div class="ruler-bad"><b>النتائج</b>بيع نصيب مصر من أسهم قناة السويس لإنجلترا، وزيادة التدخل الأجنبى، وظهور صندوق الدين، والمراقبة الثنائية، ولجنة التحقيق العليا، والوزارة المختلطة.</div>
+    </div></div>
+  </div>
+  <div class="ruler-card" id="famTree">
+    <button class="ruler-head" onclick="toggleRuler('famTree')"><span>🌳 للاطلاع فقط: شجرة حكم أسرة «محمد على»</span><span class="arrow">▾</span></button>
+    <div class="ruler-body"><div class="ruler-in">
+      <p style="font-size:13.5px">«محمد على» باشا (١٨٠٥ - ١٨٤٨م) ← إبراهيم باشا (١٨٤٨م) ← عباس حلمى باشا الأول (١٨٤٨ - ١٨٥٤م) ← محمد سعيد باشا (١٨٥٤ - ١٨٦٣م) ← الخديو إسماعيل (١٨٦٣ - ١٨٧٩م) ← الخديو توفيق (١٨٧٩ - ١٨٩٢م) ← الخديو عباس حلمى الثانى (١٨٩٢ - ١٩١٤م) ← السلطان حسين كامل (١٩١٤ - ١٩١٧م) ← السلطان/الملك أحمد فؤاد الأول (١٩١٧ - ١٩٣٦م) ← الملك فاروق الأول (١٩٣٦ - ١٩٥٢م) ← الملك أحمد فؤاد الثانى (١٩٥٢ - ١٩٥٣م).</p>
+    </div></div>
+  </div>
+</section>
+
+<section class="panel" id="chat">
+  <div class="lesson-title"><div class="lesson-num">💬</div><div><h2>الشات</h2><span>تحدّث مع زملائك في الدفعة</span></div></div>
+  <div class="chat-box" id="peerBox"><div class="msg other">جارٍ التحميل...</div></div>
+  <div class="chat-row"><input id="peerInput" placeholder="اكتب رسالتك للطلاب..." autocomplete="off" maxlength="500"><button id="peerSend">إرسال</button></div>
+  <div class="chat-note" id="peerNote"></div>
+</section>
+
+<section class="panel" id="hw">
+  <div class="lesson-title"><div class="lesson-num">📝</div><div><h2>الواجبات</h2><span id="hwUnit"></span></div></div>
+  <div class="card empty-card"><div class="big">📝</div><p id="hwMsg"></p></div>
+</section>
+
+<section class="panel" id="rev">
+  <div class="lesson-title"><div class="lesson-num">🔁</div><div><h2>المراجعات</h2><span id="revUnit"></span></div></div>
+  <div class="card empty-card"><div class="big">🔁</div><p id="revMsg"></p></div>
+</section>
+
+<section class="panel" id="quiz">
+  <div class="lesson-title">
+    <div class="lesson-num">✓</div>
+    <div><h2>اختبر نفسك</h2><span>اختر امتحان الدرس الذي تريده، ثم أجب على الأسئلة</span></div>
+  </div>
+  <div class="scope-row" id="scopeToggle">
+    <div class="scope-label">📘 الوحدة الأولى</div>
+    <button class="scope-btn active" data-scope="1-1" onclick="setScope('1-1')">🗺️ امتحان الدرس الأول</button>
+    <button class="scope-btn" data-scope="1-2" onclick="setScope('1-2')">🏛️ امتحان الدرس الثاني</button>
+    <button class="scope-btn" data-scope="1-3" onclick="setScope('1-3')">⛵ امتحان الدرس الثالث</button>
+    <div class="scope-label">📗 الوحدة الثانية</div>
+    <button class="scope-btn" data-scope="2-1" onclick="setScope('2-1')">🏰 امتحان الدرس الأول</button>
+    <button class="scope-btn" data-scope="2-2" onclick="setScope('2-2')">⚙️ امتحان الدرس الثاني</button>
+    <button class="scope-btn" data-scope="2-3" onclick="setScope('2-3')">👑 امتحان الدرس الثالث</button>
+  </div>
+  <div id="quizArea">
+    <div class="quiz-progress">
+      <span id="qCounter">١ / ١٠</span>
+      <div class="quiz-bar"><div id="qBar"></div></div>
+      <span id="qScoreLive">النتيجة: ٠</span>
+    </div>
+    <div id="qCards"></div>
+    <div class="quiz-nav">
+      <button class="btn btn-primary" id="nextBtn" disabled onclick="nextQ()">السؤال التالي</button>
+    </div>
+  </div>
+  <div class="quiz-result" id="quizResult">
+    <div class="score-ring" id="scoreRing"><span id="scoreText">0/10</span></div>
+    <h3 id="resultMsg"></h3>
+    <p style="color:var(--ink-soft);font-size:13.6px;margin-bottom:16px">راجع الدروس أعلاه للتأكد من فهم أي نقطة أخطأت فيها.</p>
+    <button class="btn btn-primary" onclick="restartQuiz()">إعادة المحاولة</button>
+  </div>
+</section>
+
+</main>
+
+<div class="name-overlay show" id="nameOverlay">
+  <div class="name-box">
+    <div class="big">👋</div>
+    <h2>أهلًا بك!</h2>
+    <p>اكتب اسمك ثلاثيًا وكود الدخول الخاص بك.</p>
+    <input id="nameInput" maxlength="60" placeholder="الاسم الثلاثي" autocomplete="off" style="margin-bottom:10px">
+    <input id="codeInput" inputmode="numeric" maxlength="6" placeholder="كود الدخول" autocomplete="off">
+    <div id="codeErr" style="color:var(--brick);font-weight:800;font-size:13px;margin-top:8px;min-height:18px"></div>
+    <button id="nameBtn" disabled>دخول</button>
+  </div>
+</div>
+
+<button class="adm-fab" id="admFab">🛠 لوحة المشرف</button>
+<div class="adm-panel" id="admPanel">
+  <div class="adm-top"><h2>🛠 لوحة المشرف</h2><button id="admRefresh">تحديث</button><button id="admClose" style="background:var(--navy);color:#f2ead4">إغلاق</button></div>
+  <div class="adm-tabs"><button class="active" data-t="sum">👥 الطلاب</button><button data-t="att">📝 الامتحانات</button><button data-t="log">🔐 الدخول</button><button data-t="msg">💬 المحادثات</button></div>
+  <div id="admBody">جارٍ التحميل...</div>
+</div>
+
+<footer>ملخص تعليمي مبني على محتوى الوحدتين الأولى والثانية — دراسات اجتماعية، الصف الثالث الإعدادي، الترم الأول · للمراجعة الذاتية فقط</footer>
+
+<script>
+const tabBtns = document.querySelectorAll('.tab-btn');
+tabBtns.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    tabBtns.forEach(b=>{ if(b.dataset.group===btn.dataset.group) b.classList.remove('active'); });
+    btn.classList.add('active');
+    document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+    document.getElementById(btn.dataset.target).classList.add('active');
+    if(btn.dataset.scope) setScope(btn.dataset.scope);
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+
+let curCat='explain', curUnit='1';
+function render(){
+  document.querySelectorAll('#catNav .cat-btn').forEach(b=>b.classList.toggle('active', b.dataset.cat===curCat));
+  document.querySelectorAll('.unit-btn').forEach(b=>b.classList.toggle('active', b.dataset.unit===curUnit));
+  document.getElementById('tabsNav').style.display = curCat==='explain' ? '' : 'none';
+  document.getElementById('unitNav').style.display = curCat==='explain' ? '' : 'none';
+  const tabs=[...document.querySelectorAll('#tabsNav .tab-btn')];
+  tabs.forEach(b=>{ b.style.display = (b.dataset.group===curUnit) ? '' : 'none'; });
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  if(curCat==='explain'){
+    const grp=tabs.filter(b=>b.dataset.group===curUnit);
+    (grp.find(b=>b.classList.contains('active'))||grp[0]).click();
+    return;
+  }
+  if(curCat==='chat'){
+    document.getElementById('chat').classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+    return;
+  }
+  if(curCat==='exam'){
+    document.getElementById('quiz').classList.add('active');
+    setScope(examScope);
+  } else if(curCat==='homework'){
+    document.getElementById('hwUnit').textContent='';
+    document.getElementById('hwMsg').textContent='لا توجد واجبات مضافة حتى الآن.';
+    document.getElementById('hw').classList.add('active');
+  } else {
+    document.getElementById('revUnit').textContent='';
+    document.getElementById('revMsg').textContent='لا توجد مراجعات مضافة حتى الآن.';
+    document.getElementById('rev').classList.add('active');
+  }
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+document.querySelectorAll('#catNav .cat-btn').forEach(c=>c.addEventListener('click',()=>{ curCat=c.dataset.cat; render(); }));
+document.querySelectorAll('.unit-btn').forEach(u=>u.addEventListener('click',()=>{ curUnit=u.dataset.unit; render(); }));
+
+let adminMode=false, admTab='sum', admData=null;
+
+const SALT='g3-soc-2026';
+const VALID = new Set(["51c6cde120ae671493557b75979a9a8fede9f6a2037c9319250d6522647dd33e","5c2761d97095ec76c9c39c1d0bd9b446dde16a2a7360a431a85d51a076baf13e"]);
+function normName(n){
+  return n.replace(/[\u064B-\u065F\u0670\u0640]/g,'').replace(/[أإآ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/\s+/g,' ').trim().toLowerCase();
+}
+async function sha256(t){
+  const buf=await crypto.subtle.digest('SHA-256', new TextEncoder().encode(t));
+  return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+const arDigits=t=>t.replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d));
+
+function getDeviceId(){
+  let id=null;
+  try{ id=localStorage.getItem('deviceId'); }catch(e){}
+  if(!id){
+    id='dev-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,10);
+    try{ localStorage.setItem('deviceId',id); }catch(e){}
+  }
+  return id;
+}
+const DEVICE_ID = getDeviceId();
+async function checkNameLock(name){
+  const docId = (normName(name).replace(/\s+/g,'_') || 'x').slice(0,80);
+  ensureFb();
+  if(!fbAuth.currentUser) await fbAuth.signInAnonymously();
+  const ref = fsDb.collection('nameLocks').doc(docId);
+  const snap = await ref.get();
+  if(!snap.exists){
+    await ref.set({ name: String(name).slice(0,60), deviceId: DEVICE_ID, ts: Date.now() });
+    return { ok:true };
+  }
+  const data = snap.data();
+  if(data.deviceId === DEVICE_ID) return { ok:true };
+  return { ok:false, owner: String(data.name||'').slice(0,60) };
+}
+
+function esc(s){ const d=document.createElement('div'); d.textContent=String(s||''); return d.innerHTML; }
+function ensureFb(){ if(!fsDb){ firebase.initializeApp(firebaseConfig); fbAuth=firebase.auth(); fsDb=firebase.firestore(); } }
+function saveAttempt(){
+  if(adminMode || !fsDb || !chatUid || !chatName) return;
+  fsDb.collection('attempts').add({uid:chatUid, name:chatName.slice(0,60), scope:examScope, score:score, total:quizBank.length, answers:attemptLog, ts:Date.now()}).catch(()=>{});
+}
+
+(function(){
+  const ov=document.getElementById('nameOverlay'), nameI=document.getElementById('nameInput'), codeI=document.getElementById('codeInput'), btn=document.getElementById('nameBtn'), err=document.getElementById('codeErr');
+  function enter(name){ document.getElementById('whoName').textContent=name; document.getElementById('whoChip').style.display=''; ov.classList.remove('show'); err.textContent=''; startChat(name); }
+  function check(){ btn.disabled=!(nameI.value.trim() && codeI.value.trim()); }
+  nameI.addEventListener('input',()=>{ err.textContent=''; check(); });
+  codeI.addEventListener('input',()=>{ err.textContent=''; check(); });
+  async function verify(name,code){ return VALID.has(await sha256(SALT+'|'+normName(name)+'|'+code)); }
+  async function submit(){
+    const name=nameI.value.trim().replace(/\s+/g,' '), code=arDigits(codeI.value.trim());
+    if(!name||!code) return;
+    btn.disabled=true;
+    // 🔐 المشرف الأول: admin / 837194
+    if(name.toLowerCase()==='admin' && code==='837194'){
+      try{ localStorage.setItem('adm','المشرف'); }catch(e){}
+      enterAdmin('المشرف'); btn.disabled=false; return;
+    }
+    // 🔐 المشرف الثاني: مستر أسامة / 562847
+    if(normName(name)==='مستر اسامه' && code==='562847'){
+      try{ localStorage.setItem('adm','مستر أسامة'); }catch(e){}
+      enterAdmin('مستر أسامة'); btn.disabled=false; return;
+    }
+    // 🌟 زياد المصطفى / 1234
+    if(normName(name)==='زياد المصطفي' && code==='1234'){
+      try{
+        const lock = await checkNameLock(name);
+        if(!lock.ok){ err.textContent='هذا الاسم مستخدم من جهاز آخر.'; btn.disabled=false; return; }
+      }catch(e){ err.textContent='تعذّر التحقق من الاسم.'; btn.disabled=false; return; }
+      try{ localStorage.setItem('stu',JSON.stringify({name,code})); }catch(e){}
+      enter(name); btn.disabled=false; return;
+    }
+    // 👤 طالب عادي
+    if(name.split(' ').length<3){ err.textContent='اكتب اسمك ثلاثيًا (ثلاث كلمات على الأقل).'; btn.disabled=false; return; }
+    let ok=false; try{ ok=await verify(name,code); }catch(e){ err.textContent='تعذّر التحقق.'; btn.disabled=false; return; }
+    if(!ok){ err.textContent='الاسم أو الكود غير صحيح.'; btn.disabled=false; return; }
+    try{
+      const lock = await checkNameLock(name);
+      if(!lock.ok){ err.textContent='هذا الاسم مستخدم من جهاز آخر. كلّم المشرف.'; btn.disabled=false; return; }
+    }catch(e){ err.textContent='تعذّر التحقق من الاسم.'; btn.disabled=false; return; }
+    try{ localStorage.setItem('stu',JSON.stringify({name,code})); }catch(e){}
+    enter(name);
+  }
+  btn.addEventListener('click',submit);
+  [nameI,codeI].forEach(i=>i.addEventListener('keydown',e=>{ if(e.key==='Enter') submit(); }));
+  document.getElementById('logoutBtn').addEventListener('click',()=>{
+    try{ localStorage.removeItem('stu'); localStorage.removeItem('adm'); }catch(e){}
+    stopChat(); adminMode=false;
+    document.getElementById('whoChip').style.display='none';
+    document.getElementById('admFab').style.display='none';
+    document.getElementById('admPanel').classList.remove('show');
+    nameI.value=''; codeI.value=''; btn.disabled=true; ov.classList.add('show');
+  });
+  (async()=>{
+    try{
+      const admName = localStorage.getItem('adm');
+      if(admName){ enterAdmin(admName === '1' ? 'المشرف' : admName); return; }
+    }catch(e){}
+    try{ const st=JSON.parse(localStorage.getItem('stu')||'null'); if(st && await verify(st.name,st.code)){ enter(st.name); return; } }catch(e){}
+    ov.classList.add('show'); setTimeout(()=>nameI.focus(),50);
+  })();
+})();
+
+const firebaseConfig = {
+  apiKey: "AIzaSyApCnSNW638M-pjA4_tiDbzT-MV9NB1fQM",
+  authDomain: "ziyad-5f84c.firebaseapp.com",
+  projectId: "ziyad-5f84c",
+  storageBucket: "ziyad-5f84c.firebasestorage.app",
+  messagingSenderId: "563118360003",
+  appId: "1:563118360003:web:7a5ad4932a05f49fe8e976"
+};
+let fsDb=null, fbAuth=null, chatUnsub=null, chatUid=null, chatName='', chatWired=false;
+function addMsg(box, text, cls, who){
+  const d=document.createElement('div'); d.className='msg '+cls;
+  if(who){ const sm=document.createElement('small'); sm.textContent=who; d.appendChild(sm); }
+  const t=document.createElement('span'); t.textContent=text; d.appendChild(t);
+  box.appendChild(d); box.scrollTop=box.scrollHeight; return t;
+}
+function chatOff(msg){
+  const box=document.getElementById('peerBox'); box.innerHTML=''; addMsg(box,msg,'other');
+  document.getElementById('peerInput').disabled=true; document.getElementById('peerSend').disabled=true;
+}
+function stopChat(){ if(chatUnsub){ chatUnsub(); chatUnsub=null; } chatName=''; }
+async function startChat(name){
+  chatName=name;
+  const box=document.getElementById('peerBox'), input=document.getElementById('peerInput'), btn=document.getElementById('peerSend'), note=document.getElementById('peerNote');
+  if(firebaseConfig.apiKey.startsWith('PUT_')){ chatOff('الشات غير مفعّل بعد.'); return; }
+  try{
+    ensureFb();
+    if(!fbAuth.currentUser) await fbAuth.signInAnonymously();
+    chatUid=fbAuth.currentUser.uid;
+    fsDb.collection('logins').add({uid:chatUid, name:name.slice(0,60), ts:Date.now()}).catch(()=>{});
+  }catch(e){ chatOff('تعذّر الاتصال بالشات.'); return; }
+  input.disabled=false; btn.disabled=false;
+  stopChat(); chatName=name;
+  chatUnsub=fsDb.collection('messages').orderBy('ts','desc').limit(100).onSnapshot(snap=>{
+    const rows=snap.docs.map(d=>d.data()).reverse();
+    box.innerHTML='';
+    if(!rows.length){ addMsg(box,'لا توجد رسائل بعد. كن أول من يكتب!','other'); return; }
+    rows.forEach(r=>{ const mine=r.uid===chatUid; addMsg(box,String(r.text||''), mine?'me':'other', mine?'أنت':(String(r.name||'').trim()||'زميل')); });
+  },()=>{ note.textContent='تعذّر تحميل الرسائل.'; });
+  if(chatWired) return; chatWired=true;
+  async function send(){
+    const t=input.value.trim().slice(0,500); if(!t||!chatName) return;
+    btn.disabled=true; input.value='';
+    try{ await fsDb.collection('messages').add({text:t, uid:chatUid, name:chatName.slice(0,60), ts:Date.now()}); note.textContent=''; }
+    catch(e){ note.textContent='تعذّر إرسال الرسالة.'; }
+    btn.disabled=false; input.focus();
+  }
+  btn.addEventListener('click',send);
+  input.addEventListener('keydown',e=>{ if(e.key==='Enter') send(); });
+}
+
+function enterAdmin(adminName){
+  document.getElementById('whoName').textContent = adminName || 'المشرف';
+  document.getElementById('whoChip').style.display='';
+  document.getElementById('nameOverlay').classList.remove('show');
+  adminMode=true;
+  document.getElementById('admFab').style.display='block';
+  try{
+    ensureFb();
+    fbAuth.signInAnonymously().then(r=>{ chatUid=r.user.uid; }).catch(()=>{});
+  }catch(e){}
+  openAdmin();
+}
+(function(){
+  const $=id=>document.getElementById(id);
+  $('admFab').addEventListener('click',openAdmin);
+  $('admClose').addEventListener('click',()=>$('admPanel').classList.remove('show'));
+  $('admRefresh').addEventListener('click',()=>{ if(admTab==='msg') loadMsgs(); else loadAdmin(); });
+  document.querySelectorAll('.adm-tabs button').forEach(b=>b.addEventListener('click',()=>{
+    admTab=b.dataset.t;
+    document.querySelectorAll('.adm-tabs button').forEach(x=>x.classList.toggle('active',x===b));
+    if(admTab==='msg') loadMsgs(); else renderAdmin();
+  }));
+})();
+function openAdmin(){ document.getElementById('admPanel').classList.add('show'); if(admTab==='msg') loadMsgs(); else loadAdmin(); }
+async function loadAdmin(){
+  const body=document.getElementById('admBody'); body.textContent='جارٍ التحميل...';
+  try{
+    ensureFb();
+    if(!fbAuth.currentUser) await fbAuth.signInAnonymously();
+    if(!chatUid) chatUid=fbAuth.currentUser.uid;
+    const [lg,at]=await Promise.all([
+      fsDb.collection('logins').orderBy('ts','desc').limit(2000).get(),
+      fsDb.collection('attempts').orderBy('ts','desc').limit(500).get()
+    ]);
+    admData={logins:lg.docs.map(d=>d.data()), attempts:at.docs.map(d=>d.data())};
+    renderAdmin();
+  }catch(e){ body.textContent='تعذّر تحميل البيانات.'; }
+}
+function scopeLabel(sc){ const [u,l]=String(sc).split('-'); const n={'1':'الأول','2':'الثاني','3':'الثالث'}; return 'الوحدة '+(n[u]||u)+' · الدرس '+(n[l]||l); }
+function fmtDate(t){ try{ return new Date(t).toLocaleString('ar-EG',{dateStyle:'medium',timeStyle:'short'}); }catch(e){ return ''; } }
+function renderAdmin(){
+  const body=document.getElementById('admBody'); if(!admData) return;
+  body.innerHTML='';
+  const card=(parent)=>{ const d=document.createElement('div'); d.className='adm-card'; parent.appendChild(d); return d; };
+  const {logins,attempts}=admData;
+  if(admTab==='sum'){
+    const map={};
+    const get=n=>{ const k=normName(n||''); return map[k]||(map[k]={name:n||'—',logins:0,last:0,att:0,sum:0}); };
+    logins.forEach(r=>{ const m=get(r.name); m.logins++; m.last=Math.max(m.last,r.ts||0); });
+    attempts.forEach(r=>{ const m=get(r.name); m.att++; m.sum+= r.total? r.score/r.total*100 : 0; m.last=Math.max(m.last,r.ts||0); });
+    const rows=Object.values(map).sort((a,b)=>b.last-a.last);
+    const st=document.createElement('div'); st.className='adm-stat';
+    [['الطلاب',rows.length],['مرات الدخول',logins.length],['الامتحانات',attempts.length]].forEach(([t,v])=>{
+      const d=document.createElement('div'), sp=document.createElement('span'); sp.textContent=v; d.appendChild(sp); d.appendChild(document.createTextNode(t)); st.appendChild(d); });
+    body.appendChild(st);
+    if(!rows.length){ card(body).textContent='لا توجد بيانات بعد.'; return; }
+    rows.forEach(m=>{ const c=card(body);
+      const b=document.createElement('b'); b.textContent=m.name; c.appendChild(b);
+      c.appendChild(document.createElement('br'));
+      c.appendChild(document.createTextNode('الدخول: '+m.logins+' مرة · آخر نشاط: '+fmtDate(m.last)));
+      c.appendChild(document.createElement('br'));
+      c.appendChild(document.createTextNode('الامتحانات: '+m.att+(m.att?(' · متوسط النتيجة: '+Math.round(m.sum/m.att)+'%'):'')));
+    });
+  } else if(admTab==='att'){
+    if(!attempts.length){ card(body).textContent='لا توجد امتحانات بعد.'; return; }
+    attempts.forEach(r=>{
+      const c=card(body), det=document.createElement('details'), sm=document.createElement('summary');
+      const pct=r.total?Math.round(r.score/r.total*100):0;
+      sm.textContent=(r.name||'—')+' — '+scopeLabel(r.scope)+' — '+r.score+'/'+r.total+' ('+pct+'%) — '+fmtDate(r.ts);
+      det.appendChild(sm);
+      (r.answers||[]).forEach(a=>{
+        const d=document.createElement('div'); d.className='adm-ans';
+        let picked='';
+        if(a.t==='tf') picked=' — اختار: '+(a.p===true?'صواب':a.p===false?'خطأ':'');
+        else if(a.t==='mcq') picked=' — اختار: '+(a.p||'');
+        else picked=a.ok?' — قيّم نفسه: أجاب صحيحًا':' — قيّم نفسه: يحتاج مراجعة';
+        d.textContent=(a.ok?'✅ ':'❌ ')+a.n+'. '+(a.q||'')+picked;
+        det.appendChild(d);
+      });
+      c.appendChild(det);
+    });
+  } else if(admTab==='log'){
+    if(!logins.length){ card(body).textContent='لا توجد تسجيلات دخول بعد.'; return; }
+    logins.slice(0,300).forEach(r=>{ const c=card(body); c.textContent='🔐 '+(r.name||'—')+' — '+fmtDate(r.ts); });
+  }
+}
+
+async function loadMsgs(){
+  const body=document.getElementById('admBody'); body.textContent='جارٍ التحميل...';
+  try{
+    ensureFb();
+    if(!fbAuth.currentUser) await fbAuth.signInAnonymously();
+    const snap = await fsDb.collection('messages').orderBy('ts','desc').limit(300).get();
+    const msgs = snap.docs.map(d=>({id:d.id, ...d.data()}));
+    body.innerHTML='';
+    const delAll = document.createElement('button');
+    delAll.textContent = '🗑️ مسح كل الرسائل (' + msgs.length + ')';
+    delAll.style.cssText = 'width:100%;padding:12px;background:var(--brick);color:#fff;border:0;border-radius:10px;font-family:inherit;font-weight:900;cursor:pointer;margin-bottom:14px;font-size:14px;';
+    delAll.onclick = deleteAllMsgs;
+    body.appendChild(delAll);
+    if(!msgs.length){ const d=document.createElement('div'); d.className='adm-card'; d.textContent='لا توجد رسائل.'; body.appendChild(d); return; }
+    msgs.forEach(m=>{
+      const c=document.createElement('div'); c.className='adm-card';
+      c.style.display='flex'; c.style.gap='10px'; c.style.alignItems='flex-start';
+      const info=document.createElement('div'); info.style.flex='1'; info.style.wordBreak='break-word';
+      info.innerHTML = '<b style="color:var(--teal)">'+esc(m.name||'—')+'</b> <span style="color:var(--ink-soft);font-size:12px">('+fmtDate(m.ts)+')</span><br><span style="font-size:13.5px">'+esc(m.text||'')+'</span>';
+      const del=document.createElement('button'); del.textContent='🗑️';
+      del.style.cssText='background:var(--brick);color:#fff;border:0;border-radius:8px;padding:8px 12px;cursor:pointer;font-family:inherit;font-size:14px;flex:0 0 auto;';
+      del.onclick = ()=>deleteMsg(m.id);
+      c.appendChild(info); c.appendChild(del); body.appendChild(c);
+    });
+  }catch(e){ body.textContent='تعذّر تحميل الرسائل.'; }
+}
+async function deleteMsg(id){
+  if(!confirm('تأكيد مسح الرسالة؟')) return;
+  try{ await fsDb.collection('messages').doc(id).delete(); loadMsgs(); }
+  catch(e){ alert('تعذّر المسح.'); }
+}
+async function deleteAllMsgs(){
+  if(!confirm('⚠️ تأكيد مسح كل الرسائل؟ لا يمكن التراجع!')) return;
+  if(!confirm('هل أنت متأكد 100%؟')) return;
+  try{
+    const snap = await fsDb.collection('messages').get();
+    if(!snap.size){ alert('لا توجد رسائل.'); return; }
+    const docs = snap.docs;
+    for(let i=0; i<docs.length; i+=400){
+      const batch = fsDb.batch();
+      docs.slice(i, i+400).forEach(d=>batch.delete(d.ref));
+      await batch.commit();
+    }
+    loadMsgs();
+  }catch(e){ alert('تعذّر المسح: ' + (e.message||'')); }
+}
+
+function toggleRuler(id){ document.getElementById(id).classList.toggle('open'); }
+
+function showCiv(which){
+  document.getElementById('panelMaya').classList.toggle('show', which==='maya');
+  document.getElementById('panelInca').classList.toggle('show', which==='inca');
+  document.getElementById('btnMaya').classList.toggle('active-maya', which==='maya');
+  document.getElementById('btnInca').classList.toggle('active-inca', which==='inca');
+}
+
+const mayaData = [
+  ["الحياة السياسية","👑",["مدن مستقلة تتحالف فيما بينها عند الحاجة، ولكل مدينة ملك.","الملك يجمع بين السلطة السياسية والدينية.","نظام الحكم وراثي."]],
+  ["الحياة الاقتصادية","🌽",["اعتمدت بدايةً على الزراعة المتنقلة، ثم ظهرت الزراعة المستقرة والقرى.","مارسوا الحرف اليدوية مثل الفخار والنسيج.","ازداد اهتمامهم بالتجارة."]],
+  ["الحياة الدينية","⛩️",["تعدد الآلهة، ولكل إله دور محدد.","الملوك والكهنة يُدفنون في أهرامات مع مجوهراتهم.","عامة الناس يُدفنون تحت منازلهم."]],
+  ["الحياة الثقافية والعلمية","📜",["استخدموا الكتابة التصويرية التي تشبه الكتابة الهيروغليفية.","دوّنوا الأحداث المهمة على جدران المعابد.","تقدّموا في علم الفلك، ووضعوا تقويمًا دقيقًا قسّم السنة إلى 365 يومًا."]],
+  ["العمارة والفنون","🏛️",["شيّدوا مراصد فلكية وقصورًا ضخمة.","بنوا أهرامات تشبه الأهرامات المصرية لكنها أقل ضخامة.","من أبرز آثارهم الباقية حتى اليوم هرم كوكولكان بالمكسيك."]]
+];
+const incaData = [
+  ["الحياة السياسية","👑",["نظام حكم مركزي قوي وراثي داخل الأسرة الحاكمة.","أسهم هذا النظام في استقرار وتوسع الإمبراطورية."]],
+  ["الحياة الاقتصادية","🦙",["برعوا في الزراعة، وبنوا مخازن لتخزين الحبوب.","ربّوا الحيوانات وخاصة اللاما.","تغلّبوا على طبيعة بلادهم الجبلية بزراعة المدرجات.","أبدعوا في صناعة الأواني الفخارية والمعدنية."]],
+  ["الحياة الدينية","☀️",["تعدد الآلهة المرتبطة بالطبيعة، وأهمها إله الشمس.","كان حكام الإنكا يعدّون أنفسهم أبناء إله الشمس.","اشتُهروا بحفظ أجساد موتاهم عن طريق التحنيط."]],
+  ["الحياة الثقافية والعلمية","🧵",["لم يعرفوا الكتابة التقليدية، وتحدثوا بلغة «الكيتشوا» الشفهية.","استخدموا وسيلة تُعرف بـ«الكيبو»: حبال ملوّنة وعقد لتدوين المعلومات.","عرفوا الأوقات المُثلى للزراعة اعتمادًا على مراقبة الشمس والقمر والنجوم."]],
+  ["العمارة والفنون","🏔️",["شيّدوا معابد وقصورًا ضخمة من كتل حجرية نُحتت بدقة عالية.","اهتموا ببناء الجسور وشق الطرق.","من أبرز آثارهم الباقية حتى اليوم مدينة ماتشو بيتشو الأثرية في بيرو."]]
+];
+function buildAccordion(containerId, data){
+  const box = document.getElementById(containerId);
+  data.forEach(([title, icon, items])=>{
+    const item = document.createElement('div');
+    item.className = 'accordion-item';
+    item.innerHTML = '<button class="accordion-head" onclick="toggleAcc(this)"><span>'+icon+' '+title+'</span><span class="arrow">▾</span></button><div class="accordion-body"><ul>'+items.map(t=>'<li>'+t+'</li>').join('')+'</ul></div>';
+    box.appendChild(item);
+  });
+}
+buildAccordion('accMaya', mayaData);
+buildAccordion('accInca', incaData);
+function toggleAcc(headBtn){
+  const item = headBtn.parentElement;
+  const wasOpen = item.classList.contains('open');
+  item.parentElement.querySelectorAll('.accordion-item').forEach(i=>{
+    i.classList.remove('open');
+    i.querySelector('.accordion-body').style.maxHeight = null;
+  });
+  if(!wasOpen){
+    item.classList.add('open');
+    const body = item.querySelector('.accordion-body');
+    body.style.maxHeight = body.scrollHeight + 40 + 'px';
+  }
+}
+
+const similarities = [
+  ["العمارة الضخمة","برعت الحضارتان في بناء منشآت ضخمة مثل الأهرامات والمعابد، كما في مصر القديمة."],
+  ["المعتقدات الدينية","الإيمان بتعدد الآلهة، وتقديس الحاكم، والإيمان بالبعث والخلود، والاهتمام بالتحنيط."],
+  ["الكتابة التصويرية","استخدام رموز تصويرية لتسجيل الأحداث وتوثيق العلوم، كما حدث في حضارة المايا."],
+  ["الاهتمام بعلم الفلك","وضع هذه الحضارات تقاويم دقيقة لتنظيم الحياة الزراعية."]
+];
+
+function buildFlipGrid(containerId, data, extraClass){
+  const grid = document.getElementById(containerId);
+  grid.innerHTML = '';
+  data.forEach(([front, back])=>{
+    const d = document.createElement('div');
+    d.className = 'flip' + (extraClass ? ' '+extraClass : '');
+    d.onclick=()=>d.classList.toggle('flipped');
+    d.innerHTML = '<div class="flip-inner"><div class="flip-face flip-front">'+front+'</div><div class="flip-face flip-back">'+back+'</div></div>';
+    grid.appendChild(d);
+  });
+}
+
+const continentData = {
+  na:{chips:["ثالث قارات العالم مساحة","النصف الشمالي والغربي"],flipClass:"flip-na",facts:[["الموقع الفلكي","تمتد بين دائرتي عرض ٧°٣٠′ و٨٣° شمالًا، وخطي طول ١٠° و١٦٨° غربًا."],["الحدود","شمالًا المحيط القطبي الشمالي، شرقًا الأطلنطي، غربًا الهادي."],["الجبال والهضاب","جبال الروكي والأبلاش، وهضبة لبرادور."],["السهول","السهول الوسطى، وسهول ساحلية."],["أشهر جزرها","جزيرة جرينلاند."]]},
+  sa:{chips:["رابع قارات العالم مساحة","أوسع سهول نهرية في العالم"],flipClass:"flip-sa",facts:[["الموقع الفلكي","بين دائرتي عرض ١٢° شمالًا و٥٦° جنوبًا."],["الحدود","شمالًا البحر الكاريبي وأمريكا الشمالية، شرقًا الأطلنطي، غربًا الهادي."],["الجبال والهضاب","جبال الإنديز غربًا، وهضبة البرازيل شرقًا."],["السهول","سهول الأمازون أوسع سهول نهرية في العالم."],["أشهر جزرها","جزر فوكلاند."]]},
+  an:{chips:["خامس قارات العالم مساحة","غير مأهولة بالسكان"],flipClass:"flip-an",facts:[["الموقع","أقصى جنوب الكرة الأرضية حول القطب الجنوبي."],["الحدود","يحيط بها المحيط القطبي الجنوبي من جميع الجهات."],["المساحة","خامس قارات العالم من حيث المساحة."],["السكان","قارة غير مأهولة بالسكان بصفة دائمة."]]},
+  au:{chips:["سابعة وأصغر قارات العالم","نصف الكرة الجنوبي بالكامل","قارة وجزيرة في آن واحد"],flipClass:"flip-au",facts:[["الموقع الفلكي","بين دائرتي عرض ١٠° و٤٤° جنوبًا."],["الحدود","شمالًا بحرا آرافورا وتيمور، شرقًا الهادي."],["الجبال والهضاب","جبال الحاجز الكبير شرقًا، وهضبة غرب أستراليا."],["السهول","سهول نهري موري ودارلنج."],["أشهر جزرها","جزيرة تسمانيا."]]}
+};
+function renderContinent(key){
+  const data = continentData[key];
+  document.querySelectorAll('#continentToggle .cbtn').forEach(b=>{ b.classList.toggle('active', b.dataset.c===key); });
+  const chipsBox = document.getElementById('continentChips');
+  chipsBox.innerHTML = data.chips.map(c=>'<div class="chip">'+c+'</div>').join('');
+  buildFlipGrid('flipContinent', data.facts, data.flipClass);
+}
+document.querySelectorAll('#continentToggle .cbtn').forEach(b=>{ b.addEventListener('click', ()=>renderContinent(b.dataset.c)); });
+renderContinent('na');
+buildFlipGrid('flipGrid', similarities);
+
+const L = n => '<span class="lesson-badge">الدرس '+n+'</span>';
+const L2 = n => '<span class="lesson-badge" style="background:var(--brick)">و٢ - الدرس '+n+'</span>';
+
+const tfData = [
+  {l:1, text:"نشأت حضارتا المايا والإنكا في الأمريكتين قبل وصول الأوروبيين إليها بعدة قرون.", correct:true},
+  {l:1, text:"تُعد قارة أستراليا ثالث قارات العالم من حيث المساحة.", correct:false, fix:"الصواب: أستراليا سابع وأصغر قارات العالم."},
+  {l:1, text:"تمتد سلاسل جبال الإنديز في قارة أمريكا الشمالية.", correct:false, fix:"الصواب: في أمريكا الجنوبية."},
+  {l:1, text:"يغلب على هضبة غرب أستراليا الطابع الصحراوي.", correct:true},
+  {l:2, text:"كانت المدن المستقلة في حضارة المايا تتحالف فيما بينها عند الحاجة.", correct:true},
+  {l:2, text:"كان عامة الشعب في المايا يُدفنون في الأهرامات.", correct:false, fix:"الصواب: الملوك والكهنة."},
+  {l:2, text:"أهرامات المايا أقل ضخامة من الأهرامات المصرية.", correct:true},
+  {l:2, text:"لم يعرف شعب الإنكا الكتابة التقليدية.", correct:true},
+  {l:3, text:"بدأت أوروبا الكشوف الجغرافية في القرن الخامس عشر الميلادي.", correct:true},
+  {l:3, text:"وصل كولومبوس إلى جزر البهاما عام ١٤٩٢م.", correct:true},
+  {l:3, text:"أطلق ماجلان اسم «الهادي» على المحيط.", correct:true},
+  {l:3, text:"أميريجو فسبوتشي هو من أثبت أن الأراضي المكتشفة قارة جديدة.", correct:true}
+];
+const mcqData = [
+  {l:1, q:"تمتلك قارات العالم الجديد احتياطيات كبيرة من المعادن نتيجة:", opts:["موقعها الفلكي والجغرافي","صغر مساحتها","كثافتها السكانية","قلة أنهارها"], a:0},
+  {l:1, q:"أطول سلاسل الجبال بقارة أمريكا الشمالية في جهتها:", opts:["الشرقية","الغربية","الشمالية","الجنوبية"], a:1},
+  {l:1, q:"سهول الأمازون أوسع سهول نهرية في العالم بسبب:", opts:["طول النهر فقط","شدة الانحدار","تعدد روافده وانتشار الغابات","قربه من الهادي"], a:2},
+  {l:2, q:"نشأت حضارة المايا في أقصى جنوب قارة أمريكا الشمالية بالجهة:", opts:["الشمالية","الجنوبية","الشرقية","الغربية"], a:1},
+  {l:2, q:"استخدم شعب الإنكا لتوثيق المعلومات وسيلة تُعرف باسم:", opts:["الهيروغليفية","الكيبو","المسمارية","الألواح"], a:1},
+  {l:3, q:"من الدوافع السياسية للكشوف الجغرافية:", opts:["البحث عن طرق تجارية","فرض النفوذ وتكوين إمبراطوريات","الحصول على الذهب","تجنب طريق الحرير"], a:1},
+  {l:3, q:"اعتمد كولومبوس على فكرة كروية الأرض متجهًا نحو الهند من جهة:", opts:["الشمال","الجنوب","الشرق","الغرب"], a:3},
+  {l:3, q:"وصل جيمس كوك عام 1770م إلى الساحل الشرقي لقارة:", opts:["أمريكا الشمالية","أمريكا الجنوبية","أستراليا","آسيا"], a:2}
+];
+const whyData = [
+  {l:1, q:"بم تفسر: الأهمية الاقتصادية لهضبة البرازيل؟", a:"لاحتوائها على ثروات معدنية وأراضٍ زراعية متنوعة."},
+  {l:1, q:"بم تفسر: إنشاء الكثير من الموانئ الطبيعية على السواحل الشرقية لأمريكا الشمالية؟", a:"لتعرّج هذه السواحل وانتشار الخلجان بها."},
+  {l:2, q:"بم تفسر: عدم وجود حكومة مركزية موحدة عند حضارة المايا؟", a:"لأنها تكوّنت من عدة مدن مستقلة، لكل منها ملكها."},
+  {l:3, q:"بم تفسر: بحث الأوروبيين عن طرق تجارية جديدة للهند؟", a:"لتجنب المرور بطريق الحرير الخاضع للعثمانيين والمماليك."},
+  {l:3, q:"بم تفسر: أصبح الرقيق الإفريقي السلعة الأهم بعد اكتشاف الأمريكتين؟", a:"للعمل في المزارع والمناجم بالمستعمرات الأوروبية."}
+];
+const dalelData = [
+  {l:1, q:"دلل: تمتلك قارات العالم الجديد أهمية اقتصادية كبيرة.", a:"تمتلك احتياطيات من المعادن ومصادر الطاقة، ومساحات واسعة من الأراضي الزراعية."},
+  {l:1, q:"دلل: تتمتع قارات العالم الجديد بأهمية استراتيجية.", a:"يوجد بها قناة بنما التي تصل بين الأطلنطي والهادي."},
+  {l:2, q:"دلل: تشابهت أهرامات المايا مع الأهرامات المصرية.", a:"كلاهما استُخدم لدفن الملوك مع ممتلكاتهم."},
+  {l:3, q:"دلل: كانت الكشوف الجغرافية سلاحًا ذا حدين.", a:"حققت مكاسب للدول الأوروبية، لكنها تسببت في معاناة للسكان الأصليين والأفارقة."}
+];
+const compareData = [
+  {l:1, q:"قارن بين أمريكا الشمالية وأستراليا من حيث الموقع والمساحة.", a:"أمريكا الشمالية: المرتبة الثالثة، أستراليا: المرتبة السابعة."},
+  {l:2, q:"قارن بين المايا والإنكا من حيث نظام الكتابة.", a:"المايا: عرفوا الكتابة التصويرية. الإنكا: استخدموا الكيبو."},
+  {l:3, q:"قارن بين كولومبوس وكوك.", a:"كولومبوس: إيطالي بتمويل إسباني، وصل للبهاما ١٤٩٢م. كوك: بريطاني، وصل لأستراليا ١٧٧٠م."}
+];
+const whatifData = [
+  {l:1, q:"ماذا يحدث إذا لم تُحفر قناة بنما؟", a:"تصعب حركة التجارة بين الأطلنطي والهادي، وتضطر السفن للدوران حول أمريكا الجنوبية."},
+  {l:2, q:"ماذا يحدث إذا لم يؤمن المايا بالحياة بعد الموت؟", a:"لَما اهتموا بدفن الملوك مع مجوهراتهم."},
+  {l:3, q:"ماذا يحدث إذا لم يستكمل رفاق ماجلان الرحلة؟", a:"لَما تحققت أول رحلة بحرية حول العالم."}
+];
+const quizBankU1 = [
+  ...tfData.map(x=>({type:'tf', badge:L(x.l), ...x})),
+  ...mcqData.map(x=>({type:'mcq', badge:L(x.l), ...x})),
+  ...whyData.map(x=>({type:'open', cat:'why', badge:L(x.l), ...x})),
+  ...dalelData.map(x=>({type:'open', cat:'dalel', badge:L(x.l), ...x})),
+  ...compareData.map(x=>({type:'open', cat:'compare', badge:L(x.l), ...x})),
+  ...whatifData.map(x=>({type:'open', cat:'whatif', badge:L(x.l), ...x}))
+];
+
+const tf2Data = [
+  {l:1, text:"تولى «محمد على» حكم مصر بعد فرمان من السلطان العثمانى عام ١٨٠٥م.", correct:true},
+  {l:1, text:"كان سبب ثورة الشعب المصرى ضد البرديسى فرض ضرائب باهظة.", correct:true},
+  {l:1, text:"نجحت حملة فريزر الإنجليزية عام ١٨٠٧م فى احتلال مصر.", correct:false, fix:"الصواب: فشلت."},
+  {l:1, text:"تخلص «محمد على» من خطر المماليك بمذبحة القلعة ١٨١١م.", correct:true},
+  {l:2, text:"ألغى «محمد على» نظام الالتزام.", correct:true},
+  {l:2, text:"كانت أراضى مصر الزراعية فى عهد «محمد على» تورث بحرية.", correct:false, fix:"الصواب: لم تكن تورث."},
+  {l:2, text:"انتهت حرب المورة بتحطيم الأسطولين فى معركة نافارين ١٨٢٧م.", correct:true},
+  {l:2, text:"انتهت معاهدة لندن باحتفاظ «محمد على» بحكم مصر وراثيًا.", correct:true},
+  {l:3, text:"حكم إبراهيم باشا مصر لعدة سنوات طويلة.", correct:false, fix:"الصواب: عدة أشهر فقط."},
+  {l:3, text:"أصدر محمد سعيد باشا اللائحة السعيدية.", correct:true},
+  {l:3, text:"أنشأ إسماعيل مجلس شورى النواب عام ١٨٦٦م.", correct:true},
+  {l:3, text:"انتهى الأمر بخلع الخديو إسماعيل.", correct:true}
+];
+const mcq2Data = [
+  {l:1, q:"عادت القوات الإنجليزية للانسحاب من مصر بعد:", opts:["ثورة البرديسى","صلح أميان ١٨٠٢م","مذبحة القلعة","معاهدة لندن"], a:1},
+  {l:1, q:"صدر الفرمان بتولية «محمد على» عام:", opts:["١٨٠٤م","١٨٠٥م","١٨٠٧م","١٨١١م"], a:1},
+  {l:1, q:"قائد الحملة الإنجليزية التى فشلت عام ١٨٠٧م:", opts:["نلسون","فريزر","كيتشنر","دليسبس"], a:1},
+  {l:1, q:"تخلص «محمد على» من المماليك بمذبحة القلعة عام:", opts:["١٨٠٥م","١٨٠٧م","١٨٠٩م","١٨١١م"], a:3},
+  {l:2, q:"النظام الاقتصادى الذى اتبعه «محمد على»:", opts:["الالتزام","الاحتكار","المديريات","اللائحة"], a:1},
+  {l:2, q:"الترعة التى حفرها «محمد على»:", opts:["الإسماعيلية","الإبراهيمية","المحمودية","السويس"], a:2},
+  {l:2, q:"الحرب التى استعان فيها السلطان بـ«محمد على» للقضاء على الوهابيين:", opts:["حرب السودان","حروب شبه الجزيرة العربية","حرب المورة","حروب الشام"], a:1},
+  {l:2, q:"تحطم الأسطولان فى معركة نافارين خلال:", opts:["حروب الجزيرة","حرب السودان","حرب المورة","حروب الشام"], a:2},
+  {l:2, q:"بموجب معاهدة لندن احتفظ «محمد على» بحكم مصر مقابل:", opts:["التخلى عن الجيش","دفع مبلغ سنوى للدولة العثمانية","التنازل عن السودان","فتح قناة السويس"], a:1},
+  {l:3, q:"تولى إبراهيم باشا حكم مصر بعد:", opts:["وفاة محمد على","مرض والده","خلع إسماعيل","عزل خورشيد"], a:1},
+  {l:3, q:"صاحب اللائحة السعيدية:", opts:["إبراهيم","عباس","محمد سعيد","إسماعيل"], a:2},
+  {l:3, q:"منح امتياز قناة السويس الأول عام ١٨٥٤م:", opts:["إبراهيم","عباس","محمد سعيد","إسماعيل"], a:2},
+  {l:3, q:"أنشأ مجلس شورى النواب عام:", opts:["١٨٦٣م","١٨٦٦م","١٨٧٦م","١٨٧٩م"], a:1},
+  {l:3, q:"انتهى الأمر بخلع الخديو إسماعيل وتولية:", opts:["أخيه","ابنه محمد توفيق","شريف باشا","نوبار باشا"], a:1}
+];
+const why2Data = [
+  {l:1, q:"بم تفسر: نجاح «محمد على» فى كسب ثقة المصريين؟", a:"لأنه رفض مشاركة جنوده فى السلب والنهب، ووقف مع الشعب."},
+  {l:1, q:"بم تفسر: رغبة «محمد على» فى التخلص من الزعامة الشعبية؟", a:"لأنه أدرك خطورتها على مكانته ورغب فى الانفراد بحكم مصر."},
+  {l:2, q:"بم تفسر: لجوء «محمد على» إلى نظام الاحتكار؟", a:"لأنه وسيلة لتوفير احتياجات البلاد وزيادة دخل الدولة."},
+  {l:3, q:"بم تفسر: لجوء الخديو إسماعيل للاقتراض؟", a:"دفع تعويضات قناة السويس، والإنفاق على المشروعات والقصور، ودفع أموال للسلطان للحصول على لقب خديو."}
+];
+const dalel2Data = [
+  {l:1, q:"دلل: استعادت الدولة العثمانية سيطرتها الاسمية فقط على مصر.", a:"عيّنت خورشيد باشا واليًا لكنها لم تستطع ضبط الأوضاع."},
+  {l:2, q:"دلل: اهتم «محمد على» ببناء نهضة صناعية وتعليمية.", a:"أنشأ ديوان المدارس والمدارس العالية والمصانع والترسانة البحرية."},
+  {l:3, q:"دلل: كان عصر إسماعيل من أكثر الفترات تقدمًا وعمرانًا.", a:"زيادة المساحة الزراعية، وإنشاء خطوط السكك الحديدية ومصلحة البريد، ومضاعفة ميزانية التعليم."}
+];
+const compare2Data = [
+  {l:3, q:"قارن بين إنجازات محمد سعيد باشا وإخفاقاته.", a:"الإنجازات: اللائحة السعيدية. الإخفاقات: منح امتياز قناة السويس والاقتراض."},
+  {l:2, q:"قارن بين حروب الجزيرة وحروب الشام من حيث الأسباب.", a:"الجزيرة: للقضاء على الوهابيين. الشام: لتوسيع نفوذه وبناء دولة مستقلة."}
+];
+const whatif2Data = [
+  {l:1, q:"ماذا يحدث إذا لم يقف «محمد على» مع ثورة ١٨٠٤م؟", a:"لَما كسب ثقة المصريين ولَربما لم يصل للحكم."},
+  {l:2, q:"ماذا يحدث إذا لم توقّع معاهدة لندن ١٨٤٠م؟", a:"لربما نجح «محمد على» فى تأسيس دولة مستقلة قوية."}
+];
+const quizBankU2 = [
+  ...tf2Data.map(x=>({type:'tf', badge:L2(x.l), ...x})),
+  ...mcq2Data.map(x=>({type:'mcq', badge:L2(x.l), ...x})),
+  ...why2Data.map(x=>({type:'open', cat:'why', badge:L2(x.l), ...x})),
+  ...dalel2Data.map(x=>({type:'open', cat:'dalel', badge:L2(x.l), ...x})),
+  ...compare2Data.map(x=>({type:'open', cat:'compare', badge:L2(x.l), ...x})),
+  ...whatif2Data.map(x=>({type:'open', cat:'whatif', badge:L2(x.l), ...x}))
+];
+
+const catLabel = {why:'💭 بم تفسر', dalel:'📌 دلل', compare:'⚖️ قارن', whatif:'❓ ماذا يحدث إذا'};
+
+let examScope='1-1';
+let quizBank = quizBankU1.filter(x=>String(x.l)==='1');
+let qIndex = 0, score = 0, answered = false, attemptLog = [];
+function logAns(picked, ok){ const it=quizBank[qIndex]; attemptLog.push({n:qIndex+1, t:it.type, c:it.cat||'', q:String(it.text||it.q||'').slice(0,160), p:(picked===undefined?null:picked), ok:!!ok}); }
+const toArabicNum = n => n.toString().replace(/[0-9]/g, d=>"٠١٢٣٤٥٦٧٨٩"[d]);
+
+function setScope(scope){
+  document.querySelectorAll('.scope-btn').forEach(b=>b.classList.toggle('active', b.dataset.scope===scope));
+  examScope = scope;
+  const [u,l] = scope.split('-');
+  quizBank = (u==='1' ? quizBankU1 : quizBankU2).filter(x=>String(x.l)===l);
+  document.getElementById('quizResult').style.display = 'none';
+  document.getElementById('quizArea').style.display = 'block';
+  qIndex = 0; score = 0; answered = false; attemptLog = [];
+  renderCurrentQ();
+}
+
+function renderCurrentQ(){
+  const item = quizBank[qIndex];
+  const box = document.getElementById('qCards');
+  answered = false;
+  document.getElementById('nextBtn').disabled = true;
+  document.getElementById('nextBtn').textContent = (qIndex===quizBank.length-1) ? 'عرض النتيجة' : 'السؤال التالي';
+  if(item.type==='tf'){
+    box.innerHTML = '<div class="q-text">'+item.badge+' '+item.text+'</div><div class="tf-row"><button class="opt" style="flex:1" onclick="answerTF(true,this)">✅ صواب</button><button class="opt" style="flex:1" onclick="answerTF(false,this)">❌ خطأ</button></div><div class="tf-fb" id="curTffb" style="display:none;margin-top:8px;font-size:13.5px;color:var(--ink-soft)"></div>';
+  } else if(item.type==='mcq'){
+    box.innerHTML = '<div class="q-text">'+item.badge+' '+item.q+'</div>' + item.opts.map((o,i)=>'<button class="opt" onclick="answerMCQ('+i+',this)">'+o+'</button>').join('');
+  } else {
+    box.innerHTML = '<div class="q-text">'+item.badge+' <span style="color:var(--teal);font-size:12.5px;display:block;margin-bottom:4px">'+catLabel[item.cat]+'</span>'+item.q+'</div><button class="reveal-btn" onclick="revealOpen()">عرض الإجابة النموذجية</button><div class="reveal-ans" id="curOpenAns">'+item.a+'</div><div id="selfRateRow" style="display:none;gap:8px;margin-top:10px;"><button class="opt" style="flex:1" onclick="selfRate(true,this)">أجبت إجابة صحيحة ✅</button><button class="opt" style="flex:1" onclick="selfRate(false,this)">أحتاج للمراجعة 📖</button></div>';
+  }
+  updateHeader();
+}
+function revealOpen(){
+  document.getElementById('curOpenAns').style.display = 'block';
+  document.getElementById('selfRateRow').style.display = 'flex';
+}
+function selfRate(isCorrect, btn){
+  if(answered) return;
+  answered = true;
+  if(isCorrect) score++;
+  logAns(null, isCorrect);
+  document.querySelectorAll('#selfRateRow .opt').forEach(b=>{ b.disabled=true; });
+  btn.classList.add(isCorrect ? 'correct' : 'wrong');
+  document.getElementById('nextBtn').disabled = false;
+  updateHeader();
+}
+function answerTF(choice, btn){
+  if(answered) return;
+  answered = true;
+  const item = quizBank[qIndex];
+  const isRight = (choice === item.correct);
+  logAns(choice, isRight);
+  const row = btn.parentElement;
+  row.querySelectorAll('.opt').forEach(b=>{ b.disabled = true; });
+  btn.classList.add(isRight ? 'correct' : 'wrong');
+  if(!isRight){ row.querySelectorAll('.opt').forEach(b=>{ if(b!==btn) b.classList.add('correct'); }); }
+  const fb = document.getElementById('curTffb');
+  fb.style.display = 'block';
+  fb.textContent = item.correct ? 'العبارة صحيحة ✔️' : ('العبارة خاطئة ❌ — ' + item.fix);
+  if(isRight) score++;
+  document.getElementById('nextBtn').disabled = false;
+  updateHeader();
+}
+function answerMCQ(choice, btn){
+  if(answered) return;
+  answered = true;
+  const item = quizBank[qIndex];
+  const buttons = btn.parentElement.querySelectorAll('.opt');
+  buttons.forEach((b,i)=>{
+    b.disabled = true;
+    if(i===item.a) b.classList.add('correct');
+    else if(i===choice) b.classList.add('wrong');
+  });
+  if(choice===item.a) score++;
+  logAns(item.opts[choice], choice===item.a);
+  document.getElementById('nextBtn').disabled = false;
+  updateHeader();
+}
+function updateHeader(){
+  document.getElementById('qCounter').textContent = toArabicNum(qIndex+1) + ' / ' + toArabicNum(quizBank.length);
+  document.getElementById('qBar').style.width = ((qIndex)/quizBank.length*100)+'%';
+  document.getElementById('qScoreLive').textContent = 'النتيجة: ' + toArabicNum(score);
+}
+function nextQ(){
+  if(!answered) return;
+  qIndex++;
+  if(qIndex >= quizBank.length){ finishQuiz(); return; }
+  renderCurrentQ();
+}
+function finishQuiz(){
+  saveAttempt();
+  document.getElementById('quizArea').style.display='none';
+  const res = document.getElementById('quizResult');
+  res.style.display='block';
+  const pct = Math.round(score/quizBank.length*100);
+  document.getElementById('scoreRing').style.setProperty('--pct', pct);
+  document.getElementById('scoreText').textContent = score+'/'+quizBank.length;
+  let msg = 'أداء جيد، واصل المذاكرة! 💪';
+  if(pct>=90) msg='ممتاز! إتقان رائع 🏆';
+  else if(pct>=70) msg='جيد جدًا! راجع نقاطًا بسيطة 👍';
+  else if(pct<50) msg='راجع الدروس أعلاه جيدًا ثم أعد المحاولة 📖';
+  document.getElementById('resultMsg').textContent = msg;
+}
+function restartQuiz(){
+  qIndex=0; score=0; answered=false; attemptLog=[];
+  document.getElementById('quizResult').style.display='none';
+  document.getElementById('quizArea').style.display='block';
+  renderCurrentQ();
+}
+renderCurrentQ();
+</script>
+</body>
+</html>
