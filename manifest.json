@@ -1,0 +1,26 @@
+{
+ "name": "دراسات اجتماعية — الإعدادي",
+ "short_name": "دراسات",
+ "lang": "ar",
+ "dir": "rtl",
+ "display": "standalone",
+ "orientation": "portrait",
+ "background_color": "#f1f2fa",
+ "theme_color": "#3d5afe",
+ "start_url": "./",
+ "scope": "./",
+ "icons": [
+  {
+   "src": "icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any maskable"
+  },
+  {
+   "src": "icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any maskable"
+  }
+ ]
+}
