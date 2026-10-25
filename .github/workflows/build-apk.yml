@@ -1,0 +1,144 @@
+name: Build APK
+on:
+  workflow_dispatch:
+env:
+  APP_URL: https://ziyadalmustafa97.github.io/
+  JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
+  LC_ALL: C.UTF-8
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+      - name: Generate Android project
+        run: |
+          set -e
+          mkdir -p android/app/src/main/java/com/ziyad/dirasat android/app/src/main/res/values android/app/src/main/res/mipmap-xxxhdpi
+          cd android
+          cat > settings.gradle <<'EOF'
+          pluginManagement { repositories { google(); mavenCentral(); gradlePluginPortal() } }
+          dependencyResolutionManagement { repositories { google(); mavenCentral() } }
+          rootProject.name = 'App'
+          include ':app'
+          EOF
+          cat > build.gradle <<'EOF'
+          plugins { id 'com.android.application' version '8.5.2' apply false }
+          EOF
+          cat > app/build.gradle <<'EOF'
+          plugins { id 'com.android.application' }
+          android {
+            namespace 'com.ziyad.dirasat'
+            compileSdk 34
+            defaultConfig { applicationId 'com.ziyad.dirasat'; minSdk 24; targetSdk 34; versionCode 1; versionName '1.0' }
+            signingConfigs { release { storeFile file('app.keystore'); storePassword 'android'; keyAlias 'androiddebugkey'; keyPassword 'android' } }
+            buildTypes { release { signingConfig signingConfigs.release; minifyEnabled false } }
+            compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+            lint { abortOnError false; checkReleaseBuilds false }
+          }
+          EOF
+          echo "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" | base64 -d > app/app.keystore
+          cp ../icon-512.png app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+          cat > app/src/main/AndroidManifest.xml <<'EOF'
+          <?xml version="1.0" encoding="utf-8"?>
+          <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <application android:label="@string/app_name" android:icon="@mipmap/ic_launcher" android:theme="@style/AppTheme" android:allowBackup="true">
+              <activity android:name=".MainActivity" android:exported="true" android:windowSoftInputMode="adjustResize" android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout|uiMode">
+                <intent-filter>
+                  <action android:name="android.intent.action.MAIN"/>
+                  <category android:name="android.intent.category.LAUNCHER"/>
+                </intent-filter>
+              </activity>
+            </application>
+          </manifest>
+          EOF
+          cat > app/src/main/res/values/strings.xml <<'EOF'
+          <resources><string name="app_name">\u062F\u0631\u0627\u0633\u0627\u062A</string></resources>
+          EOF
+          cat > app/src/main/res/values/styles.xml <<'EOF'
+          <resources>
+            <style name="AppTheme" parent="android:Theme.Material.Light.NoActionBar">
+              <item name="android:windowBackground">#f1f2fa</item>
+              <item name="android:statusBarColor">#3d5afe</item>
+              <item name="android:navigationBarColor">#f1f2fa</item>
+            </style>
+          </resources>
+          EOF
+          cat > app/src/main/java/com/ziyad/dirasat/MainActivity.java <<'EOF'
+          package com.ziyad.dirasat;
+
+          import android.app.Activity;
+          import android.content.Intent;
+          import android.os.Bundle;
+          import android.view.View;
+          import android.webkit.WebChromeClient;
+          import android.webkit.WebResourceError;
+          import android.webkit.WebResourceRequest;
+          import android.webkit.WebSettings;
+          import android.webkit.WebView;
+          import android.webkit.WebViewClient;
+
+          public class MainActivity extends Activity {
+            static final String URL = "__URL__";
+            WebView w;
+
+            @Override
+            protected void onCreate(Bundle b) {
+              super.onCreate(b);
+              w = new WebView(this);
+              setContentView(w);
+              WebSettings s = w.getSettings();
+              s.setJavaScriptEnabled(true);
+              s.setDomStorageEnabled(true);
+              s.setSupportZoom(false);
+              s.setTextZoom(100);
+              s.setMediaPlaybackRequiresUserGesture(false);
+              s.setUserAgentString(s.getUserAgentString() + " SocialApp/1.0");
+              w.setOverScrollMode(View.OVER_SCROLL_NEVER);
+              w.setWebChromeClient(new WebChromeClient());
+              w.setWebViewClient(new WebViewClient() {
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView v, WebResourceRequest r) {
+                  String h = r.getUrl().getHost();
+                  if (h != null && h.endsWith("github.io")) return false;
+                  try { startActivity(new Intent(Intent.ACTION_VIEW, r.getUrl())); } catch (Exception e) { }
+                  return true;
+                }
+                @Override
+                public void onReceivedError(WebView v, WebResourceRequest r, WebResourceError e) {
+                  if (r.isForMainFrame()) {
+                    v.loadDataWithBaseURL(null, "<meta name='viewport' content='width=device-width,initial-scale=1'><body style='font-family:sans-serif;text-align:center;padding:70px 20px;background:#f1f2fa;direction:rtl'><h2>\uD83D\uDCE1 \u0645\u0641\u064A\u0634 \u0627\u062A\u0635\u0627\u0644 \u0628\u0627\u0644\u0625\u0646\u062A\u0631\u0646\u062A</h2><p>\u0627\u062A\u0623\u0643\u062F \u0645\u0646 \u0627\u0644\u0646\u062A \u0648\u0627\u0636\u063A\u0637 \u0625\u0639\u0627\u062F\u0629 \u0627\u0644\u0645\u062D\u0627\u0648\u0644\u0629.</p><a href='" + URL + "' style='display:inline-block;margin-top:14px;padding:14px 28px;border-radius:14px;background:#3d5afe;color:#fff;text-decoration:none'>\u0625\u0639\u0627\u062F\u0629 \u0627\u0644\u0645\u062D\u0627\u0648\u0644\u0629</a>", "text/html", "UTF-8", null);
+                  }
+                }
+              });
+              if (b != null) w.restoreState(b); else w.loadUrl(URL);
+            }
+
+            @Override
+            protected void onSaveInstanceState(Bundle o) {
+              super.onSaveInstanceState(o);
+              w.saveState(o);
+            }
+
+            @Override
+            public void onBackPressed() {
+              if (w.canGoBack()) w.goBack(); else super.onBackPressed();
+            }
+          }
+          EOF
+          sed -i "s|__URL__|$APP_URL|" app/src/main/java/com/ziyad/dirasat/MainActivity.java
+      - name: Build APK
+        working-directory: android
+        run: gradle assembleRelease --no-daemon
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Darasat-APK
+          path: android/app/build/outputs/apk/release/*.apk
